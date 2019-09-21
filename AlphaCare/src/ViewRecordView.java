@@ -10,6 +10,7 @@ public class ViewRecordView extends JFrame {
         this.model = model;
 
         this.medicalRecordField = new JTextField(20);
+        this.medicalRecordField.setEditable(false);
         this.editRecordButton = new JButton("Edit Record");
 
         JPanel content = new JPanel();
