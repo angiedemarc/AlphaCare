@@ -40,7 +40,7 @@ public class EditRecordView extends JFrame {
      * Fills in medical info throughout the view
      * @param mr medical record to populate the view
      */
-    public void enterMedicalInfo(MedicalRecord mr){
+    public void enterMedicalInfo(Record mr){
     }
 
 }

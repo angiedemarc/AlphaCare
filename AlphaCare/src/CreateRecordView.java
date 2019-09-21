@@ -40,7 +40,7 @@ public class ViewRecordView extends JFrame {
      * Fills in prompts for medical info throughout the view
      * @param mr medical record to know which fields to prompt
      */
-    public void enterMedicalInfo(MedicalRecord mr){
+    public void enterMedicalInfo(Record mr){
     }
 
 }
