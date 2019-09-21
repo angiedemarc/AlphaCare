@@ -3,7 +3,6 @@ public class ViewRecordView extends JFrame {
 
     private JButton editRecordButton;
     private JTextField medicalRecordField;
-    private MedicalRecord medicalRecord;
 
     //private RecordModel model;
 
@@ -27,6 +26,21 @@ public class ViewRecordView extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.setSize(800, 600);
+    }
+
+    /**
+     * Adds actionlistener to editRecordButton
+     * @param al ActionListener that will switch view form 'ViewRecordView' to 'EditRecordView'
+     */
+    public void addEditRecordButtonListener(ActionListener al) {
+        editRecordButton.addActionListener(al);
+    }
+
+    /**
+     * Fills in medical info throughout the view
+     * @param mr medical record to populate the view
+     */
+    public void enterMedicalInfo(MedicalRecord mr){
     }
 
 }
