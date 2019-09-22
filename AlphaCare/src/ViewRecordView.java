@@ -3,11 +3,9 @@ public class ViewRecordView extends JFrame {
 
     private JButton editRecordButton;
     private JTextField medicalRecordField;
+    private Record medicalRecord;
 
-    //private RecordModel model;
-
-    ViewRecordView(RecordModel model) {
-        this.model = model;
+    ViewRecordView() {
 
         this.medicalRecordField = new JTextField(20);
         this.medicalRecordField.setEditable(false);
@@ -30,6 +28,13 @@ public class ViewRecordView extends JFrame {
     }
 
     /**
+     * Returns the medicalRecord associated with the view
+     */
+    public Record getMedicalRecord(){
+        return this.medicalRecord;
+    }
+
+    /**
      * Adds actionlistener to editRecordButton
      * @param al ActionListener that will switch view form 'ViewRecordView' to 'EditRecordView'
      */
@@ -39,9 +44,11 @@ public class ViewRecordView extends JFrame {
 
     /**
      * Fills in medical info throughout the view
+     * Edits medicalRecordField to reflect the medical record
      * @param mr medical record to populate the view
      */
     public void enterMedicalInfo(Record mr){
+        this.medicalRecord = mr;
     }
 
 }

@@ -3,12 +3,9 @@ public class ViewRecordView extends JFrame {
 
     private JButton createRecordButton;
     private JTextField medicalRecordField;
+    private Record medicalRecord;
 
-    //private RecordModel model;
-
-    ViewRecordView(RecordModel model) {
-        this.model = model;
-
+    ViewRecordView() {
         this.medicalRecordField = new JTextField(20);
         this.createRecordButton = new JButton("Create Record");
 
@@ -30,17 +27,11 @@ public class ViewRecordView extends JFrame {
 
     /**
      * Adds actionlistener to createRecordButton
-     * @param al ActionListener that will save record and switch view form 'CreateRecordView' to 'ViewRecordView'
+     * Will use information from medicalRecordField to update medicalRecord
+     * @param al ActionListener that will save updated information and switch view form 'CreateRecordView' to 'ViewRecordView'
      */
     public void addCreateRecordButtonListener(ActionListener al) {
-        editRecordButton.addActionListener(al);
-    }
-
-    /**
-     * Fills in prompts for medical info throughout the view
-     * @param mr medical record to know which fields to prompt
-     */
-    public void enterMedicalInfo(Record mr){
+        createRecordButton.addActionListener(al);
     }
 
 }
