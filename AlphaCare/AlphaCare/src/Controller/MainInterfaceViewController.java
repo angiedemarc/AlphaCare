@@ -1,4 +1,7 @@
-package alphacare;
+package Controller;
+
+import View.MainInterfaceView;
+import Model.Record;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

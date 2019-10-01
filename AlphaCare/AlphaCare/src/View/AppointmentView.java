@@ -4,7 +4,7 @@
  * This is where users/actors can input the necessary
  * information in order to submit and create an appointment.
  */
-package alphacare;
+package View;
 
 import java.awt.event.ActionListener;
 import javax.swing.JButton;

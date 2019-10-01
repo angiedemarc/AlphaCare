@@ -1,6 +1,7 @@
-package alphacare;
+package View;
 
 
+import Model.Record;
 import java.awt.PopupMenu;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;

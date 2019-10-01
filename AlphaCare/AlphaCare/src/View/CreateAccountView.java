@@ -5,7 +5,7 @@
  * pieces of information in order to make an account.
  * 
  */
-package alphacare;
+package View;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;

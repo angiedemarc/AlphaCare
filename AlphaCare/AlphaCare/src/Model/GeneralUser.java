@@ -1,4 +1,4 @@
-package alphacare;
+package Model;
 
 /**
  *

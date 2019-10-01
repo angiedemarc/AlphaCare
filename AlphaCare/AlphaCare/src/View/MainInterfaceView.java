@@ -12,7 +12,7 @@
  * Viewing a record and creating a record
  * will display a new window or screen to the user.
  */
-package alphacare;
+package View;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;

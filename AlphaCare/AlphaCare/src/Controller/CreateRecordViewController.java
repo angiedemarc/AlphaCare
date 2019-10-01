@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package alphacare;
+package Controller;
+
+import View.CreateRecordView;
+import Model.Record;
 
 /**
  *

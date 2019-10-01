@@ -5,7 +5,7 @@
  * AlphaCare account credentials, allowing
  * them to log in.
  */
-package alphacare;
+package View;
 
 
 import java.awt.GridLayout;
