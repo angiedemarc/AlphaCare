@@ -18,7 +18,6 @@ public class Record {
         private String familyMedicalHistory;
         private String medicationHistory;
         private String treatmentHistory;
-        private String medicalDirective;
     
     /**
      *
@@ -34,7 +33,6 @@ public class Record {
             this.familyMedicalHistory = "N/A";
             this.medicationHistory = "N/A";
             this.treatmentHistory = "N/A";
-            this.medicalDirective = "N/A";
         }
     
      /**
@@ -48,11 +46,10 @@ public class Record {
      * @param familyMedicalHistory
      * @param medicationHistory
      * @param treatmentHistory
-     * @param medicalDirective
      */  
         
         public Record(String patientName, int ssn, String address, String state, String medicalHistory, String familyMedicalHistory, 
-                String medicationHistory, String treatmentHistory, String medicalDirective) {
+                String medicationHistory, String treatmentHistory) {
             this.patientName = patientName;
             this.ssn = ssn;
             this.address = address;
@@ -61,7 +58,6 @@ public class Record {
             this.familyMedicalHistory = familyMedicalHistory;
             this.medicationHistory = medicationHistory;
             this.treatmentHistory = treatmentHistory;
-            this.medicalDirective = medicalDirective;
         }
     
     /**
@@ -208,24 +204,6 @@ public class Record {
             this.treatmentHistory = treatmentHistory;
         }
     
-    /**
-     *
-     * getter for medicalDirective
-     * @return medicalDirective
-     */ 
-        public String getMedicalDirective() {
-            return medicalDirective;
-        }
-    
-    /**
-     *
-     * setter for medicalDirective
-     * @param medicalDirective
-     */
-        public void setMedicalDirective(String medicalDirective) {
-            this.medicalDirective = medicalDirective;
-        }
-    
      /**
      *
      * toString() for class
@@ -235,7 +213,7 @@ public class Record {
         public String toString() {
             return "Patient name: " + this.patientName + ", Social scurity number: " + this.ssn + ", Address: " + this.address + ", State: " + this.state 
                     + ", Medical history: " + this.medicalHistory + ", Family medical history: " + this.familyMedicalHistory + ", Medical history: " + 
-                    this.medicationHistory + ", Treatment history: " + this.treatmentHistory + ", Medical directive: " + this.medicalDirective;
+                    this.medicationHistory + ", Treatment history: " + this.treatmentHistory;
         }
         
     }
