@@ -7,7 +7,7 @@ package alphacare;
 
 /**
  *
- * @author Owner
+ * @author Genesis
  */
 public class TestHarness {
 
