@@ -13,17 +13,28 @@ import javax.swing.JTextField;
 public class EditRecordView extends RecordView {
 
     private JButton saveRecordButton;
-    private PopupMenu editRecordButton;
 
     EditRecordView() {
         super();
+    }
+
+    EditRecordView(Record medicalRecord){
+        super(medicalRecord);
+    }
+
+    public void createVisual(){
         this.medicalRecordField = new JTextField(20);
         this.saveRecordButton = new JButton("Save Record");
+        this.saveRecordButton.addActionListener(new ActionListener(){
+            public void actionPerformed(){
+                new ViewRecordView(medicalRecord);
+                this.dispose();
+            }
+        });
 
         JPanel content = new JPanel();
         content.setLayout(null);
         content.add(this.medicalRecordField);
-        content.add(this.editRecordButton);
 
         //setting positions and dimensions of everything
         medicalRecordField.setBounds(5, 5, 300, 50);
@@ -34,15 +45,7 @@ public class EditRecordView extends RecordView {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.setSize(800, 600);
-    }
 
-    /**
-     * Adds actionlistener to saveRecordButton
-     * Will use information from medicalRecordField to update medicalRecord
-     * @param al ActionListener that will save updated information and switch view form 'EditRecordView' to 'SaveRecordView'
-     */
-    public void addSaveRecordButtonListener(ActionListener al) {
-        saveRecordButton.addActionListener(al);
     }
 
 }

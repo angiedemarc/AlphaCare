@@ -16,12 +16,11 @@ public class RecordView extends JFrame {
     protected Record medicalRecord;
 
     public RecordView(){
-        this.name = new JTextField();
-        this.address = new JTextField();
-        this.medicalHistory = new JTextField();
-        this.familyMedicalHistory = new JTextField();
-        this.medicationHistory = new JTextField();
-        this.treatmentHistory = new JTextField();
+        displayRecordInfo();
+    }
+
+    public RecordView(Record medicalRecord){
+        this.medicalRecord = medicalRecord;
         displayRecordInfo();
     }
 
@@ -33,11 +32,10 @@ public class RecordView extends JFrame {
     }
 
     public void displayRecordInfo(){
-        name.setText(medicalRecord.getPatientName());
-        address.setText(medicalRecord.getAddress());
-        medicalHistory.setText(medicalRecord.getMedicalHistory());
-        familyMedicalHistory.setText(medicalRecord.getFamilyMedicalHistory());
-        medicationHistory.setText(medicalRecord.getMedicationHistory());
-        treatmentHistory.setText(medicalRecord.getTreatmentHistory());
-    }
+        this.name = new JTextField(medicalRecord.getPatientName());
+        this.address = new JTextField(medicalRecord.getAddress());
+        this.medicalHistory = new JTextField(medicalRecord.getMedicalHistory());
+        this.familyMedicalHistory = new JTextField(medicalRecord.getFamilyMedicalHistory());
+        this.medicationHistory = new JTextField(medicalRecord.getMedicationHistory());
+        this.treatmentHistory = new JTextField(medicalRecord.getTreatmentHistory());    }
 }

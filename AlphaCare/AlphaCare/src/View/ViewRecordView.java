@@ -18,13 +18,18 @@ public class ViewRecordView extends RecordView {
     }
 
     ViewRecordView(Record medicalRecord){
-        super();
-        this.medicalRecord = medicalRecord;
+        super(medicalRecord);
         createVisual();
     }
 
     public void createVisual(){
         this.editRecordButton = new JButton("Edit Record");
+        this.editRecordButton.addActionListener(new ActionListener(){
+            public void actionPerforemd(){
+                new EditRecordView(medicalRecord);
+                this.dispose();
+            }
+        });
 
         JPanel content = new JPanel();
         content.setLayout(null);
@@ -47,14 +52,6 @@ public class ViewRecordView extends RecordView {
      */
     public Record getMedicalRecord(){
         return this.medicalRecord;
-    }
-
-    /**
-     * Adds actionlistener to editRecordButton
-     * @param al ActionListener that will switch view form 'ViewRecordView' to 'EditRecordView'
-     */
-    public void addEditRecordButtonListener(ActionListener al) {
-        editRecordButton.addActionListener(al);
     }
 
     /**

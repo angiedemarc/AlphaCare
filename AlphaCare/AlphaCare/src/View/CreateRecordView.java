@@ -12,7 +12,6 @@ import javax.swing.JTextField;
 public class CreateRecordView extends RecordView {
 
     private JButton createRecordButton;
-    private PopupMenu editRecordButton;
 
     CreateRecordView() {
         super();
@@ -27,7 +26,6 @@ public class CreateRecordView extends RecordView {
         JPanel content = new JPanel();
         content.setLayout(null);
         content.add(this.medicalRecordField);
-        content.add(this.editRecordButton);
 
         //setting positions and dimensions of everything
         medicalRecordField.setBounds(5, 5, 300, 50);
