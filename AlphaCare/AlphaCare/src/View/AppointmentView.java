@@ -43,6 +43,7 @@ public class AppointmentView extends JFrame {
     
     private void appointmentUI(){
         setSize(800, 600);
+        setVisible(true);
         setTitle("Appointment Scheduling");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //setVisible(true);
@@ -92,6 +93,14 @@ public class AppointmentView extends JFrame {
         appointmentPanel.add(cancelButton);
         
         getContentPane().add(appointmentPanel);
+    }
+
+    public JButton getSubmitButton() {
+        return submitButton;
+    }
+
+    public void setSubmitButton(JButton submitButton) {
+        this.submitButton = submitButton;
     }
     
     /**

@@ -43,7 +43,7 @@ public class CreateAccountView extends JFrame {
         setSize(800, 600);
         setTitle("Account Creation");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //setVisible(true);
+        setVisible(true);
         
         userLabel = new JLabel("Username: ");
         userField = new JTextField();

@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Account;
 import View.CreateAccountView;
 
 
@@ -18,6 +19,11 @@ import View.CreateAccountView;
 public class CreateAccountViewController {
     
     private CreateAccountView createAccountView;
+    private Account test;
+
+    public Account getTest() {
+        return test;
+    }
     
     public CreateAccountViewController() {
         CreateAccountView createAccountView = new CreateAccountView();

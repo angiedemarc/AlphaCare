@@ -14,8 +14,11 @@ public class ViewRecordView extends JFrame {
     private JTextField medicalRecordField;
     private Record medicalRecord;
 
-    ViewRecordView() {
-
+    public ViewRecordView() {
+        ViewRecordUI();
+    }
+        
+        private void ViewRecordUI() {
         this.medicalRecordField = new JTextField(20);
         this.medicalRecordField.setEditable(false);
         this.editRecordButton = new JButton("Edit Record");
@@ -34,7 +37,10 @@ public class ViewRecordView extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.setSize(800, 600);
-    }
+        this.setVisible(true);
+        }
+        
+    
 
     /**
      * Returns the medicalRecord associated with the view

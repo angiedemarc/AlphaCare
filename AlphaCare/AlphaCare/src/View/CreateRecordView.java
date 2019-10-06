@@ -16,14 +16,17 @@ public class CreateRecordView extends JFrame {
     private Record medicalRecord;
     private PopupMenu editRecordButton;
 
-    CreateRecordView() {
+    public CreateRecordView() {
+       CreateRecordUI();
+    }
+    private void CreateRecordUI() {
         this.medicalRecordField = new JTextField(20);
         this.createRecordButton = new JButton("Create Record");
 
         JPanel content = new JPanel();
         content.setLayout(null);
         content.add(this.medicalRecordField);
-        content.add(this.editRecordButton);
+//         content.add(this.editRecordButton);
 
         //setting positions and dimensions of everything
         medicalRecordField.setBounds(5, 5, 300, 50);
@@ -34,6 +37,7 @@ public class CreateRecordView extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.setSize(800, 600);
+        this.setVisible(true);
     }
 
     /**

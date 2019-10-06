@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Account;
 import View.*;
 
 
@@ -15,9 +16,18 @@ import View.*;
 public class EditRecordViewController {
     
      private EditRecordView editRecordView;
+     private Account test;
+
+    public Account getTest() {
+        return test;
+    }
+
+    public void setTest(Account test) {
+        this.test = test;
+    }
     
     public EditRecordViewController() {
-        // EditRecordView editRecordView = new EditRecordView();
+        EditRecordView editRecordView = new EditRecordView();
     }
 
     public void setEditRecordView(EditRecordView editRecordView) {

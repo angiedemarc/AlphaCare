@@ -39,13 +39,29 @@ public class MainInterfaceView extends JFrame {
     public MainInterfaceView(){
         mainUI();
     }
+
+    public JButton getViewRecordButton() {
+        return viewRecordButton;
+    }
+
+    public JButton getCreateRecordButton() {
+        return createRecordButton;
+    }
+
+    public JButton getLogoutButton() {
+        return logoutButton;
+    }
+
+    public JButton getScheduleAppointmentButton() {
+        return scheduleAppointmentButton;
+    }
     
     private void mainUI(){
         setTitle("Main Menu");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-        //setVisible(true);
+        setVisible(true);
         
         viewRecordButton = new JButton("View Record");
         
@@ -84,5 +100,12 @@ public class MainInterfaceView extends JFrame {
         
         public void addCreateRecordListener(ActionListener al) {
         createRecordButton.addActionListener(al);
+    }
+        
+        public void addScheduleAppointmentListener(ActionListener al) {
+        scheduleAppointmentButton.addActionListener(al);
+    }
+        public void addLogoutButtonListener(ActionListener al) {
+        logoutButton.addActionListener(al);
     }
 }

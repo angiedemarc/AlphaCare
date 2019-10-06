@@ -17,8 +17,12 @@ public class EditRecordView extends JFrame {
     private Record medicalRecord;
     private PopupMenu editRecordButton;
 
-    EditRecordView() {
-
+    public EditRecordView() {
+        EditRecordUI();
+    }
+    
+    private void EditRecordUI() {
+        
         this.medicalRecordField = new JTextField(20);
         this.saveRecordButton = new JButton("Save Record");
 
@@ -36,6 +40,7 @@ public class EditRecordView extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.setSize(800, 600);
+        this.setVisible(true);
     }
 
     /**
