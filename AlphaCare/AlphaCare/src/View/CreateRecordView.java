@@ -9,16 +9,20 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-public class CreateRecordView extends JFrame {
+public class CreateRecordView extends RecordView {
 
     private JButton createRecordButton;
-    private JTextField medicalRecordField;
-    private Record medicalRecord;
     private PopupMenu editRecordButton;
 
     CreateRecordView() {
-        this.medicalRecordField = new JTextField(20);
+        super();
         this.createRecordButton = new JButton("Create Record");
+        this.createRecordButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                new ViewRecordView(this.medicalRecord);
+                this.dispose();
+            }
+        });
 
         JPanel content = new JPanel();
         content.setLayout(null);
@@ -35,14 +39,4 @@ public class CreateRecordView extends JFrame {
 
         this.setSize(800, 600);
     }
-
-    /**
-     * Adds actionlistener to createRecordButton
-     * Will use information from medicalRecordField to update medicalRecord
-     * @param al ActionListener that will save updated information and switch view form 'CreateRecordView' to 'ViewRecordView'
-     */
-    public void addCreateRecordButtonListener(ActionListener al) {
-        createRecordButton.addActionListener(al);
-    }
-
 }

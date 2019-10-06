@@ -10,15 +10,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-public class EditRecordView extends JFrame {
+public class EditRecordView extends RecordView {
 
     private JButton saveRecordButton;
-    private JTextField medicalRecordField;
-    private Record medicalRecord;
     private PopupMenu editRecordButton;
 
     EditRecordView() {
-
+        super();
         this.medicalRecordField = new JTextField(20);
         this.saveRecordButton = new JButton("Save Record");
 

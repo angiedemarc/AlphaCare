@@ -8,16 +8,22 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-public class ViewRecordView extends JFrame {
+public class ViewRecordView extends RecordView {
 
     private JButton editRecordButton;
-    private JTextField medicalRecordField;
-    private Record medicalRecord;
 
     ViewRecordView() {
+        super();
+        createVisual();
+    }
 
-        this.medicalRecordField = new JTextField(20);
-        this.medicalRecordField.setEditable(false);
+    ViewRecordView(Record medicalRecord){
+        super();
+        this.medicalRecord = medicalRecord;
+        createVisual();
+    }
+
+    public void createVisual(){
         this.editRecordButton = new JButton("Edit Record");
 
         JPanel content = new JPanel();
@@ -58,6 +64,7 @@ public class ViewRecordView extends JFrame {
      */
     public void enterMedicalInfo(Record mr){
         this.medicalRecord = mr;
+        this.medicalRecordField.setText("hello");
+        this.medicalRecordField.setText(this.medicalRecord);
     }
-
 }
