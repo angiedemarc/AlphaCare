@@ -9,6 +9,7 @@ package View;
 
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,7 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class LoginPageView extends JFrame{
+public class LoginPageView extends JFrame {
     private JPanel loginPanel;
     private JLabel userNameLabel;
     private JLabel passwordLabel;
@@ -36,7 +37,7 @@ public class LoginPageView extends JFrame{
         setSize(800, 600);
         setTitle("AlphaCare Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //setVisible(true);
+        setVisible(true);
         
         userNameLabel = new JLabel("Username: ");
         userNameField = new JTextField(16);
@@ -81,4 +82,21 @@ public class LoginPageView extends JFrame{
     public void addRegisterListener(ActionListener al) {
         registerButton.addActionListener(al);
     }
+
+    public JButton getRegisterButton() {
+        return registerButton;
+    }
+
+    public void setRegisterButton(JButton registerButton) {
+        this.registerButton = registerButton;
+    }
+
+    public JButton getLoginButton() {
+        return loginButton;
+    }
+
+    public void setLoginButton(JButton loginButton) {
+        this.loginButton = loginButton;
+    }
+
 }

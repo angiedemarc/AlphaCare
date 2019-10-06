@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Account;
 import View.*;
 
 
@@ -15,9 +16,14 @@ import View.*;
  */
 public class CreateRecordViewController {
      private CreateRecordView createRecordView;
+     private Account test;
+
+    public Account getTest() {
+        return test;
+    }
     
     public CreateRecordViewController() {
-        // CreateRecordView createRecordView = new CreateRecordView();
+        CreateRecordView createRecordView = new CreateRecordView();
     }
     
     public void addCreateRecordViewController() {

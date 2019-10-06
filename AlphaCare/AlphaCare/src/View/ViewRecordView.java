@@ -12,17 +12,17 @@ public class ViewRecordView extends RecordView {
 
     private JButton editRecordButton;
 
-    ViewRecordView() {
+    public ViewRecordView() {
         super();
-        createVisual();
+        viewRecordUI();
     }
 
-    ViewRecordView(Record medicalRecord){
+    public ViewRecordView(Record medicalRecord){
         super(medicalRecord);
-        createVisual();
+        viewRecordUI();
     }
 
-    public void createVisual(){
+    private void viewRecordUI(){
         this.editRecordButton = new JButton("Edit Record");
         this.editRecordButton.addActionListener(new ActionListener(){
             public void actionPerforemd(){
@@ -45,7 +45,10 @@ public class ViewRecordView extends RecordView {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.setSize(800, 600);
-    }
+        this.setVisible(true);
+        }
+        
+    
 
     /**
      * Returns the medicalRecord associated with the view

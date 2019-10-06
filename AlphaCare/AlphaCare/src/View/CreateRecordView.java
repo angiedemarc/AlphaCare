@@ -13,8 +13,12 @@ public class CreateRecordView extends RecordView {
 
     private JButton createRecordButton;
 
-    CreateRecordView() {
+    public CreateRecordView() {
         super();
+        createRecordUI();
+    }
+
+    private void createRecordUI(){
         this.createRecordButton = new JButton("Create Record");
         this.createRecordButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -36,5 +40,6 @@ public class CreateRecordView extends RecordView {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.setSize(800, 600);
+        this.setVisible(true);
     }
 }

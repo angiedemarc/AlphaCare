@@ -1,7 +1,7 @@
 package Controller;
 
 import View.AppointmentView;
-import Model.Record;
+import Model.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,6 +16,11 @@ import Model.Record;
 public class AppointmentViewController {
 
     private AppointmentView appointmentView;
+
+    public Account getTest() {
+        return test;
+    }
+    private Account test;
     
     public AppointmentViewController() {
         AppointmentView appointmentPanel = new AppointmentView();
@@ -29,9 +34,4 @@ public class AppointmentViewController {
         return appointmentView;
     }
     
-    
-    
 }
-
-    
-

@@ -2,6 +2,22 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/Controller/CreateRecordViewController.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/Controller/CreateAccountViewController.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/Controller/MainInterfaceViewController.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/View/MainInterfaceView.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/View/EditRecordView.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/View/LoginPageView.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/View/ViewRecordView.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/Controller/EditRecordViewController.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/alphacare/TestHarness.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/View/CreateAccountView.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/Controller/LoginPageViewController.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/View/CreateRecordView.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/Controller/AppointmentViewController.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/View/AppointmentView.java</file>
+            <file>file:/Users/calvinho/Documents/GitHub/AlphaCare/AlphaCare/AlphaCare/src/Controller/ViewRecordViewController.java</file>
+        </group>
     </open-files>
 </project-private>

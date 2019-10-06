@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Account;
 import Model.Record;
 import View.ViewRecordView;
 
@@ -15,9 +16,14 @@ import View.ViewRecordView;
 public class ViewRecordViewController {
     
     private ViewRecordView viewRecordView;
+    private Account test;
 
-    public ViewRecordViewController(ViewRecordView viewRecordView) {
-        this.viewRecordView = viewRecordView;
+    public Account getTest() {
+        return test;
+    }
+
+    public ViewRecordViewController() {
+        viewRecordView = new ViewRecordView();
     }
 
     public ViewRecordView getViewRecordView() {
