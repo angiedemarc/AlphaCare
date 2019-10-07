@@ -6,16 +6,16 @@ import javax.swing.JTextField;
 
 public class RecordView extends JFrame {
 
-    protected JTextField name;
-    protected JTextField address;
-    protected JTextField medicalHistory;
-    protected JTextField familyMedicalHistory;
-    protected JTextField medicationHistory;
-    protected JTextField treatmentHistory;
+    protected JLabel name;
+    protected JLabel address;
+    protected JLabel medicalHistory;
+    protected JLabel familyMedicalHistory;
+    protected JLabel medicationHistory;
+    protected JLabel treatmentHistory;
     protected Record medicalRecord;
 
     public RecordView() {
-        displayRecordInfo();
+        promptRecordInfo();
     }
 
     public RecordView(Record medicalRecord) {
@@ -33,13 +33,20 @@ public class RecordView extends JFrame {
     }
 
     public void displayRecordInfo() {
-        if (medicalRecord != null) {
+        this.name = new JTextField();
+        this.address = new JTextField();
+        this.medicalHistory = new JTextField();
+        this.familyMedicalHistory = new JTextField();
+        this.medicationHistory = new JTextField();
+        this.treatmentHistory = new JTextField();
+    }
+
+    public void displayRecordInfo() {
             this.name = new JTextField(medicalRecord.getPatientName());
             this.address = new JTextField(medicalRecord.getAddress());
             this.medicalHistory = new JTextField(medicalRecord.getMedicalHistory());
             this.familyMedicalHistory = new JTextField(medicalRecord.getFamilyMedicalHistory());
             this.medicationHistory = new JTextField(medicalRecord.getMedicationHistory());
             this.treatmentHistory = new JTextField(medicalRecord.getTreatmentHistory());
-        }
     }
 }
