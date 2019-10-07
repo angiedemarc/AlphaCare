@@ -2,6 +2,7 @@ package View;
 
 import Model.Record;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class RecordView extends JFrame {
