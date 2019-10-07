@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 
 public class CreateRecordView extends JFrame {
 
+    private JTextField medicalRecordField;
     private JButton createRecordButton;
     private Record medicalRecord;
 

@@ -19,7 +19,7 @@ public class EditRecordView extends JFrame {
     private PopupMenu editRecordButton;
 
     public EditRecordView() {
-        EditRecordUI();
+        editRecordUI();
     }
 
     private void editRecordUI() {
