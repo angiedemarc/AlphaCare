@@ -6,6 +6,7 @@
  */
 package View;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -93,6 +94,32 @@ public class AppointmentView extends JFrame {
         appointmentPanel.add(cancelButton);
         
         getContentPane().add(appointmentPanel);
+        
+        setVisible(true);
+        
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent eventLis){
+                System.out.println("Testing: Successful Submission!");
+                
+                MainInterfaceView mainInterface = new MainInterfaceView();
+                
+                setVisible(false);
+                mainInterface.setVisible(true);
+            }
+        });
+        
+        cancelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent eventList){
+                System.out.println("Testing: Successful Cancellation!");
+                
+                MainInterfaceView mainInterface = new MainInterfaceView();
+                
+                setVisible(false);
+                mainInterface.setVisible(true);
+            }
+        });
     }
 
     public JButton getSubmitButton() {

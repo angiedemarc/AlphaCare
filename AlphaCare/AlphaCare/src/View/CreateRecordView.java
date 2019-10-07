@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 
 public class CreateRecordView extends RecordView {
 
+    private JTextField medicalRecordField;
     private JButton createRecordButton;
 
     public CreateRecordView() {

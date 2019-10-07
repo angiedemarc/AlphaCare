@@ -16,10 +16,12 @@ public class EditRecordView extends RecordView {
 
     public EditRecordView() {
         super();
+        editRecordUI();
     }
 
     public EditRecordView(Record medicalRecord) {
         super(medicalRecord);
+        editRecordUI();
     }
 
     private void editRecordUI() {
