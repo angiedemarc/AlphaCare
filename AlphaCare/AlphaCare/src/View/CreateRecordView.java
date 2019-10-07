@@ -98,7 +98,7 @@ public class CreateRecordView extends JFrame {
         this.setTitle("Record");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        this.setSize(800, 600);
+        this.setSize(1000, 800);
         this.setVisible(true);
     }
 
@@ -111,13 +111,13 @@ public class CreateRecordView extends JFrame {
 
     private void switchView() {
         if (nameEntry.getText()!= ""
-        && ssnEntry.getText != "" 
-        && addressEntry.getText != ""
-        && stateEntry.getText != ""
-        && medicalHistoryEntry.getText != ""
-        && familyMedicalHistoryEntry.getText != ""
-        && medicationHistoryEntry.getText != ""
-        && treatmentHistoryEntry.getText != ""){
+        && ssnEntry.getText() != "" 
+        && addressEntry.getText() != ""
+        && stateEntry.getText() != ""
+        && medicalHistoryEntry.getText() != ""
+        && familyMedicalHistoryEntry.getText() != ""
+        && medicationHistoryEntry.getText() != ""
+        && treatmentHistoryEntry.getText() != ""){
         hasClicked = true;
         medicalRecord = new Record(nameEntry.getText(), Integer.parseInt(ssnEntry.getText()), addressEntry.getText(),
                 stateEntry.getText(), medicalHistoryEntry.getText(), familyMedicalHistoryEntry.getText(),
