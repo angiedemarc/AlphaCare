@@ -6,6 +6,7 @@
 package Controller;
 
 import Model.Account;
+import Model.Record;
 import View.*;
 
 
@@ -26,8 +27,8 @@ public class EditRecordViewController {
         this.test = test;
     }
     
-    public EditRecordViewController() {
-        EditRecordView editRecordView = new EditRecordView();
+    public EditRecordViewController(Record medicalRecord) {
+        EditRecordView editRecordView = new EditRecordView(medicalRecord);
     }
 
     public void setEditRecordView(EditRecordView editRecordView) {

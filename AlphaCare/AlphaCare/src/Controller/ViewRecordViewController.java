@@ -22,8 +22,8 @@ public class ViewRecordViewController {
         return test;
     }
 
-    public ViewRecordViewController() {
-        viewRecordView = new ViewRecordView();
+    public ViewRecordViewController(Record medicalRecord) {
+        viewRecordView = new ViewRecordView(medicalRecord);
     }
 
     public ViewRecordView getViewRecordView() {
