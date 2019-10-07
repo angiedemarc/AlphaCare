@@ -9,6 +9,7 @@ package View;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -43,7 +44,7 @@ public class CreateAccountView extends JFrame {
         setSize(800, 600);
         setTitle("Account Creation");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
+        //setVisible(true);
         
         userLabel = new JLabel("Username: ");
         userField = new JTextField();
@@ -77,6 +78,20 @@ public class CreateAccountView extends JFrame {
         createPanel.add(submitButton);
         
         getContentPane().add(createPanel);
+        
+        setVisible(true);
+        
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent eve){
+                System.out.println("Testing: Submission sent!");
+                
+                LoginPageView loginPage = new LoginPageView();
+                
+                setVisible(false);
+                loginPage.setVisible(true);
+            }
+        });
     }
     
     /**

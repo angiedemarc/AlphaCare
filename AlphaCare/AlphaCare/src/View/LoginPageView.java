@@ -11,6 +11,7 @@ package View;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -37,7 +38,7 @@ public class LoginPageView extends JFrame {
         setSize(800, 600);
         setTitle("AlphaCare Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
+        //setVisible(true);
         
         userNameLabel = new JLabel("Username: ");
         userNameField = new JTextField(16);
@@ -60,6 +61,28 @@ public class LoginPageView extends JFrame {
         
         //this.setContentPane(loginPanel);
         getContentPane().add(loginPanel);
+        
+        setVisible(true);
+        
+        loginButton.addActionListener(new ActionListener()  {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.out.println("Testing: Successful Login!");
+                MainInterfaceView mainInterface = new MainInterfaceView();
+                
+                setVisible(false);
+                //mainInterface.setVisible(true);
+            }
+        });
+        
+        registerButton.addActionListener(new ActionListener()   {
+            @Override
+            public void actionPerformed(ActionEvent ev){
+                System.out.println("Testing: Going to Registration page!");
+                
+                setVisible(false);
+            }
+        });
     }
     
     /**

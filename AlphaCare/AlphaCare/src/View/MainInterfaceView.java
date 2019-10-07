@@ -16,6 +16,7 @@ package View;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
+import java.awt.event.*;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -61,7 +62,7 @@ public class MainInterfaceView extends JFrame {
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-        setVisible(true);
+        //setVisible(true);
         
         viewRecordButton = new JButton("View Record");
         
@@ -79,12 +80,62 @@ public class MainInterfaceView extends JFrame {
         mainPanel = new JPanel();
         mainPanel.add(viewRecordButton);
         mainPanel.add(createRecordButton);
-        mainPanel.add(logoutButton);
         mainPanel.add(scheduleAppointmentButton);
+        mainPanel.add(logoutButton);
         
         toolBar.add(mainPanel);
         
         getContentPane().add(toolBar, BorderLayout.NORTH);
+        
+        setVisible(true);
+        
+        viewRecordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent even){
+                System.out.println("Testing: Successful Access!");
+                
+                ViewRecordView recordView = new ViewRecordView();
+                
+                setVisible(false);
+                //recordView.setVisible(true);
+            }
+        });
+        
+        createRecordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent event){
+                System.out.println("Testing: Successful Access!");
+                
+                CreateRecordView createRecord = new CreateRecordView();
+                
+                setVisible(false);
+                //createRecord.setVisible(true);
+            }
+        });
+        
+        scheduleAppointmentButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent eventL){
+                System.out.println("Testing: Successful Access!");
+                
+                AppointmentView appointment = new AppointmentView();
+                
+                setVisible(false);
+                //appointment.setVisible(true);
+            }
+        });
+        
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent eventLi){
+                System.out.println("Testing: Successful logout!");
+                
+                LoginPageView loginPageView = new LoginPageView();
+                
+                setVisible(false);
+                loginPageView.setVisible(true);
+            }
+        });
     }
     
     /**
