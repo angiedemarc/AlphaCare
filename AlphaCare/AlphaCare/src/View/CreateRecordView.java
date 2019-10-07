@@ -125,7 +125,7 @@ public class CreateRecordView extends JFrame {
         ViewRecordViewController viewRecordViewController = new ViewRecordViewController(medicalRecord);
         }
         else{
-            alert("Must enter valid information to create record");
+            System.out.println("Must enter valid information to create record");
         }
     }
 }
