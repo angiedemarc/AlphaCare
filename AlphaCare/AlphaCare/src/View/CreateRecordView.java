@@ -92,6 +92,7 @@ public class CreateRecordView extends JFrame {
 
         // setting positions and dimensions of everything
         createRecordButton.setBounds(5, 60, 200, 50);
+        content.add(createRecordButton);
 
         this.setContentPane(content);
         this.setTitle("Record");
