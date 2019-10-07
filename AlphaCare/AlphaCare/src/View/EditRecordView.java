@@ -3,6 +3,7 @@ package View;
 
 import Model.Record;
 import java.awt.PopupMenu;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,19 +21,20 @@ public class EditRecordView extends JFrame {
     public EditRecordView() {
         EditRecordUI();
     }
-    
-    private void EditRecordUI() {
-        
-        this.medicalRecordField = new JTextField(20);
+
+    private void editRecordUI() {
         this.saveRecordButton = new JButton("Save Record");
+        this.saveRecordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new ViewRecordView(medicalRecord);
+            }
+        });
 
         JPanel content = new JPanel();
         content.setLayout(null);
-        content.add(this.medicalRecordField);
-        content.add(this.editRecordButton);
 
-        //setting positions and dimensions of everything
-        medicalRecordField.setBounds(5, 5, 300, 50);
+        // setting positions and dimensions of everything
         saveRecordButton.setBounds(5, 60, 200, 50);
 
         this.setContentPane(content);

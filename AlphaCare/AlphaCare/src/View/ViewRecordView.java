@@ -1,6 +1,7 @@
 package View;
 
 import Model.Record;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -22,14 +23,18 @@ public class ViewRecordView extends JFrame {
         this.medicalRecordField = new JTextField(20);
         this.medicalRecordField.setEditable(false);
         this.editRecordButton = new JButton("Edit Record");
+        this.editRecordButton.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new EditRecordView(medicalRecord);
+            }
+        });
 
         JPanel content = new JPanel();
         content.setLayout(null);
-        content.add(this.medicalRecordField);
         content.add(this.editRecordButton);
 
         //setting positions and dimensions of everything
-        medicalRecordField.setBounds(5, 5, 300, 50);
         editRecordButton.setBounds(5, 60, 200, 50);
 
         this.setContentPane(content);
