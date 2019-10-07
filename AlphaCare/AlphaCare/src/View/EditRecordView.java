@@ -1,5 +1,6 @@
 package View;
 
+
 import Model.Record;
 import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
@@ -9,16 +10,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class EditRecordView extends RecordView {
+
+public class EditRecordView extends JFrame {
 
     private JButton saveRecordButton;
+    private JTextField medicalRecordField;
+    private Record medicalRecord;
+    private PopupMenu editRecordButton;
 
     public EditRecordView() {
-        super();
-    }
-
-    public EditRecordView(Record medicalRecord) {
-        super(medicalRecord);
+        EditRecordUI();
     }
 
     private void editRecordUI() {
@@ -42,6 +43,15 @@ public class EditRecordView extends RecordView {
 
         this.setSize(800, 600);
         this.setVisible(true);
+    }
+
+    /**
+     * Adds actionlistener to saveRecordButton
+     * Will use information from medicalRecordField to update medicalRecord
+     * @param al ActionListener that will save updated information and switch view form 'EditRecordView' to 'SaveRecordView'
+     */
+    public void addSaveRecordButtonListener(ActionListener al) {
+        saveRecordButton.addActionListener(al);
     }
 
 }

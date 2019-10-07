@@ -9,21 +9,19 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-public class ViewRecordView extends RecordView {
+public class ViewRecordView extends JFrame {
 
     private JButton editRecordButton;
+    private JTextField medicalRecordField;
+    private Record medicalRecord;
 
     public ViewRecordView() {
-        super();
-        viewRecordUI();
+        ViewRecordUI();
     }
-
-    public ViewRecordView(Record medicalRecord){
-        super(medicalRecord);
-        viewRecordUI();
-    }
-
-    private void viewRecordUI(){
+        
+        private void ViewRecordUI() {
+        this.medicalRecordField = new JTextField(20);
+        this.medicalRecordField.setEditable(false);
         this.editRecordButton = new JButton("Edit Record");
         this.editRecordButton.addActionListener(new ActionListener(){
             @Override
@@ -57,6 +55,14 @@ public class ViewRecordView extends RecordView {
     }
 
     /**
+     * Adds actionlistener to editRecordButton
+     * @param al ActionListener that will switch view form 'ViewRecordView' to 'EditRecordView'
+     */
+    public void addEditRecordButtonListener(ActionListener al) {
+        editRecordButton.addActionListener(al);
+    }
+
+    /**
      * Fills in medical info throughout the view
      * Edits medicalRecordField to reflect the medical record
      * @param mr medical record to populate the view
@@ -64,4 +70,5 @@ public class ViewRecordView extends RecordView {
     public void enterMedicalInfo(Record mr){
         this.medicalRecord = mr;
     }
+
 }
