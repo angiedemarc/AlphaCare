@@ -23,7 +23,7 @@ public class CreateRecordViewController {
     }
     
     public CreateRecordViewController() {
-        CreateRecordView createRecordView = new CreateRecordView();
+        this.createRecordView = new CreateRecordView();
     }
     
     public void addCreateRecordViewController() {
@@ -31,7 +31,7 @@ public class CreateRecordViewController {
     }
 
     public CreateRecordView getCreateRecordView() {
-        return createRecordView;
+        return this.createRecordView;
     }
    
 }
