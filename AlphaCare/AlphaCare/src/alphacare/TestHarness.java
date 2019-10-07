@@ -20,6 +20,7 @@ public class TestHarness {
     public static void main(String[] args) {
         // This tests to see the application work flow from the Login. It should display all of our view classes from just initially the login process. 
         LoginPageViewController loginPage = new LoginPageViewController(); // We have not yet added authentication functionality to the application yet!
+        CreateRecordViewController createRecord = new CreateRecordViewController();
         // Here, we will test to see the attributes in our model class. 
 
         System.out.println(loginPage.getTest().toString());

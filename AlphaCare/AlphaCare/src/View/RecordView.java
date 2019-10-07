@@ -4,7 +4,6 @@ import Model.Record;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-
 public class RecordView extends JFrame {
 
     protected JTextField name;
@@ -15,27 +14,32 @@ public class RecordView extends JFrame {
     protected JTextField treatmentHistory;
     protected Record medicalRecord;
 
-    public RecordView(){
+    public RecordView() {
         displayRecordInfo();
     }
 
-    public RecordView(Record medicalRecord){
+    public RecordView(Record medicalRecord) {
         this.medicalRecord = medicalRecord;
         displayRecordInfo();
     }
 
     /**
      * Returns the medicalRecord associated with the view
+     *
+     * @return
      */
-    public Record getMedicalRecord(){
+    public Record getMedicalRecord() {
         return this.medicalRecord;
     }
 
-    public void displayRecordInfo(){
-        this.name = new JTextField(medicalRecord.getPatientName());
-        this.address = new JTextField(medicalRecord.getAddress());
-        this.medicalHistory = new JTextField(medicalRecord.getMedicalHistory());
-        this.familyMedicalHistory = new JTextField(medicalRecord.getFamilyMedicalHistory());
-        this.medicationHistory = new JTextField(medicalRecord.getMedicationHistory());
-        this.treatmentHistory = new JTextField(medicalRecord.getTreatmentHistory());    }
+    public void displayRecordInfo() {
+        if (medicalRecord != null) {
+            this.name = new JTextField(medicalRecord.getPatientName());
+            this.address = new JTextField(medicalRecord.getAddress());
+            this.medicalHistory = new JTextField(medicalRecord.getMedicalHistory());
+            this.familyMedicalHistory = new JTextField(medicalRecord.getFamilyMedicalHistory());
+            this.medicationHistory = new JTextField(medicalRecord.getMedicationHistory());
+            this.treatmentHistory = new JTextField(medicalRecord.getTreatmentHistory());
+        }
+    }
 }
