@@ -47,16 +47,16 @@ public class CreateAccountView extends JFrame {
         //setVisible(true);
         
         userLabel = new JLabel("Username: ");
-        userField = new JTextField();
+        userField = new JTextField(16);
         
         passLabel = new JLabel("Password: ");
-        passField = new JTextField();
+        passField = new JTextField(16);
         
         firstNameLabel = new JLabel("First name: ");
-        firstNameField = new JTextField();
+        firstNameField = new JTextField(16);
         
         lastNameLabel = new JLabel("Last name: ");
-        lastNameField = new JTextField();
+        lastNameField = new JTextField(16);
         
         roleLabel = new JLabel("Select your Role: ");
         roleSelection = new JComboBox(new String[] { "Patient", "Medical Personnel", "Medical Administrator"});
