@@ -110,10 +110,22 @@ public class CreateRecordView extends JFrame {
     }
 
     private void switchView() {
+        if (nameEntry.getText()!= ""
+        && ssnEntry.getText != "" 
+        && addressEntry.getText != ""
+        && stateEntry.getText != ""
+        && medicalHistoryEntry.getText != ""
+        && familyMedicalHistoryEntry.getText != ""
+        && medicationHistoryEntry.getText != ""
+        && treatmentHistoryEntry.getText != ""){
         hasClicked = true;
         medicalRecord = new Record(nameEntry.getText(), Integer.parseInt(ssnEntry.getText()), addressEntry.getText(),
                 stateEntry.getText(), medicalHistoryEntry.getText(), familyMedicalHistoryEntry.getText(),
                 medicationHistoryEntry.getText(), treatmentHistoryEntry.getText());
         ViewRecordViewController viewRecordViewController = new ViewRecordViewController(medicalRecord);
+        }
+        else{
+            alert("Must enter valid information to create record");
+        }
     }
 }
