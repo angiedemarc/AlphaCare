@@ -33,20 +33,20 @@ public class RecordView extends JFrame {
     }
 
     public void promptRecordInfo() {
-        this.name = new JTextField();
-        this.address = new JTextField();
-        this.medicalHistory = new JTextField();
-        this.familyMedicalHistory = new JTextField();
-        this.medicationHistory = new JTextField();
-        this.treatmentHistory = new JTextField();
+        this.name = new JLabel();
+        this.address = new JLabel();
+        this.medicalHistory = new JLabel();
+        this.familyMedicalHistory = new JLabel();
+        this.medicationHistory = new JLabel();
+        this.treatmentHistory = new JLabel();
     }
 
     public void displayRecordInfo() {
-            this.name = new JTextField(medicalRecord.getPatientName());
-            this.address = new JTextField(medicalRecord.getAddress());
-            this.medicalHistory = new JTextField(medicalRecord.getMedicalHistory());
-            this.familyMedicalHistory = new JTextField(medicalRecord.getFamilyMedicalHistory());
-            this.medicationHistory = new JTextField(medicalRecord.getMedicationHistory());
-            this.treatmentHistory = new JTextField(medicalRecord.getTreatmentHistory());
+            this.name = new JLabel(medicalRecord.getPatientName());
+            this.address = new JLabel(medicalRecord.getAddress());
+            this.medicalHistory = new JLabel(medicalRecord.getMedicalHistory());
+            this.familyMedicalHistory = new JLabel(medicalRecord.getFamilyMedicalHistory());
+            this.medicationHistory = new JLabel(medicalRecord.getMedicationHistory());
+            this.treatmentHistory = new JLabel(medicalRecord.getTreatmentHistory());
     }
 }
