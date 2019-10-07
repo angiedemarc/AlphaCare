@@ -1,5 +1,6 @@
 package View;
 
+import Controller.ViewRecordViewController;
 import Model.Record;
 import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
@@ -10,22 +11,22 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-public class CreateRecordView extends JFrame {
+public class CreateRecordView extends RecordView {
 
     private JTextField medicalRecordField;
     private JButton createRecordButton;
-    private Record medicalRecord;
 
     public CreateRecordView() {
-       CreateRecordUI();
+        super();
+        createRecordUI();
     }
-    private void CreateRecordUI() {
-        this.medicalRecordField = new JTextField(20);
+
+    private void createRecordUI(){
         this.createRecordButton = new JButton("Create Record");
         this.createRecordButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                new ViewRecordView(medicalRecord);
+                switchView();
             }
         });
 
@@ -42,14 +43,8 @@ public class CreateRecordView extends JFrame {
         this.setSize(800, 600);
         this.setVisible(true);
     }
-
-    /**
-     * Adds actionlistener to createRecordButton
-     * Will use information from medicalRecordField to update medicalRecord
-     * @param al ActionListener that will save updated information and switch view form 'CreateRecordView' to 'ViewRecordView'
-     */
-    public void addCreateRecordButtonListener(ActionListener al) {
-        createRecordButton.addActionListener(al);
+    
+    private void switchView(){
+        ViewRecordViewController viewRecordViewController = new ViewRecordViewController(medicalRecord);
     }
-
 }
