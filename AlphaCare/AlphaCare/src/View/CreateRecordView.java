@@ -1,5 +1,6 @@
 package View;
 
+import Controller.ViewRecordViewController;
 import Model.Record;
 import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
@@ -114,5 +115,4 @@ public class CreateRecordView extends JFrame {
                 medicationHistoryEntry.getText(), treatmentHistoryEntry.getText());
         ViewRecordViewController viewRecordViewController = new ViewRecordViewController(medicalRecord);
     }
-
 }
