@@ -32,7 +32,7 @@ public class RecordView extends JFrame {
         return this.medicalRecord;
     }
 
-    public void displayRecordInfo() {
+    public void promptRecordInfo() {
         this.name = new JTextField();
         this.address = new JTextField();
         this.medicalHistory = new JTextField();
