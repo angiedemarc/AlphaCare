@@ -38,8 +38,7 @@ public class SingletonRecordList {
 
     /**
      *
-     * Method that will be used to access the single instance of this class
-     * globally
+     * Method used to access single instance of this class globally
      *
      * @return instance
      */
@@ -53,8 +52,7 @@ public class SingletonRecordList {
 
     /**
      *
-     * Method that will be used to access ArrayList of records using the single
-     * instance of this class
+     * Method used to access ArrayList of records through the single instance of this class
      *
      * @return recordList
      */
@@ -64,7 +62,7 @@ public class SingletonRecordList {
 
     /**
      *
-     * Method that adds new records to the list of records
+     * Method that adds a new record to the ArrayList of records using the single instance of this class
      * @param newRecord
      */
     public void add(Record newRecord) {
