@@ -64,7 +64,7 @@ public class MainInterfaceView extends JFrame {
 
     private void mainUI() {
         setTitle("Main Menu");
-        setSize(800, 600);
+        setSize(900, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         //setVisible(true);
@@ -79,8 +79,9 @@ public class MainInterfaceView extends JFrame {
 
         searchButton = new JButton("Search");
 
+        //-----Input Prompt User Interface Design Pattern-------
         searchField = new JTextField();
-        searchField.setText("Enter a record number");
+        searchField.setText("Enter a record number or account number");
 
         toolBar = new JToolBar();
         toolBar.add(searchButton);
