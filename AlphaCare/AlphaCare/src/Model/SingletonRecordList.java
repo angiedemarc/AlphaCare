@@ -5,6 +5,8 @@ import java.util.ArrayList;
 /**
  *
  * @author Genesis
+ * I used this resource to help me structure this class:
+ * https://stackoverflow.com/questions/40152454/arraylist-initialized-accessed-using-singleton-class
  */
 public class SingletonRecordList {
 
