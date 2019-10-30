@@ -9,25 +9,30 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Genesis
+ * @author Owner
  */
-public class RecordList {
+public class SingletonRecordList {
 
-    private ArrayList<Record> recordList;
+    private static SingletonRecordList instance;
+    private ArrayList<Record> recordList = null;
 
-    /**
-     *
-     * Empty constructor that automatically creates ArrayList of records
-     */
-    public RecordList() {
-        this.recordList = new ArrayList<>();
+    public static SingletonRecordList getInstance() {
+        if (instance == null) {
+            instance = new SingletonRecordList();
+        }
+
+        return instance;
+    }
+
+    private SingletonRecordList() {
+        recordList = new ArrayList<>();
         createRecords();
     }
 
-    /**
-     *
-     * Method that populates ArrayList of records
-     */
+    public ArrayList<Record> getRecordList() {
+        return this.recordList;
+    }
+
     public void createRecords() {
         this.recordList.add(new Record());
         this.recordList.add(new Record());
@@ -37,25 +42,9 @@ public class RecordList {
         this.recordList.add(new Record("Genesis DuBon", 567893456, "10 Disappointment Street", "FL", "healthy", "diabetes",
                 "none", "Claritin"));
     }
+    //Add element to array
 
-    /**
-     *
-     * getter for ArrayList of records
-     *
-     * @return recordList
-     */
-    public ArrayList<Record> getRecordList() {
-        return recordList;
+    public void add(Record newRecord) {
+        recordList.add(newRecord);
     }
-
-     /**
-     *
-     * setter for ArrayList of records
-     *
-     * @param recordList
-     */
-    public void setRecordList(ArrayList<Record> recordList) {
-        this.recordList = recordList;
-    }
-
 }
