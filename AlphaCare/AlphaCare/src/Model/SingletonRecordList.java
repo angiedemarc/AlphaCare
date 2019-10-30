@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Owner
+ * @author Genesis
  */
 public class SingletonRecordList {
 
