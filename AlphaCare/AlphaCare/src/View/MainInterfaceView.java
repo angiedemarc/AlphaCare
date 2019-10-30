@@ -82,7 +82,7 @@ public class MainInterfaceView extends JFrame {
         //-----Input Prompt User Interface Design Pattern-------
         searchField = new JTextField();
         searchField.setText("Enter a record number or account number");
-        //-----------------------------------------------------------
+        //------------------------------------------------------
 
         toolBar = new JToolBar();
         toolBar.add(searchButton);
