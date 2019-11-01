@@ -5,8 +5,11 @@ import java.util.ArrayList;
 /**
  *
  * @author Genesis
+ * 
  * I used this resource to help me structure this class:
  * https://stackoverflow.com/questions/40152454/arraylist-initialized-accessed-using-singleton-class
+ * 
+ * To access the list of records within the single instance of this class, type "SingletonRecordList.getInstance.getRecordList()."
  */
 public class SingletonRecordList {
 
@@ -15,16 +18,16 @@ public class SingletonRecordList {
 
     /**
      *
-     * Constructor automatically creates ArrayList of records
+     * Empty constructor automatically creates ArrayList of records
      */
     private SingletonRecordList() {
-        recordList = new ArrayList<>();
+        this.recordList = new ArrayList<>();
         createRecords();
     }
 
     /**
      *
-     * Method that populates ArrayList of records
+     *This method populates the ArrayList of records
      */
     public void createRecords() {
         this.recordList.add(new Record());
@@ -38,7 +41,7 @@ public class SingletonRecordList {
 
     /**
      *
-     * Method used to access single instance of this class globally
+     * This method is used to access the single instance of this class globally
      *
      * @return instance
      */
@@ -52,7 +55,7 @@ public class SingletonRecordList {
 
     /**
      *
-     * Method used to access ArrayList of records through the single instance of this class
+     * This method is used to access the ArrayList of records through the single instance of this class
      *
      * @return recordList
      */
@@ -62,10 +65,10 @@ public class SingletonRecordList {
 
     /**
      *
-     * Method that adds a new record to the ArrayList of records using the single instance of this class
+     * This method adds a new record to the ArrayList of records using the single instance of this class
      * @param newRecord
      */
     public void add(Record newRecord) {
-        recordList.add(newRecord);
+        this.recordList.add(newRecord);
     }
 }
