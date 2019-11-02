@@ -9,7 +9,6 @@ import java.util.ArrayList;
  * I used this resource to help me structure this class:
  * https://stackoverflow.com/questions/40152454/arraylist-initialized-accessed-using-singleton-class
  * 
- * To access the list of records within the single instance of this class, type "SingletonRecordList.getInstance.getRecordList()."
  */
 public class SingletonRecordList {
 
