@@ -30,6 +30,11 @@ public class TestHarness {
 
         System.out.println(loginPage.getTest().toString());
         //System.out.println(createRecord.getCreateRecordView().getMedicalRecord());
+        
+        for(Record r: SingletonRecordList.getInstance().getRecordList()){
+            System.out.println("From the singleton class: " + r.getPatientName());
+        }
+        
     }
     
 }
