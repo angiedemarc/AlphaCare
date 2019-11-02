@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class EditRecordView extends RecordView {
@@ -42,6 +43,11 @@ public class EditRecordView extends RecordView {
         this.setContentPane(content);
         this.setTitle("Record");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
+        JScrollPane scrollPane = new JScrollPane(content);
+        // getContentPane().add(appointmentPanel);
+        getContentPane().add(scrollPane);
 
         this.setSize(800, 600);
         this.setVisible(true);

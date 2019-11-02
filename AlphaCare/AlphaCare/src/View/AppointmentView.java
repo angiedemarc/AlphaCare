@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -92,8 +93,10 @@ public class AppointmentView extends JFrame {
         appointmentPanel.add(symptomsArea);
         appointmentPanel.add(submitButton);
         appointmentPanel.add(cancelButton);
-        
-        getContentPane().add(appointmentPanel);
+        // Fucked the layout up just to show them that continuous scrolling does work! :(
+        JScrollPane scrollPane = new JScrollPane(appointmentPanel);
+        // getContentPane().add(appointmentPanel);
+        getContentPane().add(scrollPane);
         
         setVisible(true);
         

@@ -17,15 +17,15 @@ import java.util.ArrayList;
  *
  * @author calvinho
  */
-public class LoginPageViewController implements ActionListener {
+public class LoginPageViewController  {
     
     private LoginPageView loginPageView;
     private Account test;
 
     public LoginPageViewController() {
         loginPageView = new LoginPageView();
-        loginPageView.addLoginListener(this);
-        loginPageView.addRegisterListener(this);
+        // loginPageView.addLoginListener(this);
+        // loginPageView.addRegisterListener(this);
         ArrayList<String> permissions = new ArrayList<String>();
         permissions.add("Test");
         permissions.add("Test1");
@@ -41,18 +41,18 @@ public class LoginPageViewController implements ActionListener {
         this.loginPageView = loginPageView;
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == loginPageView.getLoginButton()) {
-            MainInterfaceViewController main = new MainInterfaceViewController();
-        }
-        else if (e.getSource() == loginPageView.getRegisterButton()) {
-            CreateAccountViewController registration = new CreateAccountViewController();
-        }
-        else {
-            System.out.println("Test has failed!");
-        }
-    }
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//        if (e.getSource() == loginPageView.getLoginButton()) {
+//            MainInterfaceViewController main = new MainInterfaceViewController();
+//        }
+//        else if (e.getSource() == loginPageView.getRegisterButton()) {
+//            CreateAccountViewController registration = new CreateAccountViewController();
+//        }
+//        else {
+//            System.out.println("Test has failed!");
+//        }
+//    }
     
      public Account getTest() {
         return test;

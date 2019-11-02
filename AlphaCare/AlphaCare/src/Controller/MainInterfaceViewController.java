@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
  *
  * @author calvinho
  */
-public class MainInterfaceViewController implements ActionListener {
+public class MainInterfaceViewController {
 
     private MainInterfaceView mainInterfaceView;
     private Account test;
@@ -26,10 +26,10 @@ public class MainInterfaceViewController implements ActionListener {
 
     public MainInterfaceViewController() {
         mainInterfaceView = new MainInterfaceView();
-        mainInterfaceView.addCreateRecordListener(this);
-        mainInterfaceView.addViewRecordListener(this);
-        mainInterfaceView.addLogoutButtonListener(this);
-        mainInterfaceView.addScheduleAppointmentListener(this);
+//        mainInterfaceView.addCreateRecordListener(this);
+//        mainInterfaceView.addViewRecordListener(this);
+//        mainInterfaceView.addLogoutButtonListener(this);
+//        mainInterfaceView.addScheduleAppointmentListener(this);
     }
 
     public MainInterfaceView getMainInterfaceView() {
@@ -40,19 +40,19 @@ public class MainInterfaceViewController implements ActionListener {
         this.mainInterfaceView = mainInterfaceView;
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == mainInterfaceView.getCreateRecordButton()) {
-            CreateRecordViewController createRecord = new CreateRecordViewController();
-        } else if (e.getSource() == mainInterfaceView.getViewRecordButton()) {
-            ViewRecordViewController viewRecord = new ViewRecordViewController(new Record());
-        } else if (e.getSource() == mainInterfaceView.getLogoutButton()) {
-            LoginPageViewController login = new LoginPageViewController();
-        } else if (e.getSource() == mainInterfaceView.getScheduleAppointmentButton()) {
-            AppointmentViewController appointment = new AppointmentViewController();
-        } else {
-            System.out.println("This has failed!");
-        }
-    }
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//        if (e.getSource() == mainInterfaceView.getCreateRecordButton()) {
+//            CreateRecordViewController createRecord = new CreateRecordViewController();
+//        } else if (e.getSource() == mainInterfaceView.getViewRecordButton()) {
+//            ViewRecordViewController viewRecord = new ViewRecordViewController(new Record());
+//        } else if (e.getSource() == mainInterfaceView.getLogoutButton()) {
+//            LoginPageViewController login = new LoginPageViewController();
+//        } else if (e.getSource() == mainInterfaceView.getScheduleAppointmentButton()) {
+//            AppointmentViewController appointment = new AppointmentViewController();
+//        } else {
+//            System.out.println("This has failed!");
+//        }
+//    }
 
 }
