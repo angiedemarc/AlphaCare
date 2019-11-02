@@ -8,6 +8,8 @@
 package View;
 
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,6 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class LoginPageView extends JFrame {
@@ -60,8 +63,12 @@ public class LoginPageView extends JFrame {
         loginPanel.add(registerButton);
         
         //this.setContentPane(loginPanel);
-        getContentPane().add(loginPanel);
-        
+        // getContentPane().add(loginPanel);\
+        // Scrolling
+        loginPanel.setAutoscrolls(true);
+        JScrollPane scrollBar = new JScrollPane(loginPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollBar.setBounds(50, 30, 300, 50);
+        getContentPane().add(scrollBar, BorderLayout.CENTER);
         setVisible(true);
         
         loginButton.addActionListener(new ActionListener()  {
