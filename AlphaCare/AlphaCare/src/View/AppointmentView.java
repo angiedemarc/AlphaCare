@@ -1,6 +1,6 @@
 /**
  * This is the appointment scheduling interface.
- * 
+ *
  * This is where users/actors can input the necessary
  * information in order to submit and create an appointment.
  */
@@ -17,6 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class AppointmentView extends JFrame {
+
     private JPanel appointmentPanel;
     private JLabel fullNameLabel;
     private JLabel birthDateLabel;
@@ -32,18 +33,18 @@ public class AppointmentView extends JFrame {
     private JTextField emailField;
     private JTextField dateField;
     private JTextArea symptomsArea;
+    private JButton homeButton;
     private JButton submitButton;
     private JButton cancelButton;
-    
+
     /**
-     * This constructor will instantiate the
-     * appointment scheduling interface.
+     * This constructor will instantiate the appointment scheduling interface.
      */
-    public AppointmentView(){
+    public AppointmentView() {
         appointmentUI();
     }
     
-    private void appointmentUI(){
+    private void appointmentUI() {
         setSize(800, 600);
         setVisible(true);
         setTitle("Appointment Scheduling");
@@ -71,6 +72,8 @@ public class AppointmentView extends JFrame {
         symptomsLabel = new JLabel("Please type in any symptoms you are experiencing: ");
         symptomsArea = new JTextArea(10, 10);
         
+        homeButton = new JButton("Home");
+        
         submitButton = new JButton("SUBMIT");
         
         cancelButton = new JButton("CANCEL");
@@ -91,6 +94,7 @@ public class AppointmentView extends JFrame {
         appointmentPanel.add(dateField);
         appointmentPanel.add(symptomsLabel);
         appointmentPanel.add(symptomsArea);
+        appointmentPanel.add(homeButton);
         appointmentPanel.add(submitButton);
         appointmentPanel.add(cancelButton);
         // Fucked the layout up just to show them that continuous scrolling does work! :(
@@ -100,9 +104,20 @@ public class AppointmentView extends JFrame {
         
         setVisible(true);
         
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent eventL) {
+                System.out.println("home button");
+                MainInterfaceView mainInterface = new MainInterfaceView();
+                
+                setVisible(false);
+                mainInterface.setVisible(true);
+            }
+        });
+        
         submitButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent eventLis){
+            public void actionPerformed(ActionEvent eventLis) {
                 System.out.println("Testing: Successful Submission!");
                 
                 MainInterfaceView mainInterface = new MainInterfaceView();
@@ -114,7 +129,7 @@ public class AppointmentView extends JFrame {
         
         cancelButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent eventList){
+            public void actionPerformed(ActionEvent eventList) {
                 System.out.println("Testing: Successful Cancellation!");
                 
                 MainInterfaceView mainInterface = new MainInterfaceView();
@@ -124,28 +139,37 @@ public class AppointmentView extends JFrame {
             }
         });
     }
-
+    
+    public JButton getHomeButton() {
+        return homeButton;
+    }
+    
     public JButton getSubmitButton() {
         return submitButton;
     }
-
+    
     public void setSubmitButton(JButton submitButton) {
         this.submitButton = submitButton;
     }
-    
+
     /**
-     * These action listener methods will allow their
-     * respective buttons to perform their functions.
-     * 
-     * The first one will submit the information to the database.
-     * The second one will delete the information and cancel the scheduling.
-     * @param al 
+     * These action listener methods will allow their respective buttons to
+     * perform their functions.
+     *
+     * The first one will submit the information to the database. The second one
+     * will delete the information and cancel the scheduling.
+     *
+     * @param al
      */
+    public void addHomeListener(ActionListener al) {
+        homeButton.addActionListener(al);
+    }
+    
     public void addSubmitListener(ActionListener al) {
         submitButton.addActionListener(al);
     }
-        
-        public void addCancelListener(ActionListener al) {
+    
+    public void addCancelListener(ActionListener al) {
         cancelButton.addActionListener(al);
     }
 }

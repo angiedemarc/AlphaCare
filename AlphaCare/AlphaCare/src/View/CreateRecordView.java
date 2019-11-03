@@ -13,6 +13,8 @@ import javax.swing.JTextField;
 
 public class CreateRecordView extends JFrame {
 
+    
+    private JButton homeButton;
     private JTextField nameEntry;
     private JLabel namePrompt;
     private JTextField ssnEntry;
@@ -45,10 +47,20 @@ public class CreateRecordView extends JFrame {
                 switchView();
             }
         });
+        
+        this.homeButton = new JButton("Home");
+        this.homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MainInterfaceView mainInterface = new MainInterfaceView();
+                
+                setVisible(false);
+            }
+        });
 
         JPanel content = new JPanel();
         content.setLayout(null);
-
+        
         namePrompt = new JLabel("Name: ");
         nameEntry = new JTextField(20);
         ssnPrompt = new JLabel("Social Security Number: ");
@@ -66,6 +78,7 @@ public class CreateRecordView extends JFrame {
         treatmentHistoryPrompt = new JLabel("Treatment History: ");
         treatmentHistoryEntry = new JTextField(50);
 
+        
         content.add(namePrompt);
         content.add(nameEntry);
 
@@ -91,8 +104,9 @@ public class CreateRecordView extends JFrame {
         content.add(treatmentHistoryEntry);
 
         // setting positions and dimensions of everything
-        createRecordButton.setBounds(5, 60, 200, 50);
-        content.add(createRecordButton);
+        createRecordButton.setBounds(20, 60, 200, 50);
+        homeButton.setBounds(1, 10, 50, 50);
+        content.add(createRecordButton, homeButton);
 
         this.setContentPane(content);
         this.setTitle("Record");

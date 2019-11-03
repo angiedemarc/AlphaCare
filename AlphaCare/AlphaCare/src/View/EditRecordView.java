@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 public class EditRecordView extends RecordView {
 
     private JButton saveRecordButton;
+    private JButton homeButton;
 
     public EditRecordView() {
         super();
@@ -33,12 +34,23 @@ public class EditRecordView extends RecordView {
                 switchView();
             }
         });
+        
+        this.homeButton = new JButton("Home");
+        this.homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MainInterfaceView mainInterface = new MainInterfaceView();
+                
+                setVisible(false);
+            }
+        });
 
         JPanel content = new JPanel();
         content.setLayout(null);
 
         // setting positions and dimensions of everything
         saveRecordButton.setBounds(5, 60, 200, 50);
+        homeButton.setBounds(40, 80, 10, 50);
 
         this.setContentPane(content);
         this.setTitle("Record");

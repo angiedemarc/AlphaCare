@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 public class ViewRecordView extends RecordView {
 
     private JButton editRecordButton;
+    private JButton homeButton;
 
     public ViewRecordView() {
         super();
@@ -32,13 +33,24 @@ public class ViewRecordView extends RecordView {
                 switchView();
             }
         });
+        
+        this.homeButton = new JButton("Home");
+        this.homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MainInterfaceView mainInterface = new MainInterfaceView();
+                
+                setVisible(false);
+            }
+        });
 
         JPanel content = new JPanel();
         content.setLayout(null);
-        content.add(this.editRecordButton);
+        content.add(this.editRecordButton, this.homeButton);
 
         //setting positions and dimensions of everything
         editRecordButton.setBounds(5, 60, 200, 50);
+        homeButton.setBounds(10, 10, 10, 10);
 
         this.setContentPane(content);
         this.setTitle("Record");
