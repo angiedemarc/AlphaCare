@@ -33,6 +33,7 @@ public class MainInterfaceView extends JFrame {
     private JButton logoutButton;
     private JButton scheduleAppointmentButton;
     private JButton searchButton;
+    private JButton homeButton;
     private JTextField searchField;
 
     /**
@@ -61,6 +62,10 @@ public class MainInterfaceView extends JFrame {
     public JButton getSearchButton() {
         return searchButton;
     }
+    
+    public JButton getHomeButton() {
+        return homeButton;
+    }
 
     private void mainUI() {
         setTitle("Main Menu");
@@ -78,6 +83,8 @@ public class MainInterfaceView extends JFrame {
         scheduleAppointmentButton = new JButton("Schedule Appointment");
 
         searchButton = new JButton("Search");
+        
+        homeButton = new JButton("Home");
 
         //-----Input Prompt User Interface Design Pattern-------
         searchField = new JTextField();
@@ -85,6 +92,7 @@ public class MainInterfaceView extends JFrame {
         //------------------------------------------------------
 
         toolBar = new JToolBar();
+        toolBar.add(homeButton);
         toolBar.add(searchButton);
         toolBar.add(viewRecordButton);
         toolBar.add(createRecordButton);
@@ -96,6 +104,7 @@ public class MainInterfaceView extends JFrame {
         mainPanel.add(viewRecordButton);
         mainPanel.add(createRecordButton);
         mainPanel.add(scheduleAppointmentButton);
+        mainPanel.add(homeButton);
         mainPanel.add(logoutButton);
 
         toolBar.add(mainPanel);
@@ -147,6 +156,16 @@ public class MainInterfaceView extends JFrame {
                 //appointment.setVisible(true);
             }
         });
+        
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent eventL) {
+                
+                MainInterfaceView mainInterface = new MainInterfaceView();
+                
+                setVisible(false);
+            }
+        });
 
         logoutButton.addActionListener(new ActionListener() {
             @Override
@@ -177,6 +196,10 @@ public class MainInterfaceView extends JFrame {
 
     public void addScheduleAppointmentListener(ActionListener al) {
         scheduleAppointmentButton.addActionListener(al);
+    }
+    
+    public void addHomeButtonListener(ActionListener al) {
+        homeButton.addActionListener(al);
     }
 
     public void addLogoutButtonListener(ActionListener al) {
