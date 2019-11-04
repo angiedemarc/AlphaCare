@@ -39,7 +39,6 @@ public class ViewRecordView extends RecordView {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MainInterfaceView mainInterface = new MainInterfaceView();
-                
                 setVisible(false);
             }
         });
@@ -64,8 +63,9 @@ public class ViewRecordView extends RecordView {
         this.setVisible(true);
     }
 
-    private void switchView() {
+    protected void switchView() {
         EditRecordViewController editRecordViewController = new EditRecordViewController(medicalRecord);
+        this.setVisible(false);
     }
 
     /**

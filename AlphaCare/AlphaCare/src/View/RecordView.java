@@ -5,10 +5,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class RecordView extends JFrame {
+public abstract class RecordView extends JFrame {
 
     protected JLabel name;
+    protected JLabel ssn;
     protected JLabel address;
+    protected JLabel state;
     protected JLabel medicalHistory;
     protected JLabel familyMedicalHistory;
     protected JLabel medicationHistory;
@@ -16,7 +18,6 @@ public class RecordView extends JFrame {
     protected Record medicalRecord;
 
     public RecordView() {
-        promptRecordInfo();
     }
 
     public RecordView(Record medicalRecord) {
@@ -33,21 +34,15 @@ public class RecordView extends JFrame {
         return this.medicalRecord;
     }
 
-    public void promptRecordInfo() {
-        this.name = new JLabel();
-        this.address = new JLabel();
-        this.medicalHistory = new JLabel();
-        this.familyMedicalHistory = new JLabel();
-        this.medicationHistory = new JLabel();
-        this.treatmentHistory = new JLabel();
+    public void displayRecordInfo() {
+        this.name = new JLabel(medicalRecord.getPatientName());
+        this.address = new JLabel(medicalRecord.getAddress());
+        this.state = new JLabel(medicalRecord.getState());
+        this.medicalHistory = new JLabel(medicalRecord.getMedicalHistory());
+        this.familyMedicalHistory = new JLabel(medicalRecord.getFamilyMedicalHistory());
+        this.medicationHistory = new JLabel(medicalRecord.getMedicationHistory());
+        this.treatmentHistory = new JLabel(medicalRecord.getTreatmentHistory());
     }
 
-    public void displayRecordInfo() {
-            this.name = new JLabel(medicalRecord.getPatientName());
-            this.address = new JLabel(medicalRecord.getAddress());
-            this.medicalHistory = new JLabel(medicalRecord.getMedicalHistory());
-            this.familyMedicalHistory = new JLabel(medicalRecord.getFamilyMedicalHistory());
-            this.medicationHistory = new JLabel(medicalRecord.getMedicationHistory());
-            this.treatmentHistory = new JLabel(medicalRecord.getTreatmentHistory());
-    }
+    abstract protected void switchView();
 }
