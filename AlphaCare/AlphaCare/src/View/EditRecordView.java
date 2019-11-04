@@ -2,14 +2,12 @@ package View;
 
 import Controller.ViewRecordViewController;
 import Model.Record;
-import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 
 public class EditRecordView extends EditableView {
 
@@ -64,6 +62,7 @@ public class EditRecordView extends EditableView {
         this.setVisible(true);
     }
     
+    @Override
     protected void switchView(){
         ViewRecordViewController viewRecordViewController = new ViewRecordViewController(medicalRecord);
     }

@@ -1,15 +1,32 @@
 package View;
 
+import Model.Record;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 public abstract class EditableView extends RecordView {
 
     protected JTextField nameEntry;
     protected int ssnEntry;
+    protected JTextField ssnEntry1;
+    protected JTextField ssnEntry2;
+    protected JTextField ssnEntry3;
     protected String addressEntry;
+    protected JTextField addressEntry1;
+    protected JTextField addressEntry2;
     protected JTextField stateEntry;
     protected JTextField medicalHistoryEntry;
     protected JTextField familyMedicalHistoryEntry;
     protected JTextField medicationHistoryEntry;
     protected JTextField treatmentHistoryEntry;
+
+    public EditableView() {
+    }
+
+    public EditableView(Record medicalRecord) {
+        super(medicalRecord);
+    }
 
     public JPanel promptRecordInfo() {
 
@@ -24,18 +41,17 @@ public abstract class EditableView extends RecordView {
         }
 
         ssn = new JLabel("Social Security Number: ");
-        JTextField ssnEntry1 = new JTextField(3);
-        JTextField ssnEntry2 = new JTextField(2);
-        JTextField ssnEntry3 = new JTextField(4);
+        ssnEntry1 = new JTextField(3);
+        ssnEntry2 = new JTextField(2);
+        ssnEntry3 = new JTextField(4);
 
         address = new JLabel("Address: ");
-        JTextField addressEntry1;
         if (medicalRecord.getAddress() != null) {
             addressEntry1 = new JTextField(medicalRecord.getAddress());
         } else {
             addressEntry1 = new JTextField(30);
         }
-        JTextField addressEntry2 = new JTextField(20);
+        addressEntry2 = new JTextField(20);
 
         state = new JLabel("State: ");
         if (medicalRecord.getState() != null) {
@@ -100,6 +116,7 @@ public abstract class EditableView extends RecordView {
 
         content.add(treatmentHistory);
         content.add(treatmentHistoryEntry);
+        return content;
     }
 
     public boolean saveInfo() {
@@ -108,11 +125,10 @@ public abstract class EditableView extends RecordView {
         ssnEntry = Integer.parseInt(temp);
         addressEntry = addressEntry1.getText() + addressEntry2.getText();
 
-        if (nameEntry.getText() != "" && temp.getText() != "" && addressEntry.getText() != ""
+        if (nameEntry.getText() != "" && temp != "" && addressEntry != ""
                 && stateEntry.getText() != "" && medicalHistoryEntry.getText() != ""
                 && familyMedicalHistoryEntry.getText() != "" && medicationHistoryEntry.getText() != ""
                 && treatmentHistoryEntry.getText() != "") {
-            hasClicked = true;
             medicalRecord = new Record(nameEntry.getText(), ssnEntry, addressEntry, stateEntry.getText(),
                     medicalHistoryEntry.getText(), familyMedicalHistoryEntry.getText(),
                     medicationHistoryEntry.getText(), treatmentHistoryEntry.getText());
