@@ -15,12 +15,17 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 public class CreateAccountView extends JFrame {
     private JPanel createPanel;
     private JLabel userLabel;
     private JLabel passLabel;
+    private JLabel passDescLabel;
+    private JProgressBar passStrength;
     private JLabel firstNameLabel;
     private JLabel lastNameLabel;
     private JLabel roleLabel;
@@ -41,7 +46,7 @@ public class CreateAccountView extends JFrame {
     }
     
     private void createAccountUI(){
-        setSize(800, 600);
+        setSize(1000, 600);
         setTitle("Account Creation");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //setVisible(true);
@@ -51,6 +56,13 @@ public class CreateAccountView extends JFrame {
         
         passLabel = new JLabel("Password: ");
         passField = new JTextField(16);
+        passDescLabel = new JLabel("<html><ul>" +
+                "<li>Passwords must be at least 8 characters long</li>" +
+                "<li>Passwords must contain at least 1 uppercase letter</li>" +
+                "<li>Passwords must contain at least 1 number</li>" +
+                "<li>Passwords must contain at least 1 special character (ex. !, ?, %, _)</li>" +
+                "</ul></html>"); //Rudimentary description and requirements for a password
+        passStrength = new JProgressBar(0,20);
         
         firstNameLabel = new JLabel("First name: ");
         firstNameField = new JTextField(16);
@@ -69,6 +81,8 @@ public class CreateAccountView extends JFrame {
         createPanel.add(userField);
         createPanel.add(passLabel);
         createPanel.add(passField);
+        createPanel.add(passDescLabel);
+        createPanel.add(passStrength);
         createPanel.add(firstNameLabel);
         createPanel.add(firstNameField);
         createPanel.add(lastNameLabel);
@@ -92,6 +106,39 @@ public class CreateAccountView extends JFrame {
                 loginPage.setVisible(true);
             }
         });
+                
+        /**
+         * Rudimentary Password Strength Meter:
+         * for now, it just checks the length of the password.
+         * Later on, we plan on implementing some sort of
+         * point system based on the requirements we outlined above.
+         */
+        passField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void changedUpdate(DocumentEvent e){
+                updateLabel(e);
+            }
+            
+            @Override
+            public void insertUpdate(DocumentEvent e){
+                updateLabel(e);
+            }
+            
+            @Override
+            public void removeUpdate(DocumentEvent e){
+                updateLabel(e);
+            }
+            
+            private void updateLabel(DocumentEvent e){
+                String password =  passField.getText();
+                if(password.length() < 1){
+                    passStrength.setValue(0);
+                }
+                else{
+                    passStrength.setValue(password.length());
+                }
+            }
+        }); 
     }
     
     /**

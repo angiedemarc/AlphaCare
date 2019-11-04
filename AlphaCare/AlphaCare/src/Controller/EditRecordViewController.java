@@ -6,6 +6,9 @@
 package Controller;
 
 import Model.Account;
+import Model.Caretaker;
+import Model.Memento;
+import Model.Originator;
 import Model.Record;
 import View.*;
 
@@ -18,6 +21,9 @@ public class EditRecordViewController {
     
      private EditRecordView editRecordView;
      private Account test;
+     private Memento memento;
+     private Originator originator;
+     private Caretaker caretaker;
 
     public Account getTest() {
         return test;
@@ -28,7 +34,7 @@ public class EditRecordViewController {
     }
     
     public EditRecordViewController(Record medicalRecord) {
-        EditRecordView editRecordView = new EditRecordView(medicalRecord);
+        EditRecordView editRecordView = new EditRecordView(medicalRecord, this);
     }
 
     public void setEditRecordView(EditRecordView editRecordView) {
@@ -39,5 +45,28 @@ public class EditRecordViewController {
         return editRecordView;
     }
     
+        public Memento getMemento(){
+        return memento;
+    }
+    
+    public void setMemento(Memento mem){
+        this.memento = mem;
+    }
+    
+    public Originator getOriginator(){
+        return originator;
+    }
+    
+    public void setOriginator(Originator origin){
+        this.originator = origin;
+    }
+    
+    public Caretaker getCaretaker(){
+        return caretaker;
+    }
+    
+    public void setCaretaker(Caretaker ct){
+        this.caretaker = ct;
+    }
     
 }

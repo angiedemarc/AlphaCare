@@ -87,6 +87,9 @@ public class LoginPageView extends JFrame {
             public void actionPerformed(ActionEvent ev){
                 System.out.println("Testing: Going to Registration page!");
                 
+                CreateAccountView registerInterface = new CreateAccountView();
+                registerInterface.setVisible(true);
+                
                 setVisible(false);
             }
         });
