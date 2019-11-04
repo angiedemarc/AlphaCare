@@ -2,16 +2,14 @@ package View;
 
 import Controller.ViewRecordViewController;
 import Model.Record;
-import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 
-public class EditRecordView extends RecordView {
+public class EditRecordView extends EditableView {
 
     private JButton saveRecordButton;
     private JButton homeButton;
@@ -45,9 +43,8 @@ public class EditRecordView extends RecordView {
             }
         });
 
-        JPanel content = new JPanel();
-        content.setLayout(null);
-
+        JPanel content = promptRecordInfo();
+        
         // setting positions and dimensions of everything
         saveRecordButton.setBounds(5, 60, 200, 50);
         homeButton.setBounds(40, 80, 10, 50);
@@ -65,7 +62,8 @@ public class EditRecordView extends RecordView {
         this.setVisible(true);
     }
     
-    private void switchView(){
+    @Override
+    protected void switchView(){
         ViewRecordViewController viewRecordViewController = new ViewRecordViewController(medicalRecord);
     }
 
