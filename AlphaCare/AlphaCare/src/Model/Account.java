@@ -13,6 +13,8 @@ public class Account {
  */
     private String userName;
     private String password;
+    private String fName;
+    private String lName;
     private String role;
     private ArrayList<String> permissions;
 
@@ -41,6 +43,14 @@ public class Account {
         this.password = password;
         this.role = role;
         this.permissions = permissions;
+    }
+
+    public Account(String userName, String password, String role, String fName, String lName) {
+        this.userName = userName;
+        this.password = password;
+        this.role = role;
+        this.fName = fName;
+        this.lName = lName;
     }
 
  /**

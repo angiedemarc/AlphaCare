@@ -37,6 +37,19 @@ public class AccountList {
         this.accountList.add(new Account("MBuchle", "ujks3456", "Doctor", new ArrayList<>()));
     }
 
+    public boolean contains(Account account){
+        for (Account account2 : accountList) {
+            if (account2.equals(account)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addAccount(Account account){
+        accountList.add(account);
+    }
+
     /**
      *
      * getter for ArrayList of accounts
