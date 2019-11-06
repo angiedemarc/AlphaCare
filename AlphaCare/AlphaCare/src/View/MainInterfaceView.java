@@ -69,7 +69,7 @@ public class MainInterfaceView extends JFrame {
 
     private void mainUI() {
         setTitle("Main Menu");
-        setSize(900, 600);
+        setSize(1000, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         //setVisible(true);
