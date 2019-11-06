@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -13,6 +14,8 @@ public class Account {
  */
     private String userName;
     private String password;
+    private String fName;
+    private String lName;
     private String role;
     private ArrayList<String> permissions;
 
@@ -41,6 +44,19 @@ public class Account {
         this.password = password;
         this.role = role;
         this.permissions = permissions;
+    }
+
+    public Account(String userName, String password, String role, String fName, String lName) {
+        this.userName = userName;
+        this.password = password;
+        this.role = role;
+        this.fName = fName;
+        this.lName = lName;
+    }
+    
+    public Account(String userName, String password){
+        this.userName = userName;
+        this.password = password;
     }
 
  /**
@@ -125,6 +141,35 @@ public class Account {
     @Override
     public String toString() {
         return "Username: " + this.userName + ", Password: " + this.password + " Role: " + this.role + ", Permissions: " + this.permissions;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 71 * hash + Objects.hashCode(this.userName);
+        hash = 71 * hash + Objects.hashCode(this.password);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Account other = (Account) obj;
+        if (!Objects.equals(this.userName, other.userName)) {
+            return false;
+        }
+        if (!Objects.equals(this.password, other.password)) {
+            return false;
+        }
+        return true;
     }
     
     
