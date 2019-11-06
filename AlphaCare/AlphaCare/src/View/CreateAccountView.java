@@ -7,6 +7,8 @@
  */
 package View;
 
+import Model.Account;
+import Model.AccountList;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.*;
@@ -57,7 +59,7 @@ public class CreateAccountView extends JFrame {
         userField = new JTextField(16);
 
         passLabel = new JLabel("Password: ");
-        passField = new JTextField(16);
+        passField = new JPasswordField(16);
         passDescLabel = new JLabel("<html><ul>" + "<li>Passwords must be at least 8 characters long</li>"
                 + "<li>Passwords must contain at least 1 uppercase letter</li>"
                 + "<li>Passwords must contain at least 1 number</li>"
@@ -110,8 +112,9 @@ public class CreateAccountView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent eve) {
                 // System.out.println("Testing: Submission sent!");
+                System.out.println("userField: " + userField.getText() + "passField: " + passField.getText() + "confirmPass: " + confirmPassField.getText());
                 if (userField.getText() == null || passField.getText() == null
-                        || passField.getText() != confirmPassField.getText()) {
+                        || !passField.getText().equals(confirmPassField.getText())) {
                     JOptionPane.showMessageDialog(createPanel,
                             "Something went wrong! Try re-entering username/password");
                 } else {
