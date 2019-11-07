@@ -23,9 +23,9 @@ public class LoginPageViewController {
     private LoginPageView loginPageView;
     private AccountList accountList;
 
-    public LoginPageViewController() {
+    public LoginPageViewController(AccountList list) {
+        this.accountList = list;
         loginPageView = new LoginPageView();
-        accountList = new AccountList();
         CreateTextfieldListeners();
         CreateButtonListeners();
     }
@@ -42,9 +42,9 @@ public class LoginPageViewController {
                 String password = String.valueOf(loginPageView.getPasswordField().getPassword());
                 Account account = new Account(loginPageView.getUserNameField().getText(), password);
 
-                AccountList accList = new AccountList(); //should make this global?
+               // AccountList accList = new AccountList(); //should make this global?
 
-                if (accList.getAccountData().contains(account)) {
+                if (accountList.getAccountList().contains(account)) {
                     MainInterfaceViewController mainInterface = new MainInterfaceViewController();
                     loginPageView.setVisible(false);
                 } else {
@@ -57,7 +57,7 @@ public class LoginPageViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CreateAccountViewController registration = new CreateAccountViewController();
+                CreateAccountViewController registration = new CreateAccountViewController(accountList);
                 loginPageView.setVisible(false);
             }
         });

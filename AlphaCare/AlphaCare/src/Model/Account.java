@@ -7,7 +7,7 @@ import java.util.Objects;
  *
  * @author Genesis
  */
-public class Account {
+public class Account implements Comparable <Account>{
 /**
  *
  * Declaration of class attributes
@@ -39,11 +39,11 @@ public class Account {
  * @param role
  * @param permissions
  */
-    public Account(String userName, String password, String role, ArrayList<String> permissions) {
+    public Account(String userName, String password, String role) {
         this.userName = userName;
         this.password = password;
         this.role = role;
-        this.permissions = permissions;
+        //this.permissions = permissions;
     }
 
     public Account(String userName, String password, String role, String fName, String lName) {
@@ -114,24 +114,24 @@ public class Account {
         this.role = role;
     }
 
-/**
- *
- * getter for ArrayList of permissions (read, write, view)
- * @return permissions
- */
-    public ArrayList<String> getPermissions() {
-        return permissions;
-    }
-
-/**
- *
- * setter for ArrayList of permissions
- * @param permissions
- */
-    
-    public void setPermissions(ArrayList<String> permissions) {
-        this.permissions = permissions;
-    }
+///**
+// *
+// * getter for ArrayList of permissions (read, write, view)
+// * @return permissions
+// */
+//    public ArrayList<String> getPermissions() {
+//        return permissions;
+//    }
+//
+///**
+// *
+// * setter for ArrayList of permissions
+// * @param permissions
+// */
+//    
+//    public void setPermissions(ArrayList<String> permissions) {
+//        this.permissions = permissions;
+//    }
    
 /**
  *
@@ -141,7 +141,7 @@ public class Account {
 //do we want to return the password in toString()?
     @Override
     public String toString() {
-        return "Username: " + this.userName + ", Password: " + this.password + " Role: " + this.role + ", Permissions: " + this.permissions;
+        return "Username: " + this.userName + ", Password: " + this.password + " Role: " + this.role;
     }
 
     @Override
@@ -171,6 +171,12 @@ public class Account {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public int compareTo(Account o) {
+        int compareVal = o.password.compareTo(o.password);
+       return compareVal;
     }
     
     

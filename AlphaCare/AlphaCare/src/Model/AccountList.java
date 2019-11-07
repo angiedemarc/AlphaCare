@@ -41,18 +41,19 @@ public class AccountList implements Serializable {
      *
      * Method that populates ArrayList of accounts
      */
-    private ArrayList<Account> getAccountList() {
-        ArrayList<Account> accountList = new ArrayList<>();
-        accountList.add((new Account("CJones45", "ghdjuei34", "Admin", new ArrayList<>())));
-        accountList.add((new Account("AMira", "uejdnh36!", "Patient", new ArrayList<>())));
-        accountList.add((new Account("MBuchle", "ujks3456", "Doctor", new ArrayList<>())));
-        accountList.add((new Account("a", "z", "Patient", new ArrayList<>())));
-        return accountList;
+    public ArrayList<Account> getAccountList() {
+        theListOfAccountsAll = new ArrayList<>();
+        theListOfAccountsAll.add((new Account("CJones45", "ghdjuei34", "Admin")));
+        theListOfAccountsAll.add((new Account("AMira", "uejdnh36!", "Patient")));
+        theListOfAccountsAll.add((new Account("MBuchle", "ujks3456", "Doctor")));
+        theListOfAccountsAll.add((new Account("a", "z", "Patient")));
+        return theListOfAccountsAll;
     }
 
     /**
      *
      * Method that populates ArrayList of accounts
+     * @param account
      */
 //    public void createAccounts() {
 //        this.accountList.add(new Account());
@@ -71,7 +72,11 @@ public class AccountList implements Serializable {
 //        return false;
 //    }
 //
-//    public void addAccount(Account account){
-//        accountList.add(account);
-//    }
+    public void addAccount(Account account){
+        theListOfAccountsAll.add(account);
+        
+        for(Account a: theListOfAccountsAll){
+            System.out.println("Hi:"+ a.toString());
+        }
+    }
 }

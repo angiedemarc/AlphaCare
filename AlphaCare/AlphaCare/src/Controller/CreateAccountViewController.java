@@ -24,10 +24,12 @@ import javax.swing.JOptionPane;
 public class CreateAccountViewController {
 
     private CreateAccountView createAccountView;
+    private AccountList list;
     //private ObservableList<Account> listOfAccounts;
 
-    public CreateAccountViewController() {
+    public CreateAccountViewController(AccountList acct) {
         createAccountView = new CreateAccountView();
+        this.list = acct;
        // listOfAccounts = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getAccountList().getAccountData();
         CreateSubmitButtonListener();
     }
@@ -54,10 +56,10 @@ public class CreateAccountViewController {
                             "Something went wrong! Try re-entering username/password");
                 } else {
                     Account account = new Account(username, password, role, firstName, lastName);
-                    AccountList accList = new AccountList();
-                    accList.getAccountData().add(account);
+    
+                    list.addAccount(account);
                     
-                    LoginPageViewController loginPageCntl = new LoginPageViewController();
+                    LoginPageViewController loginPageCntl = new LoginPageViewController(list);
                     loginPageCntl.getLoginPageView();
                     
                     createAccountView.setVisible(false);
@@ -68,7 +70,7 @@ public class CreateAccountViewController {
     }
 
     public void addCreateAccountViewController() {
-        this.createAccountView = createAccountView;
+      //  this.createAccountView = createAccountView;
     }
 
     public CreateAccountView getCreateAccountView() {
