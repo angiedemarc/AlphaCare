@@ -27,14 +27,6 @@ public class CreateRecordView extends EditableView {
         this.createRecordButton = new JButton("Create Record");
         
         this.homeButton = new JButton("Home");
-        this.homeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                MainInterfaceView mainInterface = new MainInterfaceView();
-                
-                setVisible(false);
-            }
-        });
 
         JPanel content = super.promptRecordInfo();
 
@@ -62,6 +54,10 @@ public class CreateRecordView extends EditableView {
     
     public JButton getCreateRecordButton(){
         return this.createRecordButton;
+    }
+    
+    public JButton getHomeButton(){
+        return this.homeButton;
     }
 
     @Override

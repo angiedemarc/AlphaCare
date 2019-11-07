@@ -167,7 +167,7 @@ public class CreateAccountView extends JFrame {
      * @param al
      */
 
-    public void addSubmitListener(ActionListener al) {
-        submitButton.addActionListener(al);
-    }
+//    public void addSubmitListener(ActionListener al) {
+//        submitButton.addActionListener(al);
+//    }
 }

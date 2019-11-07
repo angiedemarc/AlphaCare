@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.Account;
-import Model.AccountList;
 import View.MainInterfaceView;
-import Model.Record;
 import View.AppointmentView;
 import View.CreateRecordView;
 import View.LoginPageView;
@@ -11,7 +8,6 @@ import View.ViewRecordView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /*
