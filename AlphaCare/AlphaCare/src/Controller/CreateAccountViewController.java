@@ -23,7 +23,7 @@ public class CreateAccountViewController {
     private CreateAccountView createAccountView;
 
     public CreateAccountViewController() {
-        CreateAccountView createAccountView = new CreateAccountView();
+        createAccountView = new CreateAccountView();
         CreateSubmitButtonListener();
     }
 
