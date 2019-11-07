@@ -46,7 +46,7 @@ public class LoginPageViewController {
 
                 if (accList.contains(account)) {
                     MainInterfaceViewController mainInterface = new MainInterfaceViewController();
-                    //setVisible(false);
+                    loginPageView.setVisible(false);
                 } else {
                     JOptionPane.showMessageDialog(loginPageView, "Incorrect username/password - try again");
                 }
@@ -59,6 +59,7 @@ public class LoginPageViewController {
             public void actionPerformed(ActionEvent e) {
                 //.out.println("I need to register");
                 CreateAccountViewController registration = new CreateAccountViewController();
+                loginPageView.setVisible(false);
             }
         });
 

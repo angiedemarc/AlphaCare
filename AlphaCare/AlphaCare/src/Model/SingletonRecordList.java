@@ -33,9 +33,9 @@ public class SingletonRecordList implements Serializable {
         this.recordList.add(new Record());
         this.recordList.add(new Record());
         this.recordList.add(new Record());
-        this.recordList.add(new Record("Sammy Jones", 456789087, "9087 Nowhere Avenue", "AZ", "diabetic", "cardiovascular disease",
+        this.recordList.add(new Record(1, "Sammy Jones", 456789087, "9087 Nowhere Avenue", "AZ", "diabetic", "cardiovascular disease",
                 "Allegra", "allergy shots"));
-        this.recordList.add(new Record("Genesis DuBon", 567893456, "10 Disappointment Street", "FL", "healthy", "diabetes",
+        this.recordList.add(new Record(2, "Genesis DuBon", 567893456, "10 Disappointment Street", "FL", "healthy", "diabetes",
                 "none", "Claritin"));
     }
 

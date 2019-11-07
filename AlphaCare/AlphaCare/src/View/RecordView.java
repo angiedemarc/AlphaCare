@@ -7,6 +7,7 @@ import javax.swing.JTextField;
 
 public abstract class RecordView extends JFrame {
 
+    protected JLabel patientId;
     protected JLabel name;
     protected JLabel ssn;
     protected JLabel address;
@@ -18,6 +19,7 @@ public abstract class RecordView extends JFrame {
     protected Record medicalRecord;
 
     public RecordView() {
+        this.medicalRecord = new Record();
     }
 
     public RecordView(Record medicalRecord) {
@@ -35,6 +37,7 @@ public abstract class RecordView extends JFrame {
     }
 
     public void displayRecordInfo() {
+        this.patientId = new JLabel(Integer.toString(medicalRecord.getPatientId()));
         this.name = new JLabel(medicalRecord.getPatientName());
         this.address = new JLabel(medicalRecord.getAddress());
         this.state = new JLabel(medicalRecord.getState());

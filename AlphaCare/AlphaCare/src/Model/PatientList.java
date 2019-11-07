@@ -35,7 +35,7 @@ public class PatientList {
         patientList.add((new Patient("Sam", "Spade", account3, 22, 5678)));
         return patientList;
     }
-   
+
     /**
      *
      * getter for ArrayList of patients
@@ -45,7 +45,7 @@ public class PatientList {
     public ArrayList<Patient> getTheListOfPatients() {
         return theListOfPatients;
     }
-   
+
     /**
      *
      * setter for ArrayList of patients
@@ -56,4 +56,23 @@ public class PatientList {
         this.theListOfPatients = theListOfPatients;
     }
 
+    public boolean contains(Patient patient) {
+        for (Patient patientTemp : theListOfPatients) {
+            if (patient.equals(patientTemp)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean editRecord(Record record) {
+
+        for (Patient patient : theListOfPatients) {
+            if (patient.getPatientID() == record.getPatientId()) {
+                patient.setPatientRecord(record);
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -60,7 +60,7 @@ public class MainInterfaceViewController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ViewRecordView recordView = new ViewRecordView();
-                //setVisible(false);
+                mainInterfaceView.setVisible(false);
             }
         });
 
@@ -70,6 +70,7 @@ public class MainInterfaceViewController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CreateRecordView createRecord = new CreateRecordView();
+                mainInterfaceView.setVisible(false);
             }
         });
 
@@ -79,6 +80,7 @@ public class MainInterfaceViewController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 AppointmentView appointment = new AppointmentView();
+                mainInterfaceView.setVisible(false);
             }
         });
 
@@ -88,6 +90,8 @@ public class MainInterfaceViewController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MainInterfaceView mainInterface = new MainInterfaceView();
+                mainInterfaceView.setVisible(false);
+                mainInterfaceView = mainInterface;
             }
         });
 
@@ -97,6 +101,7 @@ public class MainInterfaceViewController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 LoginPageView loginPageView = new LoginPageView();
+                mainInterfaceView.setVisible(false);
             }
         });
     }
