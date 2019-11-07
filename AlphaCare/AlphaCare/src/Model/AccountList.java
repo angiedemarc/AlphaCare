@@ -5,13 +5,14 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Genesis
  */
-public class AccountList {
+public class AccountList implements Serializable {
 
     private ArrayList<Account> accountList;
 
@@ -35,6 +36,7 @@ public class AccountList {
         this.accountList.add(new Account("CJones45", "ghdjuei34", "Admin", new ArrayList<>()));
         this.accountList.add(new Account("AMira", "uejdnh36!", "Patient", new ArrayList<>()));
         this.accountList.add(new Account("MBuchle", "ujks3456", "Doctor", new ArrayList<>()));
+        this.accountList.add(new Account("a", "z", "Patient", new ArrayList<>()));
     }
 
     public boolean contains(Account account){

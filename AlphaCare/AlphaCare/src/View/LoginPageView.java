@@ -29,10 +29,10 @@ public class LoginPageView extends JFrame {
     private JPanel loginPanel;
     private JLabel userNameLabel;
     private JLabel passwordLabel;
-    private JTextField userNameField;
-    private JPasswordField passwordField;
-    private JButton loginButton;
-    private JButton registerButton;
+    public JTextField userNameField;
+    public JPasswordField passwordField;
+    public JButton loginButton;
+    public JButton registerButton;
 
     /**
      * This constructor will instantiate the login window's interface.
@@ -48,23 +48,23 @@ public class LoginPageView extends JFrame {
         // setVisible(true);
 
         userNameLabel = new JLabel("Username: ");
-        userNameField = new JTextField(16);
+        setUserNameField(new JTextField(16));
 
         passwordLabel = new JLabel("Password: ");
-        passwordField = new JPasswordField(16);
+        setPasswordField(new JPasswordField(16));
 
-        loginButton = new JButton("Login");
+        setLoginButton(new JButton("Login"));
 
-        registerButton = new JButton("Register");
+        setRegisterButton(new JButton("Register"));
 
         loginPanel = new JPanel();
 
         loginPanel.add(userNameLabel);
-        loginPanel.add(userNameField);
+        loginPanel.add(getUserNameField());
         loginPanel.add(passwordLabel);
-        loginPanel.add(passwordField);
-        loginPanel.add(loginButton);
-        loginPanel.add(registerButton);
+        loginPanel.add(getPasswordField());
+        loginPanel.add(getLoginButton());
+        loginPanel.add(getRegisterButton());
 
         // this.setContentPane(loginPanel);
         // getContentPane().add(loginPanel);\
@@ -76,33 +76,6 @@ public class LoginPageView extends JFrame {
         getContentPane().add(scrollBar, BorderLayout.CENTER);
         setVisible(true);
 
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // System.out.println("Testing: Successful Login!");
-                Account account = new Account(userNameField.getText(), passwordField.getText());
-                AccountList accList = new AccountList(); //should make this global?
-                if (accList.contains(account)) {
-                    MainInterfaceView mainInterface = new MainInterfaceView();
-                    setVisible(false);
-                }
-                else{
-                    JOptionPane.showMessageDialog(loginPanel, "Incorrect username/password - try again");
-                }
-            }
-        });
-
-        registerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ev) {
-                //System.out.println("Testing: Going to Registration page!");
-
-                CreateAccountView registerInterface = new CreateAccountView();
-                //registerInterface.setVisible(true);
-
-                setVisible(false);
-            }
-        });
     }
 
     /**
@@ -118,13 +91,7 @@ public class LoginPageView extends JFrame {
      * 
      * @param al
      */
-    public void addLoginListener(ActionListener al) {
-        loginButton.addActionListener(al);
-    }
 
-    public void addRegisterListener(ActionListener al) {
-        registerButton.addActionListener(al);
-    }
 
     public JButton getRegisterButton() {
         return registerButton;
@@ -140,6 +107,22 @@ public class LoginPageView extends JFrame {
 
     public void setLoginButton(JButton loginButton) {
         this.loginButton = loginButton;
+    }
+
+    public JTextField getUserNameField() {
+        return userNameField;
+    }
+
+    public void setUserNameField(JTextField userNameField) {
+        this.userNameField = userNameField;
+    }
+
+    public JPasswordField getPasswordField() {
+        return passwordField;
+    }
+
+    public void setPasswordField(JPasswordField passwordField) {
+        this.passwordField = passwordField;
     }
 
 }

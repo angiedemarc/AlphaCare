@@ -1,36 +1,90 @@
 package Controller;
 
 import Model.Account;
+import Model.AccountList;
+import Model.Model;
 import View.LoginPageView;
-import Model.Record;
+//import View.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author calvinho
  */
-public class LoginPageViewController  {
-    
+public class LoginPageViewController {
+
     private LoginPageView loginPageView;
-    private Account test;
+    private AccountList accountList;
 
     public LoginPageViewController() {
         loginPageView = new LoginPageView();
-        // loginPageView.addLoginListener(this);
-        // loginPageView.addRegisterListener(this);
-        ArrayList<String> permissions = new ArrayList<String>();
-        permissions.add("Test");
-        permissions.add("Test1");
-        permissions.add("Test2");
-        test = new Account("Test", "Password", "Patient", permissions);
+        accountList = new AccountList();
+        CreateTextfieldListeners();
+        CreateButtonListeners();
+    }
+
+    private void CreateButtonListeners() {
+        JButton login = loginPageView.getLoginButton();
+        login.addActionListener(
+                new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("I logged in");
+
+                //if statement for authentication
+               String password = String.valueOf(loginPageView.passwordField.getPassword()); 
+               Account account = new Account(loginPageView.userNameField.getText(),password);
+                AccountList accList = new AccountList(); //should make this global?
+                
+                if (accList.contains(account)) {
+                    MainInterfaceViewController mainInterface = new MainInterfaceViewController();
+                    //setVisible(false);
+                }
+                else{
+                    JOptionPane.showMessageDialog(loginPageView, "Incorrect username/password - try again");
+                }
+            }
+        });
+        JButton reg = loginPageView.getRegisterButton();
+        reg.addActionListener(
+                new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("I need to register");
+                CreateAccountViewController registration = new CreateAccountViewController();
+            }
+        });
+
+    }
+
+    private void CreateTextfieldListeners() {
+        JTextField un = loginPageView.getUserNameField();
+        un.addActionListener(
+                new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(e);
+            }
+        });
+
+        JTextField pass = loginPageView.getPasswordField();
+        pass.addActionListener(
+                new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(e);
+            }
+        });
+
     }
 
     public LoginPageView getLoginPageView() {
@@ -41,21 +95,4 @@ public class LoginPageViewController  {
         this.loginPageView = loginPageView;
     }
 
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        if (e.getSource() == loginPageView.getLoginButton()) {
-//            MainInterfaceViewController main = new MainInterfaceViewController();
-//        }
-//        else if (e.getSource() == loginPageView.getRegisterButton()) {
-//            CreateAccountViewController registration = new CreateAccountViewController();
-//        }
-//        else {
-//            System.out.println("Test has failed!");
-//        }
-//    }
-    
-     public Account getTest() {
-        return test;
-    }
-    
 }

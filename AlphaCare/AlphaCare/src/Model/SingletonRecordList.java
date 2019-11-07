@@ -1,5 +1,6 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -10,7 +11,7 @@ import java.util.ArrayList;
  * https://stackoverflow.com/questions/40152454/arraylist-initialized-accessed-using-singleton-class
  * 
  */
-public class SingletonRecordList {
+public class SingletonRecordList implements Serializable {
 
     private static SingletonRecordList instance;
     private ArrayList<Record> recordList = null;
