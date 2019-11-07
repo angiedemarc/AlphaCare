@@ -13,6 +13,10 @@ import java.util.ArrayList;
  */
 public class SingletonRecordList implements Serializable {
 
+    public void setRecordList(ArrayList<Record> recordList) {
+        this.recordList = recordList;
+    }
+
     private static SingletonRecordList instance;
     private ArrayList<Record> recordList = null;
 
@@ -20,7 +24,7 @@ public class SingletonRecordList implements Serializable {
      *
      * Empty constructor automatically creates ArrayList of records
      */
-    private SingletonRecordList() {
+    public SingletonRecordList() {
         this.recordList = new ArrayList<>();
         createRecords();
     }
@@ -30,12 +34,12 @@ public class SingletonRecordList implements Serializable {
      *This method populates the ArrayList of records
      */
     public void createRecords() {
-        this.recordList.add(new Record());
-        this.recordList.add(new Record());
-        this.recordList.add(new Record());
-        this.recordList.add(new Record(1, "Sammy Jones", 456789087, "9087 Nowhere Avenue", "AZ", "diabetic", "cardiovascular disease",
+        this.getRecordList().add(new Record());
+        this.getRecordList().add(new Record());
+        this.getRecordList().add(new Record());
+        this.getRecordList().add(new Record(1, "Sammy Jones", 456789087, "9087 Nowhere Avenue", "AZ", "diabetic", "cardiovascular disease",
                 "Allegra", "allergy shots"));
-        this.recordList.add(new Record(2, "Genesis DuBon", 567893456, "10 Disappointment Street", "FL", "healthy", "diabetes",
+        this.getRecordList().add(new Record(2, "Genesis DuBon", 567893456, "10 Disappointment Street", "FL", "healthy", "diabetes",
                 "none", "Claritin"));
     }
 
@@ -69,6 +73,6 @@ public class SingletonRecordList implements Serializable {
      * @param newRecord
      */
     public void add(Record newRecord) {
-        this.recordList.add(newRecord);
+        this.getRecordList().add(newRecord);
     }
 }

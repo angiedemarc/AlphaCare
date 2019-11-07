@@ -1,5 +1,6 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 //import java.util.List;
 //import javafx.collections.FXCollections;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author cole
  */
-public class PatientList {
+public class PatientList implements Serializable {
 
     public ArrayList<Patient> theListOfPatients;
     Account account1 = new Account();
