@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 public abstract class EditableView extends RecordView {
 
     protected JTextField nameEntry;
+    protected JTextField patientIdEntry;
     protected int ssnEntry;
     protected JTextField ssnEntry1;
     protected JTextField ssnEntry2;
@@ -32,6 +33,13 @@ public abstract class EditableView extends RecordView {
 
         JPanel content = new JPanel();
         content.setLayout(null);
+
+        patientId = new JLabel("Patient Id: ");
+        if (medicalRecord.getPatientId() != -1) {
+            patientIdEntry = new JTextField(medicalRecord.getPatientId());
+        } else {
+            patientIdEntry = new JTextField(10);
+        }
 
         name = new JLabel("Name: ");
         if (medicalRecord.getPatientName() != null) {
@@ -88,6 +96,9 @@ public abstract class EditableView extends RecordView {
             treatmentHistoryEntry = new JTextField(60);
         }
 
+        content.add(patientId);
+        content.add(patientIdEntry);
+
         content.add(name);
         content.add(nameEntry);
 
@@ -125,11 +136,11 @@ public abstract class EditableView extends RecordView {
         ssnEntry = Integer.parseInt(temp);
         addressEntry = addressEntry1.getText() + addressEntry2.getText();
 
-        if (nameEntry.getText() != "" && temp != "" && addressEntry != ""
+        if (nameEntry.getText() != "" && nameEntry.getText() != "" && temp != "" && addressEntry != ""
                 && stateEntry.getText() != "" && medicalHistoryEntry.getText() != ""
                 && familyMedicalHistoryEntry.getText() != "" && medicationHistoryEntry.getText() != ""
                 && treatmentHistoryEntry.getText() != "") {
-            medicalRecord = new Record(nameEntry.getText(), ssnEntry, addressEntry, stateEntry.getText(),
+            medicalRecord = new Record(Integer.parseInt(patientIdEntry.getText()), nameEntry.getText(), ssnEntry, addressEntry, stateEntry.getText(),
                     medicalHistoryEntry.getText(), familyMedicalHistoryEntry.getText(),
                     medicationHistoryEntry.getText(), treatmentHistoryEntry.getText());
             return true;

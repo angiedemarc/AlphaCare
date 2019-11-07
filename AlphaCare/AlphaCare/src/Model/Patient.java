@@ -10,12 +10,13 @@ public class Patient extends GeneralUser {
      *
      * class attributes
      */
-    public int age;
-    public int patientID;
+    private int age;
+    private int patientID;
+    private Record patientRecord;
 
     /**
      *
-     * Full constructor (takes all attributes)
+     * Constructor
      *
      * @param firstName
      * @param lastName
@@ -27,6 +28,24 @@ public class Patient extends GeneralUser {
         super(firstName, lastName, account);
         this.age = age;
         this.patientID = patientID;
+    }
+    
+    /**
+     *
+     * Full constructor (takes all attributes)
+     *
+     * @param firstName
+     * @param lastName
+     * @param account
+     * @param age
+     * @param patientID
+     * @param record
+     */
+    public Patient(String firstName, String lastName, Account account, int age, int patientID, Record record) {
+        super(firstName, lastName, account);
+        this.age = age;
+        this.patientID = patientID;
+        this.patientRecord = record;
     }
 
     /**
@@ -68,5 +87,52 @@ public class Patient extends GeneralUser {
     public void setPatientID(int patientID) {
         this.patientID = patientID;
     }
+    
+    /**
+     *
+     * getter for patientRecord
+     *
+     * @return patientRecord
+     */
+    public Record getPatientRecord() {
+        return patientRecord;
+    }
 
+    /**
+     *
+     * setter for patientRecord
+     *
+     * @param patientRecord
+     */
+    public void setPatientRecord(Record patientRecord) {
+        this.patientRecord = patientRecord;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 53 * hash + this.patientID;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Patient other = (Patient) obj;
+        if (this.patientID != other.patientID) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
 }

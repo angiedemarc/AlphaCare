@@ -25,12 +25,6 @@ public class CreateRecordView extends EditableView {
 
     private void createRecordUI() {
         this.createRecordButton = new JButton("Create Record");
-        this.createRecordButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                switchView();
-            }
-        });
         
         this.homeButton = new JButton("Home");
         this.homeButton.addActionListener(new ActionListener() {
@@ -47,7 +41,8 @@ public class CreateRecordView extends EditableView {
         // setting positions and dimensions of everything
         createRecordButton.setBounds(20, 60, 200, 50);
         homeButton.setBounds(1, 10, 50, 50);
-        content.add(createRecordButton, homeButton);
+        content.add(createRecordButton);
+        content.add(homeButton);
 
         this.setContentPane(content);
         this.setTitle("Record");
@@ -63,6 +58,10 @@ public class CreateRecordView extends EditableView {
             return medicalRecord;
         }
         return new Record();
+    }
+    
+    public JButton getCreateRecordButton(){
+        return this.createRecordButton;
     }
 
     @Override
