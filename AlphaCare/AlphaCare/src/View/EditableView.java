@@ -23,6 +23,7 @@ public abstract class EditableView extends RecordView {
     protected JTextField treatmentHistoryEntry;
 
     public EditableView() {
+        super();
     }
 
     public EditableView(Record medicalRecord) {
@@ -32,7 +33,7 @@ public abstract class EditableView extends RecordView {
     public JPanel promptRecordInfo() {
 
         JPanel content = new JPanel();
-        content.setLayout(null);
+        //TODO put all this in a spring layout
 
         patientId = new JLabel("Patient Id: ");
         if (medicalRecord.getPatientId() != -1) {
@@ -42,7 +43,7 @@ public abstract class EditableView extends RecordView {
         }
 
         name = new JLabel("Name: ");
-        if (medicalRecord.getPatientName() != null) {
+        if (medicalRecord.getPatientName() != "N/A") {
             nameEntry = new JTextField(medicalRecord.getPatientName());
         } else {
             nameEntry = new JTextField(20);
@@ -52,9 +53,20 @@ public abstract class EditableView extends RecordView {
         ssnEntry1 = new JTextField(3);
         ssnEntry2 = new JTextField(2);
         ssnEntry3 = new JTextField(4);
+        if (medicalRecord.getSsn() != 0) {
+            String[] ssnNums = new String[9];
+            int recordSsn = medicalRecord.getSsn();
+            for (int i = 0; i < 9; i++) {
+                ssnNums[i] = Integer.toString(recordSsn % 10);
+                recordSsn /= 10;
+            }
+            ssnEntry1 = new JTextField(ssnNums[1] + ssnNums[2] + ssnNums[3]);
+            ssnEntry2 = new JTextField(ssnNums[4] + ssnNums[5]);
+            ssnEntry3 = new JTextField(ssnNums[6] + ssnNums[7] + ssnNums[8]);
+        }
 
         address = new JLabel("Address: ");
-        if (medicalRecord.getAddress() != null) {
+        if (medicalRecord.getAddress() != "N/A") {
             addressEntry1 = new JTextField(medicalRecord.getAddress());
         } else {
             addressEntry1 = new JTextField(30);
@@ -62,35 +74,35 @@ public abstract class EditableView extends RecordView {
         addressEntry2 = new JTextField(20);
 
         state = new JLabel("State: ");
-        if (medicalRecord.getState() != null) {
+        if (medicalRecord.getState() != "N/A") {
             stateEntry = new JTextField(medicalRecord.getState());
         } else {
             stateEntry = new JTextField(30);
         }
 
         medicalHistory = new JLabel("Medical History: ");
-        if (medicalRecord.getMedicalHistory() != null) {
+        if (medicalRecord.getMedicalHistory() != "N/A") {
             medicalHistoryEntry = new JTextField(medicalRecord.getMedicalHistory());
         } else {
             medicalHistoryEntry = new JTextField(60);
         }
 
         familyMedicalHistory = new JLabel("Family Medical History: ");
-        if (medicalRecord.getFamilyMedicalHistory() != null) {
+        if (medicalRecord.getFamilyMedicalHistory() != "N/A") {
             familyMedicalHistoryEntry = new JTextField(medicalRecord.getFamilyMedicalHistory());
         } else {
             familyMedicalHistoryEntry = new JTextField(60);
         }
 
         medicationHistory = new JLabel("Medication History: ");
-        if (medicalRecord.getMedicationHistory() != null) {
+        if (medicalRecord.getMedicationHistory() != "N/A") {
             medicationHistoryEntry = new JTextField(medicalRecord.getMedicationHistory());
         } else {
             medicationHistoryEntry = new JTextField(60);
         }
 
         treatmentHistory = new JLabel("Treatment History: ");
-        if (medicalRecord.getTreatmentHistory() != null) {
+        if (medicalRecord.getTreatmentHistory() != "N/A") {
             treatmentHistoryEntry = new JTextField(medicalRecord.getTreatmentHistory());
         } else {
             treatmentHistoryEntry = new JTextField(60);

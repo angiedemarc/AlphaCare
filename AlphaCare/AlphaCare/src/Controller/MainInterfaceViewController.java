@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.Account;
-import Model.AccountList;
 import View.MainInterfaceView;
-import Model.Record;
 import View.AppointmentView;
 import View.CreateRecordView;
 import View.LoginPageView;
@@ -11,7 +8,6 @@ import View.ViewRecordView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /*
@@ -69,7 +65,7 @@ public class MainInterfaceViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CreateRecordView createRecord = new CreateRecordView();
+                CreateRecordViewController createRecord = new CreateRecordViewController();
                 mainInterfaceView.setVisible(false);
             }
         });
@@ -79,7 +75,7 @@ public class MainInterfaceViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AppointmentView appointment = new AppointmentView();
+                AppointmentViewController appointment = new AppointmentViewController();
                 mainInterfaceView.setVisible(false);
             }
         });
@@ -100,7 +96,7 @@ public class MainInterfaceViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                LoginPageView loginPageView = new LoginPageView();
+                LoginPageViewController loginPageView = new LoginPageViewController();
                 mainInterfaceView.setVisible(false);
             }
         });

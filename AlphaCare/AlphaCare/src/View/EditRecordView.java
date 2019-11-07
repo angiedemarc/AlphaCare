@@ -30,7 +30,7 @@ public class EditRecordView extends EditableView {
     private EditRecordViewController cont;
     private Caretaker caretaker = cont.getCaretaker();
     private Originator originator = cont.getOriginator();
-    
+
     private int savedInfoIndex = 0;
     private int currentInfoIndex = 0;
 
@@ -47,82 +47,17 @@ public class EditRecordView extends EditableView {
 
     private void editRecordUI() {
         this.saveRecordButton = new JButton("Save Record");
-        this.saveRecordButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                switchView();
-            }
-        });
-        
+
         this.homeButton = new JButton("Home");
-        this.homeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                MainInterfaceView mainInterface = new MainInterfaceView();
-                
-                setVisible(false);
-            }
-        });
-        
-        this.textArea = new JTextArea(40,60);
-        
+
+        this.textArea = new JTextArea(40, 60);
+
         this.saveButton = new JButton("Save Edits");
-        this.saveButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ev){
-                String textInTextArea = textArea.getText();
-                
-                originator.set(textInTextArea);
-                
-                caretaker.addMemento(originator.storeInMemento());
-                
-                savedInfoIndex++;
-                currentInfoIndex++;
-                
-                System.out.println("Saved Edits #" + savedInfoIndex);
-                
-                undoButton.setEnabled(true);
-            }
-        });
-        
+
         this.undoButton = new JButton("Undo");
-        this.undoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent eve){
-                if(currentInfoIndex >= 1){
-                    currentInfoIndex--;
-                    
-                    String textString = originator.restoreFromMemento(caretaker.getMemento(currentInfoIndex));
-                    
-                    textArea.setText(textString);
-                    
-                    redoButton.setEnabled(true);
-                }
-                else{
-                    undoButton.setEnabled(false);
-                }
-            }
-        });
-        
+
         this.redoButton = new JButton("Redo");
-        this.redoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent even){
-                if((savedInfoIndex - 1) > currentInfoIndex){
-                    currentInfoIndex++;
-                    
-                    String textBoxString = originator.restoreFromMemento(caretaker.getMemento(currentInfoIndex));
-                    
-                    textArea.setText(textBoxString);
-                    
-                    undoButton.setEnabled(true);
-                }
-                else{
-                    redoButton.setEnabled(false);
-                }
-            }
-        });
-        
+
 //        this.undoManager = new UndoManager();
 //Undo functionality with UndoManager
 //        this.textArea.getDocument().addUndoableEditListener(new UndoableEditListener() {
@@ -131,11 +66,8 @@ public class EditRecordView extends EditableView {
 //                updateButtons();
 //            }
 //        });
+        JPanel content = super.promptRecordInfo();
 
-
-
-        JPanel content = promptRecordInfo();
-        
         // setting positions and dimensions of everything
         saveRecordButton.setBounds(5, 60, 200, 50);
         homeButton.setBounds(40, 80, 10, 50);
@@ -147,8 +79,7 @@ public class EditRecordView extends EditableView {
         this.setContentPane(content);
         this.setTitle("Record");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        
+
         JScrollPane scrollPane = new JScrollPane(content);
         // getContentPane().add(appointmentPanel);
         getContentPane().add(scrollPane);
@@ -156,12 +87,13 @@ public class EditRecordView extends EditableView {
         this.setSize(800, 600);
         this.setVisible(true);
     }
-    
+
     @Override
-    protected void switchView(){
+    public void switchView() {
         ViewRecordViewController viewRecordViewController = new ViewRecordViewController(medicalRecord);
     }
 
+    
     
 //Undo functionality using UndoManager    
 //    public void updateButtons(){
@@ -169,4 +101,99 @@ public class EditRecordView extends EditableView {
 //        undoButton.setEnabled(undoManager.canUndo());
 //    }
 
+    public JButton getSaveRecordButton() {
+        return saveRecordButton;
+    }
+
+    public void setSaveRecordButton(JButton saveRecordButton) {
+        this.saveRecordButton = saveRecordButton;
+    }
+
+    public JButton getHomeButton() {
+        return homeButton;
+    }
+
+    public void setHomeButton(JButton homeButton) {
+        this.homeButton = homeButton;
+    }
+
+    public JButton getSaveButton() {
+        return saveButton;
+    }
+
+    public void setSaveButton(JButton saveButton) {
+        this.saveButton = saveButton;
+    }
+
+    public JButton getUndoButton() {
+        return undoButton;
+    }
+
+    public void setUndoButton(JButton undoButton) {
+        this.undoButton = undoButton;
+    }
+
+    public JButton getRedoButton() {
+        return redoButton;
+    }
+
+    public void setRedoButton(JButton redoButton) {
+        this.redoButton = redoButton;
+    }
+
+    public JTextArea getTextArea() {
+        return textArea;
+    }
+
+    public void setTextArea(JTextArea textArea) {
+        this.textArea = textArea;
+    }
+
+    public JTextField getTextField() {
+        return textField;
+    }
+
+    public void setTextField(JTextField textField) {
+        this.textField = textField;
+    }
+
+    public EditRecordViewController getCont() {
+        return cont;
+    }
+
+    public void setCont(EditRecordViewController cont) {
+        this.cont = cont;
+    }
+
+    public Caretaker getCaretaker() {
+        return caretaker;
+    }
+
+    public void setCaretaker(Caretaker caretaker) {
+        this.caretaker = caretaker;
+    }
+
+    public Originator getOriginator() {
+        return originator;
+    }
+
+    public void setOriginator(Originator originator) {
+        this.originator = originator;
+    }
+
+    public int getSavedInfoIndex() {
+        return savedInfoIndex;
+    }
+
+    public void setSavedInfoIndex(int savedInfoIndex) {
+        this.savedInfoIndex = savedInfoIndex;
+    }
+
+    public int getCurrentInfoIndex() {
+        return currentInfoIndex;
+    }
+
+    public void setCurrentInfoIndex(int currentInfoIndex) {
+        this.currentInfoIndex = currentInfoIndex;
+    }
 }

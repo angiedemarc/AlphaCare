@@ -103,41 +103,6 @@ public class AppointmentView extends JFrame {
         getContentPane().add(scrollPane);
         
         setVisible(true);
-        
-        homeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent eventL) {
-                System.out.println("home button");
-                MainInterfaceView mainInterface = new MainInterfaceView();
-                
-                setVisible(false);
-                mainInterface.setVisible(true);
-            }
-        });
-        
-        submitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent eventLis) {
-                System.out.println("Testing: Successful Submission!");
-                
-                MainInterfaceView mainInterface = new MainInterfaceView();
-                
-                setVisible(false);
-                mainInterface.setVisible(true);
-            }
-        });
-        
-        cancelButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent eventList) {
-                System.out.println("Testing: Successful Cancellation!");
-                
-                MainInterfaceView mainInterface = new MainInterfaceView();
-                
-                setVisible(false);
-                mainInterface.setVisible(true);
-            }
-        });
     }
     
     public JButton getHomeButton() {
@@ -151,6 +116,10 @@ public class AppointmentView extends JFrame {
     public void setSubmitButton(JButton submitButton) {
         this.submitButton = submitButton;
     }
+    
+    public JButton getCancelButton(){
+        return this.cancelButton;
+    }
 
     /**
      * These action listener methods will allow their respective buttons to
@@ -161,15 +130,15 @@ public class AppointmentView extends JFrame {
      *
      * @param al
      */
-    public void addHomeListener(ActionListener al) {
-        homeButton.addActionListener(al);
-    }
-    
-    public void addSubmitListener(ActionListener al) {
-        submitButton.addActionListener(al);
-    }
-    
-    public void addCancelListener(ActionListener al) {
-        cancelButton.addActionListener(al);
-    }
+//    public void addHomeListener(ActionListener al) {
+//        homeButton.addActionListener(al);
+//    }
+//    
+//    public void addSubmitListener(ActionListener al) {
+//        submitButton.addActionListener(al);
+//    }
+//    
+//    public void addCancelListener(ActionListener al) {
+//        cancelButton.addActionListener(al);
+//    }
 }
