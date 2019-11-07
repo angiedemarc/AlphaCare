@@ -29,10 +29,10 @@ public class LoginPageView extends JFrame {
     private JPanel loginPanel;
     private JLabel userNameLabel;
     private JLabel passwordLabel;
-    public JTextField userNameField;
-    public JPasswordField passwordField;
-    public JButton loginButton;
-    public JButton registerButton;
+    private JTextField userNameField;
+    private JPasswordField passwordField;
+    private JButton loginButton;
+    private JButton registerButton;
 
     /**
      * This constructor will instantiate the login window's interface.

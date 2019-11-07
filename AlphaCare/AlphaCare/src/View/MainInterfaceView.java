@@ -62,7 +62,7 @@ public class MainInterfaceView extends JFrame {
     public JButton getSearchButton() {
         return searchButton;
     }
-    
+
     public JButton getHomeButton() {
         return homeButton;
     }
@@ -74,110 +74,44 @@ public class MainInterfaceView extends JFrame {
         setLayout(new BorderLayout());
         //setVisible(true);
 
-        viewRecordButton = new JButton("View Record");
+        setViewRecordButton(new JButton("View Record"));
 
-        createRecordButton = new JButton("Create New Record");
+        setCreateRecordButton(new JButton("Create New Record"));
 
-        logoutButton = new JButton("Logout");
+        setLogoutButton(new JButton("Logout"));
 
-        scheduleAppointmentButton = new JButton("Schedule Appointment");
+        setScheduleAppointmentButton(new JButton("Schedule Appointment"));
 
-        searchButton = new JButton("Search");
-        
-        homeButton = new JButton("Home");
+        setSearchButton(new JButton("Search"));
+
+        setHomeButton(new JButton("Home"));
 
         //-----Input Prompt User Interface Design Pattern-------
-        searchField = new JTextField();
-        searchField.setText("Enter a record number or account number");
+        setSearchField(new JTextField());
+        getSearchField().setText("Enter a record number or account number");
         //------------------------------------------------------
 
         toolBar = new JToolBar();
-        toolBar.add(homeButton);
-        toolBar.add(searchButton);
-        toolBar.add(viewRecordButton);
-        toolBar.add(createRecordButton);
-        toolBar.add(logoutButton);
-        toolBar.add(searchField);
+        toolBar.add(getHomeButton());
+        toolBar.add(getSearchButton());
+        toolBar.add(getViewRecordButton());
+        toolBar.add(getCreateRecordButton());
+        toolBar.add(getLogoutButton());
+        toolBar.add(getSearchField());
 
         mainPanel = new JPanel();
-        mainPanel.add(searchButton);
-        mainPanel.add(viewRecordButton);
-        mainPanel.add(createRecordButton);
-        mainPanel.add(scheduleAppointmentButton);
-        mainPanel.add(homeButton);
-        mainPanel.add(logoutButton);
+        mainPanel.add(getSearchButton());
+        mainPanel.add(getViewRecordButton());
+        mainPanel.add(getCreateRecordButton());
+        mainPanel.add(getScheduleAppointmentButton());
+        mainPanel.add(getHomeButton());
+        mainPanel.add(getLogoutButton());
 
         toolBar.add(mainPanel);
 
         getContentPane().add(toolBar, BorderLayout.NORTH);
 
         setVisible(true);
-        
-          searchButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent even) {
-                System.out.println("Testing: Search Success!");
-            }
-        });
-
-
-        viewRecordButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent even) {
-                System.out.println("Testing: Successful Access!");
-
-                ViewRecordView recordView = new ViewRecordView();
-
-                setVisible(false);
-                //recordView.setVisible(true);
-            }
-        });
-
-        createRecordButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent event) {
-                System.out.println("Testing: Successful Access!");
-
-                CreateRecordView createRecord = new CreateRecordView();
-
-                setVisible(false);
-                //createRecord.setVisible(true);
-            }
-        });
-
-        scheduleAppointmentButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent eventL) {
-                System.out.println("Testing: Successful Access!");
-
-                AppointmentView appointment = new AppointmentView();
-
-                setVisible(false);
-                //appointment.setVisible(true);
-            }
-        });
-        
-        homeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent eventL) {
-                
-                MainInterfaceView mainInterface = new MainInterfaceView();
-                
-                setVisible(false);
-            }
-        });
-
-        logoutButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent eventLi) {
-                System.out.println("Testing: Successful logout!");
-
-                LoginPageView loginPageView = new LoginPageView();
-
-                setVisible(false);
-                loginPageView.setVisible(true);
-            }
-        });
     }
 
     /**
@@ -186,23 +120,35 @@ public class MainInterfaceView extends JFrame {
      *
      * @param al
      */
-    public void addViewRecordListener(ActionListener al) {
-        viewRecordButton.addActionListener(al);
+    public void setViewRecordButton(JButton viewRecordButton) {
+        this.viewRecordButton = viewRecordButton;
     }
 
-    public void addCreateRecordListener(ActionListener al) {
-        createRecordButton.addActionListener(al);
+    public void setCreateRecordButton(JButton createRecordButton) {
+        this.createRecordButton = createRecordButton;
     }
 
-    public void addScheduleAppointmentListener(ActionListener al) {
-        scheduleAppointmentButton.addActionListener(al);
-    }
-    
-    public void addHomeButtonListener(ActionListener al) {
-        homeButton.addActionListener(al);
+    public void setLogoutButton(JButton logoutButton) {
+        this.logoutButton = logoutButton;
     }
 
-    public void addLogoutButtonListener(ActionListener al) {
-        logoutButton.addActionListener(al);
+    public void setScheduleAppointmentButton(JButton scheduleAppointmentButton) {
+        this.scheduleAppointmentButton = scheduleAppointmentButton;
+    }
+
+    public void setSearchButton(JButton searchButton) {
+        this.searchButton = searchButton;
+    }
+
+    public void setHomeButton(JButton homeButton) {
+        this.homeButton = homeButton;
+    }
+
+    public JTextField getSearchField() {
+        return searchField;
+    }
+
+    public void setSearchField(JTextField searchField) {
+        this.searchField = searchField;
     }
 }

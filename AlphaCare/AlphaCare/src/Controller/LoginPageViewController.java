@@ -2,9 +2,7 @@ package Controller;
 
 import Model.Account;
 import Model.AccountList;
-import Model.Model;
 import View.LoginPageView;
-//import View.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -38,18 +36,18 @@ public class LoginPageViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("I logged in");
+                //System.out.println("I logged in");
 
                 //if statement for authentication
-               String password = String.valueOf(loginPageView.passwordField.getPassword()); 
-               Account account = new Account(loginPageView.userNameField.getText(),password);
+                String password = String.valueOf(loginPageView.getPasswordField().getPassword());
+                Account account = new Account(loginPageView.getUserNameField().getText(), password);
+
                 AccountList accList = new AccountList(); //should make this global?
-                
+
                 if (accList.contains(account)) {
                     MainInterfaceViewController mainInterface = new MainInterfaceViewController();
                     //setVisible(false);
-                }
-                else{
+                } else {
                     JOptionPane.showMessageDialog(loginPageView, "Incorrect username/password - try again");
                 }
             }
@@ -59,7 +57,7 @@ public class LoginPageViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("I need to register");
+                //.out.println("I need to register");
                 CreateAccountViewController registration = new CreateAccountViewController();
             }
         });
