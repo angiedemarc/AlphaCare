@@ -4,8 +4,11 @@ import Model.Account;
 import Model.AccountList;
 import View.CreateAccountView;
 import View.LoginPageView;
+import Controller.LoginPageViewController;
+import alphacare.PersistentDataCntl;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javafx.collections.ObservableList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -21,9 +24,11 @@ import javax.swing.JOptionPane;
 public class CreateAccountViewController {
 
     private CreateAccountView createAccountView;
+    //private ObservableList<Account> listOfAccounts;
 
     public CreateAccountViewController() {
         createAccountView = new CreateAccountView();
+       // listOfAccounts = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getAccountList().getAccountData();
         CreateSubmitButtonListener();
     }
 
@@ -51,10 +56,13 @@ public class CreateAccountViewController {
                     Account account = new Account(username, password, role, firstName, lastName);
                     AccountList accList = new AccountList();
                     accList.getAccountData().add(account);
-                    LoginPageView loginPage = new LoginPageView();
+                    
+                    LoginPageViewController loginPageCntl = new LoginPageViewController();
+                    loginPageCntl.getLoginPageView();
+                    
                     createAccountView.setVisible(false);
                 }
-                // loginPage.setVisible(true);
+                //loginPage.setVisible(true);
             }
         });
     }
