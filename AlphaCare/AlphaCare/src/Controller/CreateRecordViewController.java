@@ -50,6 +50,7 @@ public class CreateRecordViewController {
                     if (!patients.editRecord(record)) {
                         JOptionPane.showMessageDialog(createRecordView, "Must have valid patient ID");
                     } else {
+                        patients.editRecord(record);
                         //patient's record has already been updated from if statement
                         ViewRecordView view = new ViewRecordView(record);
                         createRecordView.setVisible(false);

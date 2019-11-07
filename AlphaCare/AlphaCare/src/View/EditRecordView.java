@@ -66,7 +66,7 @@ public class EditRecordView extends EditableView {
 //                updateButtons();
 //            }
 //        });
-        JPanel content = promptRecordInfo();
+        JPanel content = super.promptRecordInfo();
 
         // setting positions and dimensions of everything
         saveRecordButton.setBounds(5, 60, 200, 50);

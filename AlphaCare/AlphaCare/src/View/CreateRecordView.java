@@ -46,10 +46,7 @@ public class CreateRecordView extends EditableView {
 
     @Override
     public Record getMedicalRecord() {
-        if (hasClicked) {
-            return medicalRecord;
-        }
-        return new Record();
+        return medicalRecord;
     }
     
     public JButton getCreateRecordButton(){
