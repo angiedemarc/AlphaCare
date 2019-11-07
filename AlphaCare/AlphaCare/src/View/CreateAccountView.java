@@ -1,9 +1,9 @@
 /**
  * This is the account creation window/interface.
- * 
+ *
  * The user will be prompted to enter several
  * pieces of information in order to make an account.
- * 
+ *
  */
 package View;
 
@@ -25,6 +25,8 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
 public class CreateAccountView extends JFrame {
+
+
     private JPanel createPanel;
     private JLabel userLabel;
     private JLabel passLabel;
@@ -56,84 +58,64 @@ public class CreateAccountView extends JFrame {
         // setVisible(true);
 
         userLabel = new JLabel("Username: ");
-        userField = new JTextField(16);
+        setUserField(new JTextField(16));
 
         passLabel = new JLabel("Password: ");
-        passField = new JPasswordField(16);
+        setPassField(new JPasswordField(16));
         passDescLabel = new JLabel("<html><ul>" + "<li>Passwords must be at least 8 characters long</li>"
                 + "<li>Passwords must contain at least 1 uppercase letter</li>"
                 + "<li>Passwords must contain at least 1 number</li>"
                 + "<li>Passwords must contain at least 1 special character (ex. !, ?, %, _)</li>" + "</ul></html>"); // Rudimentary
-                                                                                                                     // description
-                                                                                                                     // and
-                                                                                                                     // requirements
-                                                                                                                     // for
-                                                                                                                     // a
-                                                                                                                     // password
+        // description
+        // and
+        // requirements
+        // for
+        // a
+        // password
         passStrength = new JProgressBar(0, 20);
 
         confirmPassLabel = new JLabel("Confirm Password: ");
-        confirmPassField = new JPasswordField(16);
+        setConfirmPassField(new JPasswordField(16));
 
         firstNameLabel = new JLabel("First name: ");
-        firstNameField = new JTextField(16);
+        setFirstNameField(new JTextField(16));
 
         lastNameLabel = new JLabel("Last name: ");
-        lastNameField = new JTextField(16);
+        setLastNameField(new JTextField(16));
 
         roleLabel = new JLabel("Select your Role: ");
-        roleSelection = new JComboBox(new String[] { "Patient", "Medical Personnel", "Medical Administrator" });
+        setRoleSelection(new JComboBox(new String[]{"Patient", "Medical Personnel", "Medical Administrator"}));
 
-        submitButton = new JButton("SUBMIT");
+        setSubmitButton(new JButton("SUBMIT"));
 
         createPanel = new JPanel();
 
         createPanel.add(userLabel);
-        createPanel.add(userField);
+        createPanel.add(getUserField());
         createPanel.add(passLabel);
-        createPanel.add(passField);
+        createPanel.add(getPassField());
         createPanel.add(passDescLabel);
         createPanel.add(passStrength);
         createPanel.add(confirmPassLabel);
-        createPanel.add(confirmPassField);
+        createPanel.add(getConfirmPassField());
         createPanel.add(firstNameLabel);
-        createPanel.add(firstNameField);
+        createPanel.add(getFirstNameField());
         createPanel.add(lastNameLabel);
-        createPanel.add(lastNameField);
+        createPanel.add(getLastNameField());
         createPanel.add(roleLabel);
-        createPanel.add(roleSelection);
-        createPanel.add(submitButton);
+        createPanel.add(getRoleSelection());
+        createPanel.add(getSubmitButton());
 
         getContentPane().add(createPanel);
 
         setVisible(true);
 
-        submitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent eve) {
-                // System.out.println("Testing: Submission sent!");
-                System.out.println("userField: " + userField.getText() + "passField: " + passField.getText() + "confirmPass: " + confirmPassField.getText());
-                if (userField.getText() == null || passField.getText() == null
-                        || !passField.getText().equals(confirmPassField.getText())) {
-                    JOptionPane.showMessageDialog(createPanel,
-                            "Something went wrong! Try re-entering username/password");
-                } else {
-                    Account account = new Account(userField.getText(), passField.getText(), roleSelection.getSelectedItem().toString(), firstNameField.getText(), lastNameField.getText());
-                    AccountList accList = new AccountList();
-                    accList.addAccount(account);
-                    LoginPageView loginPage = new LoginPageView();
-                    setVisible(false);
-                }
-                // loginPage.setVisible(true);
-            }
-        });
-
         /**
-         * Rudimentary Password Strength Meter: for now, it just checks the length of
-         * the password. Later on, we plan on implementing some sort of point system
-         * based on the requirements we outlined above.
+         * Rudimentary Password Strength Meter: for now, it just checks the
+         * length of the password. Later on, we plan on implementing some sort
+         * of point system based on the requirements we outlined above.
          */
-        passField.getDocument().addDocumentListener(new DocumentListener() {
+        getPassField().getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void changedUpdate(DocumentEvent e) {
                 updateLabel(e);
@@ -150,7 +132,7 @@ public class CreateAccountView extends JFrame {
             }
 
             private void updateLabel(DocumentEvent e) {
-                String password = passField.getText();
+                String password = getPassField().getText();
                 if (password.length() < 1) {
                     passStrength.setValue(0);
                 } else {
@@ -163,11 +145,61 @@ public class CreateAccountView extends JFrame {
     /**
      * This action listener method will allow the submit button to send the
      * information to the database and create the account.
-     * 
+     *
      * @param al
      */
+    public JButton getSubmitButton() {
+        return submitButton;
+    }
 
-    public void addSubmitListener(ActionListener al) {
-        submitButton.addActionListener(al);
+    public void setSubmitButton(JButton submitButton) {
+        this.submitButton = submitButton;
+    }
+    public JTextField getUserField() {
+        return userField;
+    }
+
+    public void setUserField(JTextField userField) {
+        this.userField = userField;
+    }
+
+    public JPasswordField getPassField() {
+        return passField;
+    }
+
+    public void setPassField(JPasswordField passField) {
+        this.passField = passField;
+    }
+
+    public JPasswordField getConfirmPassField() {
+        return confirmPassField;
+    }
+
+    public void setConfirmPassField(JPasswordField confirmPassField) {
+        this.confirmPassField = confirmPassField;
+    }
+
+    public JTextField getFirstNameField() {
+        return firstNameField;
+    }
+
+    public void setFirstNameField(JTextField firstNameField) {
+        this.firstNameField = firstNameField;
+    }
+
+    public JTextField getLastNameField() {
+        return lastNameField;
+    }
+
+    public void setLastNameField(JTextField lastNameField) {
+        this.lastNameField = lastNameField;
+    }
+
+    public JComboBox getRoleSelection() {
+        return roleSelection;
+    }
+
+    public void setRoleSelection(JComboBox roleSelection) {
+        this.roleSelection = roleSelection;
     }
 }

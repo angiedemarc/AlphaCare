@@ -26,10 +26,10 @@ public class AlphaCare {
         
         
         // Here, we will test to see the attributes in our model class. 
-        
-        for(Record r: SingletonRecordList.getInstance().getRecordList()){
-            System.out.println("From the singleton class: " + r.getPatientName());
-        }
+//        
+//        for(Record r: SingletonRecordList.getInstance().getRecordList()){
+//            System.out.println("From the singleton class: " + r.getPatientName());
+//        }
     }
     
 }

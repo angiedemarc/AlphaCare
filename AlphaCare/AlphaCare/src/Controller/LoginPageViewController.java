@@ -38,13 +38,13 @@ public class LoginPageViewController {
             public void actionPerformed(ActionEvent e) {
                 //System.out.println("I logged in");
 
-                //if statement for authentication
+                //For authentication
                 String password = String.valueOf(loginPageView.getPasswordField().getPassword());
                 Account account = new Account(loginPageView.getUserNameField().getText(), password);
 
                 AccountList accList = new AccountList(); //should make this global?
 
-                if (accList.contains(account)) {
+                if (accList.getAccountData().contains(account)) {
                     MainInterfaceViewController mainInterface = new MainInterfaceViewController();
                     loginPageView.setVisible(false);
                 } else {
@@ -57,7 +57,6 @@ public class LoginPageViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //.out.println("I need to register");
                 CreateAccountViewController registration = new CreateAccountViewController();
                 loginPageView.setVisible(false);
             }
