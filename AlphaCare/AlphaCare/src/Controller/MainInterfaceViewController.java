@@ -22,6 +22,7 @@ import javax.swing.JTextField;
 public class MainInterfaceViewController {
 
     private MainInterfaceView mainInterfaceView;
+    private AccountList accountList;
 
     public MainInterfaceViewController() {
         mainInterfaceView = new MainInterfaceView();
@@ -96,7 +97,7 @@ public class MainInterfaceViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                LoginPageViewController loginPageView = new LoginPageViewController();
+                LoginPageViewController loginPageView = new LoginPageViewController(accountList);
                 mainInterfaceView.setVisible(false);
             }
         });
