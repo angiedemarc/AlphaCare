@@ -4,6 +4,7 @@ import Model.Record;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.awt.GridLayout;
 
 public abstract class EditableView extends RecordView {
 
@@ -34,6 +35,8 @@ public abstract class EditableView extends RecordView {
 
         JPanel content = new JPanel();
         //TODO put all this in a spring layout
+        GridLayout grid = new GridLayout(0, 1);
+        content.setLayout(grid);
 
         patientId = new JLabel("Patient Id: ");
         if (medicalRecord.getPatientId() != -1) {
