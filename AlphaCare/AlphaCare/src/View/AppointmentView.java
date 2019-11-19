@@ -76,9 +76,9 @@ public class AppointmentView extends JFrame {
         
         homeButton = new JButton("Home");
         
-        submitButton = new JButton("SUBMIT");
+        submitButton = new JButton("Submit");
         
-        cancelButton = new JButton("CANCEL");
+        cancelButton = new JButton("Cancel");
         
         appointmentPanel = new JPanel();
         GridLayout g = new GridLayout(0,2);
@@ -115,11 +115,11 @@ public class AppointmentView extends JFrame {
     }
     
     public JButton getHomeButton() {
-        return homeButton;
+        return this.homeButton;
     }
     
     public JButton getSubmitButton() {
-        return submitButton;
+        return this.submitButton;
     }
     
     public void setSubmitButton(JButton submitButton) {
