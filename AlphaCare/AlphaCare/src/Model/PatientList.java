@@ -3,9 +3,6 @@ package Model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
-//import java.util.List;
-//import javafx.collections.FXCollections;
-//import javafx.collections.ObservableList;
 
 /**
  *

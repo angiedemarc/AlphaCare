@@ -7,19 +7,11 @@
  */
 package View;
 
-import Model.Account;
-import Model.AccountList;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -45,7 +37,6 @@ public class LoginPageView extends JFrame {
         setSize(800, 600);
         setTitle("AlphaCare Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // setVisible(true);
 
         userNameLabel = new JLabel("Username: ");
         setUserNameField(new JTextField(16));
@@ -66,8 +57,7 @@ public class LoginPageView extends JFrame {
         loginPanel.add(getLoginButton());
         loginPanel.add(getRegisterButton());
 
-        // this.setContentPane(loginPanel);
-        // getContentPane().add(loginPanel);\
+
         // Scrolling
         loginPanel.setAutoscrolls(true);
         JScrollPane scrollBar = new JScrollPane(loginPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
@@ -90,6 +80,7 @@ public class LoginPageView extends JFrame {
      * AlphaCare.
      * 
      * @param al
+     * @return 
      */
 
 

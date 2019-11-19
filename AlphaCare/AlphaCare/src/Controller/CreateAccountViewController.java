@@ -24,12 +24,10 @@ public class CreateAccountViewController {
 
     private CreateAccountView createAccountView;
     private AccountList list;
-    //private ObservableList<Account> listOfAccounts;
 
     public CreateAccountViewController(AccountList acct) {
         createAccountView = new CreateAccountView();
         this.list = acct;
-       // listOfAccounts = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getAccountList().getAccountData();
         CreateSubmitButtonListener();
     }
 
@@ -39,7 +37,6 @@ public class CreateAccountViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // System.out.println("Testing: Submission sent!");
 
                 String username = String.valueOf(createAccountView.getUserField().getText());
                 String password = String.valueOf(createAccountView.getPassField().getPassword());
@@ -55,21 +52,16 @@ public class CreateAccountViewController {
                             "Something went wrong! Try re-entering username/password");
                 } else {
                     Account account = new Account(username, password, role, firstName, lastName);
-    
+
                     list.addAccount(account);
-                    
+
                     LoginPageViewController loginPageCntl = new LoginPageViewController(list);
                     loginPageCntl.getLoginPageView();
-                    
+
                     createAccountView.setVisible(false);
                 }
-                //loginPage.setVisible(true);
             }
         });
-    }
-
-    public void addCreateAccountViewController() {
-      //  this.createAccountView = createAccountView;
     }
 
     public CreateAccountView getCreateAccountView() {

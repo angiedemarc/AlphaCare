@@ -15,9 +15,6 @@
 package View;
 
 import java.awt.BorderLayout;
-//import java.awt.event.ActionListener;
-//import java.awt.event.*;
-//import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -82,7 +79,6 @@ public class MainInterfaceView extends JFrame {
         setSize(1000, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-        //setVisible(true);
 
         setViewRecordButton(new JButton("View Record"));
 
@@ -97,7 +93,7 @@ public class MainInterfaceView extends JFrame {
         setHomeButton(new JButton("Home"));
 
         setPrescriptionButton(new JButton("Add prescription"));
-        
+
         setReportButton(new JButton("Report feedback"));
 
         //-----Input Prompt User Interface Design Pattern-------

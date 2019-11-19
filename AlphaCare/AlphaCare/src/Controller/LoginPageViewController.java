@@ -9,11 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
  * @author calvinho
@@ -36,14 +31,12 @@ public class LoginPageViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //System.out.println("I logged in");
 
                 //For authentication
                 String password = String.valueOf(loginPageView.getPasswordField().getPassword());
                 Account account = new Account(loginPageView.getUserNameField().getText(), password);
 
-               // AccountList accList = new AccountList(); //should make this global?
-
+                // AccountList accList = new AccountList(); //should make this global? Yes, I think we should
                 if (accountList.getAccountList().contains(account)) {
                     MainInterfaceViewController mainInterface = new MainInterfaceViewController();
                     loginPageView.setVisible(false);

@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
 
 public class ViewRecordView extends RecordView {
 
@@ -33,7 +32,7 @@ public class ViewRecordView extends RecordView {
                 switchView();
             }
         });
-        
+
         this.homeButton = new JButton("Home");
         this.homeButton.addActionListener(new ActionListener() {
             @Override
