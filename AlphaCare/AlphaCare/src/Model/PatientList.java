@@ -2,6 +2,7 @@ package Model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 //import java.util.List;
 //import javafx.collections.FXCollections;
 //import javafx.collections.ObservableList;
@@ -76,4 +77,14 @@ public class PatientList implements Serializable {
         }
         return false;
     }
+
+    public Patient getPatient(int patientId) {
+        for (Patient p : this.getPatientList()) {
+            if (p.getPatientID() == patientId) {
+                return p;
+            }
+        }
+        throw new NoSuchElementException();
+    }
+
 }

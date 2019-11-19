@@ -254,6 +254,44 @@ public class Record {
 
     /**
      *
+     * getter for dateEntered
+     *
+     */
+    public LocalDate getDateEntered() {
+        return dateEntered;
+    }
+
+    /**
+     *
+     * setter for dateEntered
+     *
+     * @param dateEntered
+     */
+    public void setDateEntered(LocalDate dateEntered) {
+        this.dateEntered = dateEntered;
+    }
+
+    /**
+     *
+     * getter for timeEntered
+     *
+     */
+    public LocalTime getTimeEntered() {
+        return timeEntered;
+    }
+
+    /**
+     *
+     * setter for timeEntered
+     *
+     * @param timeEntered
+     */
+    public void setTimeEntered(LocalTime timeEntered) {
+        this.timeEntered = timeEntered;
+    }
+    
+    /**
+     *
      * toString() for class
      *
      * @return patientName, social security number, address, state,
