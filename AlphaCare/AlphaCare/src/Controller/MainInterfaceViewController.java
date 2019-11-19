@@ -1,4 +1,5 @@
 package Controller;
+
 import Model.AccountList;
 import View.MainInterfaceView;
 import View.AppointmentView;
@@ -8,6 +9,7 @@ import View.ViewRecordView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /*
@@ -23,6 +25,7 @@ public class MainInterfaceViewController {
 
     private MainInterfaceView mainInterfaceView;
     private AccountList accountList;
+    private String feedback;
 
     public MainInterfaceViewController() {
         mainInterfaceView = new MainInterfaceView();
@@ -37,7 +40,7 @@ public class MainInterfaceViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               // System.out.println(search.getText());
+                // System.out.println(search.getText());
             }
         });
         JButton searchButton = mainInterfaceView.getSearchButton();
@@ -81,17 +84,34 @@ public class MainInterfaceViewController {
             }
         });
 
-        JButton homeButton = mainInterfaceView.getHomeButton();
-        homeButton.addActionListener(
+        mainInterfaceView.getPrescriptionButton().addActionListener(
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainInterfaceView mainInterface = new MainInterfaceView();
+                PrescriptionViewController prescription = new PrescriptionViewController();
                 mainInterfaceView.setVisible(false);
-                mainInterfaceView = mainInterface;
             }
         });
 
+        mainInterfaceView.getReportButton().addActionListener(
+                new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                feedback = JOptionPane.showInputDialog("Please enter feedback on the application below:");
+                System.out.println("FEEDBACK: " + feedback);
+            }
+        });
+
+//        JButton homeButton = mainInterfaceView.getHomeButton();
+//        homeButton.addActionListener(
+//                new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                MainInterfaceView mainInterface = new MainInterfaceView();
+//                mainInterfaceView.setVisible(false);
+//                mainInterfaceView = mainInterface;
+//            }
+//        });
         JButton logoutButton = mainInterfaceView.getLogoutButton();
         logoutButton.addActionListener(
                 new ActionListener() {

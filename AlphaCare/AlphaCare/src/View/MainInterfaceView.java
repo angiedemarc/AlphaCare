@@ -15,9 +15,9 @@
 package View;
 
 import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.*;
-import javax.swing.GroupLayout;
+//import java.awt.event.ActionListener;
+//import java.awt.event.*;
+//import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -34,6 +34,8 @@ public class MainInterfaceView extends JFrame {
     private JButton scheduleAppointmentButton;
     private JButton searchButton;
     private JButton homeButton;
+    private JButton prescriptionButton;
+    private JButton reportButton;
     private JTextField searchField;
 
     /**
@@ -67,6 +69,14 @@ public class MainInterfaceView extends JFrame {
         return homeButton;
     }
 
+    public JButton getPrescriptionButton() {
+        return prescriptionButton;
+    }
+
+    public JButton getReportButton() {
+        return reportButton;
+    }
+
     private void mainUI() {
         setTitle("Main Menu");
         setSize(1000, 600);
@@ -86,16 +96,21 @@ public class MainInterfaceView extends JFrame {
 
         setHomeButton(new JButton("Home"));
 
+        setPrescriptionButton(new JButton("Add prescription"));
+        
+        setReportButton(new JButton("Report feedback"));
+
         //-----Input Prompt User Interface Design Pattern-------
         setSearchField(new JTextField());
         getSearchField().setText("Enter a record number or account number");
         //------------------------------------------------------
 
         toolBar = new JToolBar();
-        toolBar.add(getHomeButton());
+        toolBar.add(getPrescriptionButton());
         toolBar.add(getSearchButton());
         toolBar.add(getViewRecordButton());
         toolBar.add(getCreateRecordButton());
+        toolBar.add(getReportButton());
         toolBar.add(getLogoutButton());
         toolBar.add(getSearchField());
 
@@ -104,7 +119,8 @@ public class MainInterfaceView extends JFrame {
         mainPanel.add(getViewRecordButton());
         mainPanel.add(getCreateRecordButton());
         mainPanel.add(getScheduleAppointmentButton());
-        mainPanel.add(getHomeButton());
+        mainPanel.add(getPrescriptionButton());
+        mainPanel.add(getReportButton());
         mainPanel.add(getLogoutButton());
 
         toolBar.add(mainPanel);
@@ -142,6 +158,14 @@ public class MainInterfaceView extends JFrame {
 
     public void setHomeButton(JButton homeButton) {
         this.homeButton = homeButton;
+    }
+
+    public void setPrescriptionButton(JButton preButton) {
+        this.prescriptionButton = preButton;
+    }
+
+    public void setReportButton(JButton reportButton) {
+        this.reportButton = reportButton;
     }
 
     public JTextField getSearchField() {
