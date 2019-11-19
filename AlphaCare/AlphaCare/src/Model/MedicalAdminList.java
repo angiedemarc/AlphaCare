@@ -18,19 +18,18 @@ public class MedicalAdminList {
      * Empty constructor that automatically creates ArrayList of medicalAdmin
      */
     public MedicalAdminList() {
-        theListOfMedicalAdmins = getMedicalAdminList();
+        theListOfMedicalAdmins = createMedicalAdminList();
     }
 
     /**
      *
      * Method that populates ArrayList of medicalAdmin
      */
-    private ArrayList<MedicalAdmin> getMedicalAdminList() {
-        ArrayList<MedicalAdmin> MedicalAdminList = new ArrayList<>();
-        MedicalAdminList.add((new MedicalAdmin("Admin1", "Uno", account1, 2460)));
-        MedicalAdminList.add((new MedicalAdmin("Admin2", "Dos", account2, 2080)));
-        MedicalAdminList.add((new MedicalAdmin("Admin3", "Tres", account3, 2240)));
-        return MedicalAdminList;
+    private ArrayList<MedicalAdmin> createMedicalAdminList() {
+        this.theListOfMedicalAdmins.add((new MedicalAdmin("Admin1", "Uno", account1, 2460)));
+        this.theListOfMedicalAdmins.add((new MedicalAdmin("Admin2", "Dos", account2, 2080)));
+        this.theListOfMedicalAdmins.add((new MedicalAdmin("Admin3", "Tres", account3, 2240)));
+        return this.theListOfMedicalAdmins;
 
     }
 
