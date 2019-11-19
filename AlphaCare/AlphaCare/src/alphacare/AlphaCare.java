@@ -50,4 +50,14 @@ public class AlphaCare {
         recordList.setRecordList(newRecords);
     }
 
+    public void alertUsers(ArrayList<Integer> patientIds) {
+        SingletonRecordList recordList = new SingletonRecordList();
+        for (Record r : recordList.getRecordList()) {
+            if (patientIds.contains(r.getPatientId())) {
+                System.out.println("alerting " + r.getPatientName());
+                //TODO add logic to actually email users here
+            }
+        }
+    }
+
 }
