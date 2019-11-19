@@ -27,11 +27,10 @@ public class MedicalPersonnelList {
      * Method that populates ArrayList of medicalPersonnel
      */
     private ArrayList<MedicalPersonnel> getMedicalPersonnelList() {
-        ArrayList<MedicalPersonnel> MedicalPersonnelList = new ArrayList<>();
-        MedicalPersonnelList.add((new MedicalPersonnel("Admin1", "Uno", account1, 2460)));
-        MedicalPersonnelList.add((new MedicalPersonnel("Admin2", "Dos", account2, 2080)));
-        MedicalPersonnelList.add((new MedicalPersonnel("Admin3", "Tres", account3, 2240)));
-        return MedicalPersonnelList;
+        theListOfMedicalPersonnels.add((new MedicalPersonnel("Admin1", "Uno", account1, 2460)));
+        theListOfMedicalPersonnels.add((new MedicalPersonnel("Admin2", "Dos", account2, 2080)));
+        theListOfMedicalPersonnels.add((new MedicalPersonnel("Admin3", "Tres", account3, 2240)));
+        return theListOfMedicalPersonnels;
 
     }
 
