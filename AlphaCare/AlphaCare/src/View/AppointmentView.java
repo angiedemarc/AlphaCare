@@ -6,6 +6,9 @@
  */
 package View;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -49,7 +52,6 @@ public class AppointmentView extends JFrame {
         setVisible(true);
         setTitle("Appointment Scheduling");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //setVisible(true);
         
         fullNameLabel = new JLabel("Full Name: ");
         fullNameField = new JTextField(16);
@@ -79,6 +81,8 @@ public class AppointmentView extends JFrame {
         cancelButton = new JButton("CANCEL");
         
         appointmentPanel = new JPanel();
+        GridLayout g = new GridLayout(0,2);
+        appointmentPanel.setLayout(g);
         
         appointmentPanel.add(fullNameLabel);
         appointmentPanel.add(fullNameField);
@@ -94,9 +98,14 @@ public class AppointmentView extends JFrame {
         appointmentPanel.add(dateField);
         appointmentPanel.add(symptomsLabel);
         appointmentPanel.add(symptomsArea);
-        appointmentPanel.add(homeButton);
-        appointmentPanel.add(submitButton);
-        appointmentPanel.add(cancelButton);
+        
+        JPanel buttons = new JPanel();
+        buttons.setLayout(new FlowLayout());
+        buttons.add(homeButton);
+        buttons.add(submitButton);
+        buttons.add(cancelButton);
+        
+       appointmentPanel.add(buttons);
         // Fucked the layout up just to show them that continuous scrolling does work! :(
         JScrollPane scrollPane = new JScrollPane(appointmentPanel);
         // getContentPane().add(appointmentPanel);
