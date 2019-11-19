@@ -5,7 +5,6 @@ import Model.AccountList;
 import View.CreateAccountView;
 import View.LoginPageView;
 import Controller.LoginPageViewController;
-import alphacare.PersistentDataCntl;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javafx.collections.ObservableList;

@@ -40,7 +40,6 @@ public class MainInterfaceViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // System.out.println(search.getText());
             }
         });
         JButton searchButton = mainInterfaceView.getSearchButton();
@@ -101,17 +100,6 @@ public class MainInterfaceViewController {
                 System.out.println("FEEDBACK: " + feedback);
             }
         });
-
-//        JButton homeButton = mainInterfaceView.getHomeButton();
-//        homeButton.addActionListener(
-//                new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                MainInterfaceView mainInterface = new MainInterfaceView();
-//                mainInterfaceView.setVisible(false);
-//                mainInterfaceView = mainInterface;
-//            }
-//        });
         JButton logoutButton = mainInterfaceView.getLogoutButton();
         logoutButton.addActionListener(
                 new ActionListener() {
