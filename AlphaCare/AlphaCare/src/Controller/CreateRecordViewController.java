@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controller;
 
 import Model.Account;
-import Model.Patient;
 import Model.PatientList;
 import Model.Record;
 import View.*;
@@ -32,10 +26,6 @@ public class CreateRecordViewController {
         return test;
     }
 
-//    public void addCreateRecordViewController() {
-//        this.createRecordView = createRecordView;
-//    }
-
     public CreateRecordView getCreateRecordView() {
         return this.createRecordView;
     }
@@ -50,8 +40,10 @@ public class CreateRecordViewController {
                     if (!patients.editRecord(record)) {
                         JOptionPane.showMessageDialog(createRecordView, "Must have valid patient ID");
                     } else {
-                        patients.editRecord(record);
+
                         //patient's record has already been updated from if statement
+                        patients.editRecord(record);
+
                         ViewRecordView view = new ViewRecordView(record);
                         createRecordView.setVisible(false);
                     }

@@ -17,17 +17,7 @@ import javax.swing.JTextField;
  *
  * @author angie
  */
-//    private int patientId;
-//    private String fName;
-//    private String lName;
-//    private int age;
-//    private String gender;
-//    private String address;
-//    private String hospitalName;
-//    private int amountTakenInADay;
-//    private int daysTakenInAWeek;
-//    private int quantityTaken;
-//    private String overdoseWarnings;
+
 public class PrescriptionView extends JFrame {
 
     //labels
@@ -43,6 +33,7 @@ public class PrescriptionView extends JFrame {
     private JLabel daysTakenInAWeekLabel;
     private JLabel quantityTakenLabel;
     private JLabel overdoseWarningsLabel;
+    
     //input types
     private JTextField patientIdField;
     private JTextField fNameField;
@@ -55,6 +46,7 @@ public class PrescriptionView extends JFrame {
     private JComboBox daysTakenInAWeekSelection;
     private JTextField quantityTakenField;
     private JTextArea overdoseWarningsArea;
+    
     //buttons
     private JButton submitButton;
     private JButton cancelButton;
@@ -67,7 +59,6 @@ public class PrescriptionView extends JFrame {
         setSize(1000, 600);
         setTitle("Account Creation");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // setVisible(true);
 
         setPatientIdLabel(new JLabel("Patient Id: "));
         setPatientIdField((new JTextField(16)));

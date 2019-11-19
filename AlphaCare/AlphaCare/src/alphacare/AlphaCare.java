@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package alphacare;
 
 import Controller.LoginPageViewController;
@@ -22,8 +17,9 @@ public class AlphaCare {
      */
     public static void main(String[] args) {
         // Shows the functionality of the 'createRecord' which in turn can view a record
-        // CreateRecordViewController createRecord = new CreateRecordViewController();
-        // This tests to see the application work flow from the Login. It should display all of our view classes from just initially the login process. 
+                // CreateRecordViewController createRecord = new CreateRecordViewController();
+       
+                // This tests to see the application work flow from the Login. It should display all of our view classes from just initially the login process. 
         AccountList gr = new AccountList();
         LoginPageViewController loginPage = new LoginPageViewController(gr); // We have not yet added authentication functionality to the application yet!
 

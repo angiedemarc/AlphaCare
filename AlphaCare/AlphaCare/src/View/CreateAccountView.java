@@ -7,16 +7,10 @@
  */
 package View;
 
-import Model.Account;
-import Model.AccountList;
-import java.awt.GridLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JProgressBar;
@@ -55,7 +49,6 @@ public class CreateAccountView extends JFrame {
         setSize(1000, 600);
         setTitle("Account Creation");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // setVisible(true);
 
         userLabel = new JLabel("Username: ");
         setUserField(new JTextField(16));
@@ -146,7 +139,7 @@ public class CreateAccountView extends JFrame {
      * This action listener method will allow the submit button to send the
      * information to the database and create the account.
      *
-     * @param al
+     * @return 
      */
     public JButton getSubmitButton() {
         return submitButton;

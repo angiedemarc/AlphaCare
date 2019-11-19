@@ -2,18 +2,12 @@ package View;
 
 import Controller.ViewRecordViewController;
 import Model.Record;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class CreateRecordView extends EditableView {
 
-    
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
     private JButton homeButton;
     private JButton createRecordButton;
@@ -25,7 +19,7 @@ public class CreateRecordView extends EditableView {
 
     private void createRecordUI() {
         this.createRecordButton = new JButton("Create Record");
-        
+
         this.homeButton = new JButton("Home");
 
         JPanel content = super.promptRecordInfo();
@@ -48,22 +42,21 @@ public class CreateRecordView extends EditableView {
     public Record getMedicalRecord() {
         return medicalRecord;
     }
-    
-    public JButton getCreateRecordButton(){
+
+    public JButton getCreateRecordButton() {
         return this.createRecordButton;
     }
-    
-    public JButton getHomeButton(){
+
+    public JButton getHomeButton() {
         return this.homeButton;
     }
 
     @Override
     protected void switchView() {
-        if (saveInfo()){
+        if (saveInfo()) {
             hasClicked = true;
             ViewRecordViewController viewRecordViewController = new ViewRecordViewController(medicalRecord);
-        }
-        else{
+        } else {
             System.out.println("Must enter valid information to create record");
         }
     }

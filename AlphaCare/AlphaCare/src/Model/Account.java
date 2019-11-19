@@ -43,7 +43,6 @@ public class Account implements Comparable <Account>{
         this.userName = userName;
         this.password = password;
         this.role = role;
-        //this.permissions = permissions;
     }
 
     public Account(String userName, String password, String role, String fName, String lName) {
@@ -114,31 +113,12 @@ public class Account implements Comparable <Account>{
         this.role = role;
     }
 
-///**
-// *
-// * getter for ArrayList of permissions (read, write, view)
-// * @return permissions
-// */
-//    public ArrayList<String> getPermissions() {
-//        return permissions;
-//    }
-//
-///**
-// *
-// * setter for ArrayList of permissions
-// * @param permissions
-// */
-//    
-//    public void setPermissions(ArrayList<String> permissions) {
-//        this.permissions = permissions;
-//    }
-   
+
 /**
  *
  * toString() for class
  * @return userName, password, role, permissions
  */
-//do we want to return the password in toString()?
     @Override
     public String toString() {
         return "Username: " + this.userName + ", Password: " + this.password + " Role: " + this.role;
