@@ -48,7 +48,7 @@ public class AppointmentViewController {
             @Override
             public void actionPerformed(ActionEvent eventLis) {
                 JLabel submitMessage = new JLabel();
-                JOptionPane.showMessageDialog(submitMessage, "Your appointment has been submitted!");
+                JOptionPane.showMessageDialog(submitMessage, "Your appointment has been scheduled!");
 
                 MainInterfaceView mainInterface = new MainInterfaceView();
                 appointmentView.setVisible(false);
