@@ -75,4 +75,13 @@ public class SingletonRecordList implements Serializable {
     public void add(Record newRecord) {
         this.getRecordList().add(newRecord);
     }
+    
+    public Record getRecord(int patientId){
+        for (Record r: this.recordList){
+            if (r.getPatientId() == patientId){
+                return r;
+            }
+        }
+        return new Record();
+    }
 }

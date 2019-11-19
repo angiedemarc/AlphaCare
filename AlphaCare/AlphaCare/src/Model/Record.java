@@ -1,5 +1,8 @@
 package Model;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 /**
  *
  * @author Genesis
@@ -19,6 +22,8 @@ public class Record {
     private String familyMedicalHistory;
     private String medicationHistory;
     private String treatmentHistory;
+    private LocalDate dateEntered;
+    private LocalTime timeEntered;
 
     /**
      *
@@ -34,6 +39,8 @@ public class Record {
         this.familyMedicalHistory = "N/A";
         this.medicationHistory = "N/A";
         this.treatmentHistory = "N/A";
+        this.dateEntered = LocalDate.now();
+        this.timeEntered = LocalTime.now();
     }
 
     /**
@@ -61,6 +68,8 @@ public class Record {
         this.familyMedicalHistory = familyMedicalHistory;
         this.medicationHistory = medicationHistory;
         this.treatmentHistory = treatmentHistory;
+        this.dateEntered = LocalDate.now();
+        this.timeEntered = LocalTime.now();
     }
 
     /**
@@ -72,7 +81,7 @@ public class Record {
     public int getPatientId() {
         return patientId;
     }
-    
+
     /**
      *
      * setter for patientId
@@ -243,6 +252,44 @@ public class Record {
         this.treatmentHistory = treatmentHistory;
     }
 
+    /**
+     *
+     * getter for dateEntered
+     *
+     */
+    public LocalDate getDateEntered() {
+        return dateEntered;
+    }
+
+    /**
+     *
+     * setter for dateEntered
+     *
+     * @param dateEntered
+     */
+    public void setDateEntered(LocalDate dateEntered) {
+        this.dateEntered = dateEntered;
+    }
+
+    /**
+     *
+     * getter for timeEntered
+     *
+     */
+    public LocalTime getTimeEntered() {
+        return timeEntered;
+    }
+
+    /**
+     *
+     * setter for timeEntered
+     *
+     * @param timeEntered
+     */
+    public void setTimeEntered(LocalTime timeEntered) {
+        this.timeEntered = timeEntered;
+    }
+    
     /**
      *
      * toString() for class
