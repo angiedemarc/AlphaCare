@@ -1,12 +1,10 @@
 package Controller;
 
-import View.AppointmentView;
+import View.*;
 import Model.*;
-import View.MainInterfaceView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
