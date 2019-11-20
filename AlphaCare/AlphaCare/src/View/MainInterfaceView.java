@@ -96,11 +96,9 @@ public class MainInterfaceView extends JFrame {
 
         setReportButton(new JButton("Report feedback"));
 
-        //-----Input Prompt User Interface Design Pattern-------
         setSearchField(new JTextField());
         getSearchField().setText("Enter a record number or account number");
-        //------------------------------------------------------
-
+        
         toolBar = new JToolBar();
         toolBar.add(getPrescriptionButton());
         toolBar.add(getSearchButton());
