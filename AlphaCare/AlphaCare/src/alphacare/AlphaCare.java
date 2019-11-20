@@ -21,6 +21,8 @@ public class AlphaCare {
        
                 // This tests to see the application work flow from the Login. It should display all of our view classes from just initially the login process. 
         AccountList gr = new AccountList();
+        
+        
         LoginPageViewController loginPage = new LoginPageViewController(gr); // We have not yet added authentication functionality to the application yet!
 
         // Here, we will test to see the attributes in our model class. 
