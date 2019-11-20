@@ -38,6 +38,20 @@ public class AppointmentViewController {
         return this.appointmentView;
     }
 
+    public void displayApptInfo() {
+
+        int apptListLength = apptList.size();
+        JLabel confirmMsg = new JLabel();
+        int response = JOptionPane.showConfirmDialog(confirmMsg, apptList.get(apptListLength-1).getFullName() + ", your next appointment is scheduled for "
+                + apptList.get(apptListLength-1).getApptDate() + ". Would you like to make any changes to the current appointment?", "Confirm Appointment",
+                JOptionPane.YES_OPTION, JOptionPane.NO_OPTION);
+
+        if (response == JOptionPane.YES_OPTION) {
+
+            //insert code to make appointment changes here
+        }
+    }
+
     private void createButtonListeners() {
         this.appointmentView.getHomeButton().addActionListener(new ActionListener() {
             @Override
@@ -67,15 +81,8 @@ public class AppointmentViewController {
                     MainInterfaceView mainInterface = new MainInterfaceView();
                     appointmentView.setVisible(false);
                     mainInterface.setVisible(true);
-
-                    int response = JOptionPane.showConfirmDialog(submitMessage, newAppt.getFullName() + ", your next appointment is scheduled for "
-                            + newAppt.getApptDate() + ". Would you like to make any changes to the current appointment?", "Confirm",
-                            JOptionPane.YES_OPTION, JOptionPane.NO_OPTION);
-
-                    if (response == JOptionPane.YES_OPTION) {
-
-                        //insert code to make appointment changes here
-                    }
+                    
+                    displayApptInfo();
 
                 } catch (NumberFormatException e) {
                     JLabel error = new JLabel();
