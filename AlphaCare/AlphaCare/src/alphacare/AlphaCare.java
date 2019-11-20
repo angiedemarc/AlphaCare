@@ -2,7 +2,6 @@ package alphacare;
 
 import Controller.LoginPageViewController;
 import Model.*;
-import Model.SingletonRecordList;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
