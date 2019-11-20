@@ -110,6 +110,36 @@ public class AppointmentView extends JFrame {
         
         setVisible(true);
     }
+
+    public JTextField getFullNameField() {
+        return fullNameField;
+    }
+
+    public JTextField getBirthDateField() {
+        return birthDateField;
+    }
+
+    public JTextField getSsnField() {
+        return ssnField;
+    }
+
+    public JTextField getPhoneNumField() {
+        return phoneNumField;
+    }
+
+    public JTextField getEmailField() {
+        return emailField;
+    }
+
+    public JTextField getDateField() {
+        return dateField;
+    }
+
+    public JTextArea getSymptomsArea() {
+        return symptomsArea;
+    }
+    
+    
     
     public JButton getHomeButton() {
         return this.homeButton;
@@ -127,24 +157,4 @@ public class AppointmentView extends JFrame {
         return this.cancelButton;
     }
 
-    /**
-     * These action listener methods will allow their respective buttons to
-     * perform their functions.
-     *
-     * The first one will submit the information to the database. The second one
-     * will delete the information and cancel the scheduling.
-     *
-     * @param al
-     */
-//    public void addHomeListener(ActionListener al) {
-//        homeButton.addActionListener(al);
-//    }
-//    
-//    public void addSubmitListener(ActionListener al) {
-//        submitButton.addActionListener(al);
-//    }
-//    
-//    public void addCancelListener(ActionListener al) {
-//        cancelButton.addActionListener(al);
-//    }
-}
+ }
