@@ -6,8 +6,10 @@ import View.ViewRecordView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import Controller.AppointmentViewController;
 
 /**
  *
@@ -16,14 +18,35 @@ import javax.swing.JTextField;
 public class MainInterfaceViewController {
 
     private MainInterfaceView mainInterfaceView;
+    private AppointmentViewController forApptList;
     private AccountList accountList;
     private String feedback;
 
     public MainInterfaceViewController() {
         mainInterfaceView = new MainInterfaceView();
+        
+        forApptList = new AppointmentViewController();
+        forApptList.getAppointmentView().setVisible(false);
+        
+        displayApptInfo();
         CreateSearchListeners();
         CreateButtonListeners();
 
+    }
+    
+    private void displayApptInfo() {
+
+        JLabel confirmMessage = new JLabel();
+        int apptListLength = forApptList.apptList.size();
+        
+        int response = JOptionPane.showConfirmDialog(confirmMessage, forApptList.apptList.get(apptListLength - 1).getFullName() + ", "
+                + "your next appointment is scheduled for " + forApptList.apptList.get(apptListLength - 1).getApptDate() + ". Would you "
+                + "like to make any changes to the current appointment?", "Confirm", JOptionPane.YES_OPTION, JOptionPane.NO_OPTION);
+
+        if (response == JOptionPane.YES_OPTION) {
+
+            //insert code to make appointment changes here
+        }
     }
 
     private void CreateSearchListeners() {
