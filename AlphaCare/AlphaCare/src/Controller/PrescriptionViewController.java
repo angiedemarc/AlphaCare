@@ -23,7 +23,7 @@ public class PrescriptionViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("SUBMIT");
+                System.out.println("Submit");
             }
         });
         
