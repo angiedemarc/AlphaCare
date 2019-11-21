@@ -20,7 +20,7 @@ import javax.swing.*;
 public class AppointmentViewController {
 
     private AppointmentView appointmentView;
-    public ArrayList<Appointment> apptList = new ArrayList();
+    private static ArrayList<Appointment> apptList = new ArrayList();
 
     // private Account test;
     public AppointmentViewController() {
@@ -47,8 +47,24 @@ public class AppointmentViewController {
                 JOptionPane.YES_OPTION, JOptionPane.NO_OPTION);
 
         if (response == JOptionPane.YES_OPTION) {
+            appointmentView.setVisible(true);
+            // Setting the appointment view with values from the previous appointments.
+            appointmentView.getFullNameField().setText(apptList.get(apptListLength-1).getFullName());
+            appointmentView.getBirthDateField().setText(apptList.get(apptListLength-1).getFullName());
+            appointmentView.getSsnField().setText(Integer.toString(apptList.get(apptListLength-1).getSsn()));
+            appointmentView.getPhoneNumField().setText(apptList.get(apptListLength-1).getPhoneNum());
+            appointmentView.getEmailField().setText(apptList.get(apptListLength-1).getEmail());
+            appointmentView.getDateField().setText(apptList.get(apptListLength-1).getApptDate());
+            appointmentView.getSymptomsArea().setText(apptList.get(apptListLength-1).getSymptoms());
+            
+            Appointment newAppt = new Appointment(appointmentView.getFullNameField().getText(),
+                            appointmentView.getBirthDateField().getText(), Integer.parseInt(appointmentView.getSsnField().getText()),
+                            appointmentView.getPhoneNumField().getText(), appointmentView.getEmailField().getText(),
+                            appointmentView.getDateField().getText(), appointmentView.getSymptomsArea().getText());
 
-            //insert code to make appointment changes here
+            apptList.add(newAppt);
+            // Removing the first appointment in the list each time!
+            apptList.remove(0);
         }
     }
 
