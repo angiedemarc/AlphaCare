@@ -21,13 +21,15 @@ public class AppointmentViewController {
 
     private AppointmentView appointmentView;
     private static ArrayList<Appointment> apptList = new ArrayList();
+    private MainInterfaceView mainInterface;
 
     // private Account test;
     public AppointmentViewController() {
         this.appointmentView = new AppointmentView();
+        this.mainInterface = new MainInterfaceView();
+        this.mainInterface.setVisible(false);
         createButtonListeners();
-
-        apptList.add(new Appointment("Johnny Cash", "12/14/1990", 9876, "ad", "adf", "12/14/19", "afad"));
+        this.apptList.add(new Appointment("Johnny Cash", "12/14/1990", 9876, "ad", "adf", "12/14/19", "afad"));
     }
 
     public void addAppointmentView() {
@@ -56,7 +58,7 @@ public class AppointmentViewController {
             appointmentView.getEmailField().setText(apptList.get(apptListLength-1).getEmail());
             appointmentView.getDateField().setText(apptList.get(apptListLength-1).getApptDate());
             appointmentView.getSymptomsArea().setText(apptList.get(apptListLength-1).getSymptoms());
-            
+
             Appointment newAppt = new Appointment(appointmentView.getFullNameField().getText(),
                             appointmentView.getBirthDateField().getText(), Integer.parseInt(appointmentView.getSsnField().getText()),
                             appointmentView.getPhoneNumField().getText(), appointmentView.getEmailField().getText(),
@@ -66,14 +68,14 @@ public class AppointmentViewController {
             // Removing the first appointment in the list each time!
             apptList.remove(0);
         }
+
     }
 
     private void createButtonListeners() {
+        
         this.appointmentView.getHomeButton().addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent eventL) {
-                MainInterfaceView mainInterface = new MainInterfaceView();
-
+            public void actionPerformed(ActionEvent eventL) {    
                 appointmentView.setVisible(false);
                 mainInterface.setVisible(true);
             }
@@ -94,10 +96,9 @@ public class AppointmentViewController {
                     JLabel submitMessage = new JLabel();
                     JOptionPane.showMessageDialog(submitMessage, "Your appointment has been scheduled!");
 
-                    MainInterfaceView mainInterface = new MainInterfaceView();
+                   
                     appointmentView.setVisible(false);
-                    mainInterface.setVisible(true);
-                    
+
                     displayApptInfo();
 
                 } catch (NumberFormatException e) {
@@ -119,7 +120,6 @@ public class AppointmentViewController {
 
                 if (response == JOptionPane.YES_OPTION) {
 
-                    MainInterfaceView mainInterface = new MainInterfaceView();
                     appointmentView.setVisible(false);
                     mainInterface.setVisible(true);
                 }
