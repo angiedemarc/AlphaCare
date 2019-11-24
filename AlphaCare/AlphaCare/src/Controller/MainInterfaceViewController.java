@@ -24,10 +24,9 @@ public class MainInterfaceViewController {
 
     public MainInterfaceViewController() {
         mainInterfaceView = new MainInterfaceView();
-        
         forApptList = new AppointmentViewController();
         forApptList.getAppointmentView().setVisible(false);
-        forApptList.displayApptInfo();  
+        forApptList.displayApptInfo();
         CreateSearchListeners();
         CreateButtonListeners();
 
