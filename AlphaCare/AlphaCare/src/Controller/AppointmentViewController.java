@@ -68,6 +68,10 @@ public class AppointmentViewController {
             // Removing the first appointment in the list each time!
             apptList.remove(0);
         }
+        else {
+            appointmentView.setVisible(false);
+           // mainInterface.setVisible(true);
+        }
 
     }
 
@@ -98,6 +102,7 @@ public class AppointmentViewController {
 
                    
                     appointmentView.setVisible(false);
+                    mainInterface.setVisible(true);
 
                     displayApptInfo();
 
