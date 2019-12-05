@@ -1,6 +1,7 @@
 package View;
 
 import Controller.EditRecordViewController;
+import Controller.MainInterfaceViewController;
 import Model.Record;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -114,7 +115,7 @@ public class ViewRecordView extends RecordView {
         this.homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainInterfaceView mainInterface = new MainInterfaceView();
+                new MainInterfaceViewController();
                 setVisible(false);
             }
         });

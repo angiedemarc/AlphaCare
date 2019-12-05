@@ -81,7 +81,7 @@ public class AppointmentViewController {
             @Override
             public void actionPerformed(ActionEvent eventL) {    
                 appointmentView.setVisible(false);
-                mainInterface.setVisible(true);
+                new MainInterfaceViewController();
             }
         });
 
@@ -102,7 +102,7 @@ public class AppointmentViewController {
 
                    
                     appointmentView.setVisible(false);
-                    mainInterface.setVisible(true);
+                    new MainInterfaceViewController();
 
                     displayApptInfo();
 
@@ -126,7 +126,7 @@ public class AppointmentViewController {
                 if (response == JOptionPane.YES_OPTION) {
 
                     appointmentView.setVisible(false);
-                    mainInterface.setVisible(true);
+                    new MainInterfaceViewController();
                 }
 
             }
