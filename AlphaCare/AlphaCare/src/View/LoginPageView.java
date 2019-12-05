@@ -56,14 +56,7 @@ public class LoginPageView extends JFrame {
         loginPanel.add(getPasswordField());
         loginPanel.add(getLoginButton());
         loginPanel.add(getRegisterButton());
-
-
-        // Scrolling
-        loginPanel.setAutoscrolls(true);
-        JScrollPane scrollBar = new JScrollPane(loginPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollBar.setBounds(50, 30, 300, 50);
-        getContentPane().add(scrollBar, BorderLayout.CENTER);
+        add(loginPanel);
         setVisible(true);
 
     }
