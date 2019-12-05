@@ -116,11 +116,10 @@ public class EditRecordViewController {
                 editRecordView.getUndoButton().setEnabled(true);
             }
         });
-        editRecordView.getHomeButton().addActionListener(new ActionListener() {
+        editRecordView.getCont().getEditRecordView().getHomeButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MainInterfaceView mainInterface = new MainInterfaceView();
-
                 editRecordView.setVisible(false);
             }
         });

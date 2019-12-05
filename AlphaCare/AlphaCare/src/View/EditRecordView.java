@@ -5,10 +5,13 @@ import Controller.ViewRecordViewController;
 import Model.Caretaker;
 import Model.Originator;
 import Model.Record;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.event.UndoableEditEvent;
@@ -26,8 +29,8 @@ public class EditRecordView extends EditableView {
     private JTextArea textArea; //Demonstration purposes
     private JTextField textField; //Demonstration Purposes
     private EditRecordViewController cont;
-    private Caretaker caretaker = cont.getCaretaker();
-    private Originator originator = cont.getOriginator();
+    private Caretaker caretaker;
+    private Originator originator;
 
     private int savedInfoIndex = 0;
     private int currentInfoIndex = 0;
@@ -39,8 +42,10 @@ public class EditRecordView extends EditableView {
 
     public EditRecordView(Record medicalRecord, EditRecordViewController cont) {
         super(medicalRecord);
-        editRecordUI();
         this.cont = cont;
+        this.caretaker = cont.getCaretaker();
+        this.originator = cont.getOriginator();
+        editRecordUI();
     }
 
     private void editRecordUI() {
@@ -64,23 +69,103 @@ public class EditRecordView extends EditableView {
 //                updateButtons();
 //            }
 //        });
-        JPanel content = super.promptRecordInfo();
+        JPanel content = new JPanel();
+        //TODO put all this in a spring layout
+        GridLayout grid = new GridLayout(0, 1);
+        content.setLayout(grid);
 
-        // setting positions and dimensions of everything
-        saveRecordButton.setBounds(5, 60, 200, 50);
-        homeButton.setBounds(40, 80, 10, 50);
-        textArea.setBounds(50, 90, 20, 60);
-        saveButton.setBounds(60, 100, 30, 70);
-        undoButton.setBounds(70, 110, 40, 80);
-        redoButton.setBounds(80, 120, 50, 90);
+        patientId = new JLabel("Patient Id: ");
+        patientIdEntry = new JTextField(String.valueOf(medicalRecord.getPatientId()));
+
+        name = new JLabel("Name: ");
+        nameEntry = new JTextField(medicalRecord.getPatientName());
+        
+
+        ssn = new JLabel("SSN: ");
+        ssnEntry1 = new JTextField(16);
+
+
+        ssnEntry1 = new JTextField(String.valueOf(medicalRecord.getSsn()));
+            
+        address = new JLabel("Address: ");
+        addressEntry1 = new JTextField(medicalRecord.getAddress());
+        
+        
+        // Why are we using this? Just a question!
+        addressEntry2 = new JTextField(20);
+
+        state = new JLabel("State: ");
+        stateEntry = new JTextField(medicalRecord.getState());
+
+
+        medicalHistory = new JLabel("Medical History: ");
+        medicalHistoryEntry = new JTextField(medicalRecord.getMedicalHistory());
+
+
+
+        familyMedicalHistory = new JLabel("Family Medical History: ");
+        familyMedicalHistoryEntry = new JTextField(medicalRecord.getFamilyMedicalHistory());
+
+        medicationHistory = new JLabel("Medication History: ");
+        medicationHistoryEntry = new JTextField(medicalRecord.getMedicationHistory());
+
+        treatmentHistory = new JLabel("Treatment History: ");
+        treatmentHistoryEntry = new JTextField(medicalRecord.getTreatmentHistory());
+
+
+        content.add(patientId);
+        content.add(patientIdEntry);
+
+        content.add(name);
+        content.add(nameEntry);
+
+        content.add(ssn);
+        content.add(ssnEntry1);
+
+        content.add(address);
+        content.add(addressEntry1);
+        content.add(addressEntry2);
+
+        content.add(state);
+        content.add(stateEntry);
+
+        content.add(medicalHistory);
+        content.add(medicalHistoryEntry);
+
+        content.add(familyMedicalHistory);
+        content.add(familyMedicalHistoryEntry);
+
+        content.add(medicationHistory);
+        content.add(medicationHistoryEntry);
+
+        content.add(treatmentHistory);
+        content.add(treatmentHistoryEntry);
+
+        // Setting the buttons inside of the EditRecordView.
+        content.add(saveRecordButton);
+        content.add(homeButton);
 
         this.setContentPane(content);
         this.setTitle("Record");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        JScrollPane scrollPane = new JScrollPane(content);
-        // getContentPane().add(appointmentPanel);
-        getContentPane().add(scrollPane);
+        /* 
+        This is the line where we're getting the error - didn't want to delete Angie's class so I had to add it based on the panel from Editable 
+        Was able to fix it but now receiving an error with the listeners inside of the controller, currently implemented a temporary fix but will fix this!
+        */
+        
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                goHome();
+            }
+        });
+        
+        saveRecordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                switchView();
+            }
+        });
 
         this.setSize(800, 600);
         this.setVisible(true);
@@ -88,7 +173,23 @@ public class EditRecordView extends EditableView {
 
     @Override
     public void switchView() {
+        
+        medicalRecord.setPatientId(Integer.parseInt(patientIdEntry.getText()));
+        medicalRecord.setPatientName(nameEntry.getText());
+        medicalRecord.setSsn(Integer.parseInt(ssnEntry1.getText()));
+        medicalRecord.setAddress(addressEntry1.getText());
+        medicalRecord.setState(stateEntry.getText());
+        medicalRecord.setMedicalHistory(medicalHistoryEntry.getText());
+        medicalRecord.setFamilyMedicalHistory(familyMedicalHistoryEntry.getText());
+        medicalRecord.setMedicationHistory(medicationHistoryEntry.getText());
+        medicalRecord.setTreatmentHistory(treatmentHistoryEntry.getText());
         ViewRecordViewController viewRecordViewController = new ViewRecordViewController(medicalRecord);
+        this.setVisible(false);
+    }
+    
+    public void goHome() { 
+        MainInterfaceView mainInterface = new MainInterfaceView();
+        this.setVisible(false);
     }
 
     

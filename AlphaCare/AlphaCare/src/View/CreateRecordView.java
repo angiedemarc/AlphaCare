@@ -2,9 +2,12 @@ package View;
 
 import Controller.ViewRecordViewController;
 import Model.Record;
+import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class CreateRecordView extends EditableView {
 
@@ -22,7 +25,7 @@ public class CreateRecordView extends EditableView {
 
         this.homeButton = new JButton("Home");
 
-        JPanel content = super.promptRecordInfo();
+         JPanel content = super.promptRecordInfo();
 
         // setting positions and dimensions of everything
         createRecordButton.setBounds(20, 60, 200, 50);

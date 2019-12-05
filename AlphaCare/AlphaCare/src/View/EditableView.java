@@ -39,7 +39,7 @@ public abstract class EditableView extends RecordView {
         content.setLayout(grid);
 
         patientId = new JLabel("Patient Id: ");
-        if (medicalRecord.getPatientId() != -1) {
+        if (medicalRecord.getPatientId() != 1) {
             patientIdEntry = new JTextField(medicalRecord.getPatientId());
         } else {
             patientIdEntry = new JTextField(10);

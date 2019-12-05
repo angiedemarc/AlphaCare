@@ -30,7 +30,7 @@ public class Record {
      * Empty constructor (does not take parameters)
      */
     public Record() {
-        this.patientId = -1;
+        this.patientId = 1;
         this.patientName = "N/A";
         this.ssn = 0;
         this.address = "N/A";
