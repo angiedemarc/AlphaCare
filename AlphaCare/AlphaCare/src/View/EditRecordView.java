@@ -1,6 +1,7 @@
 package View;
 
 import Controller.EditRecordViewController;
+import Controller.MainInterfaceViewController;
 import Controller.ViewRecordViewController;
 import Model.Caretaker;
 import Model.Originator;
@@ -188,7 +189,7 @@ public class EditRecordView extends EditableView {
     }
     
     public void goHome() { 
-        MainInterfaceView mainInterface = new MainInterfaceView();
+        new MainInterfaceViewController();
         this.setVisible(false);
     }
 

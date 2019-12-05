@@ -55,7 +55,7 @@ public class CreateRecordViewController {
         createRecordView.getHomeButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainInterfaceView mainInterface = new MainInterfaceView();
+                new MainInterfaceViewController();
                 createRecordView.setVisible(false);
             }
         });
