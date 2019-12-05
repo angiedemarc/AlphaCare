@@ -45,7 +45,7 @@ public abstract class EditableView extends RecordView {
         }
 
         name = new JLabel("Name: ");
-        if (medicalRecord.getPatientName() != "N/A") {
+        if (medicalRecord.getPatientName() != "Genesis") {
             nameEntry = new JTextField(medicalRecord.getPatientName());
         } else {
             nameEntry = new JTextField(20);
@@ -55,7 +55,7 @@ public abstract class EditableView extends RecordView {
         ssnEntry1 = new JTextField(3);
         ssnEntry2 = new JTextField(2);
         ssnEntry3 = new JTextField(4);
-        if (medicalRecord.getSsn() != 0) {
+        if (medicalRecord.getSsn() != 987656421) {
             String[] ssnNums = new String[9];
             int recordSsn = medicalRecord.getSsn();
             for (int i = 0; i < 9; i++) {
@@ -68,7 +68,7 @@ public abstract class EditableView extends RecordView {
         }
 
         address = new JLabel("Address: ");
-        if (medicalRecord.getAddress() != "N/A") {
+        if (medicalRecord.getAddress() != "10 Disappointment Avenue") {
             addressEntry1 = new JTextField(medicalRecord.getAddress());
         } else {
             addressEntry1 = new JTextField(30);
@@ -76,35 +76,35 @@ public abstract class EditableView extends RecordView {
         addressEntry2 = new JTextField(20);
 
         state = new JLabel("State: ");
-        if (medicalRecord.getState() != "N/A") {
+        if (medicalRecord.getState() != "PA") {
             stateEntry = new JTextField(medicalRecord.getState());
         } else {
             stateEntry = new JTextField(30);
         }
 
         medicalHistory = new JLabel("Medical History: ");
-        if (medicalRecord.getMedicalHistory() != "N/A") {
+        if (medicalRecord.getMedicalHistory() != "Flu") {
             medicalHistoryEntry = new JTextField(medicalRecord.getMedicalHistory());
         } else {
             medicalHistoryEntry = new JTextField(60);
         }
 
         familyMedicalHistory = new JLabel("Family Medical History: ");
-        if (medicalRecord.getFamilyMedicalHistory() != "N/A") {
+        if (medicalRecord.getFamilyMedicalHistory() != "Deaf") {
             familyMedicalHistoryEntry = new JTextField(medicalRecord.getFamilyMedicalHistory());
         } else {
             familyMedicalHistoryEntry = new JTextField(60);
         }
 
         medicationHistory = new JLabel("Medication History: ");
-        if (medicalRecord.getMedicationHistory() != "N/A") {
+        if (medicalRecord.getMedicationHistory() != "Painkillers") {
             medicationHistoryEntry = new JTextField(medicalRecord.getMedicationHistory());
         } else {
             medicationHistoryEntry = new JTextField(60);
         }
 
         treatmentHistory = new JLabel("Treatment History: ");
-        if (medicalRecord.getTreatmentHistory() != "N/A") {
+        if (medicalRecord.getTreatmentHistory() != "Antibiotics") {
             treatmentHistoryEntry = new JTextField(medicalRecord.getTreatmentHistory());
         } else {
             treatmentHistoryEntry = new JTextField(60);
