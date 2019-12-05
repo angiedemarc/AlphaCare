@@ -29,12 +29,15 @@ public class PrescriptionViewController {
                 int patientId = Integer.parseInt(prescriptionView.getPatientIdField().getText());
                 String fName = prescriptionView.getfNameField().getText();
                 String lName = prescriptionView.getlNameField().getText();
+                int age = Integer.parseInt(prescriptionView.getAgeField().getText());
+                String gender = prescriptionView.getGenderSelection().getSelectedItem().toString();
+                String address = prescriptionView.getAddressField().getText();
                 String hospitalName = prescriptionView.getHospitalNameField().getText();
                 int amountTakenInADay = Integer.parseInt(prescriptionView.getAmountTakenInADayField().getText());
                 int daysTakenInAWeek = Integer.parseInt(prescriptionView.getDaysTakenInAWeekSelection().getSelectedItem().toString());
                 int quantityTaken = Integer.parseInt(prescriptionView.getQuantityTakenField().getText());
                 String overdoseWarnings = prescriptionView.getOverdoseWarningsArea().getText();
-                Prescription newPrs = new Prescription(patientId, fName, lName, hospitalName, amountTakenInADay, daysTakenInAWeek, quantityTaken, overdoseWarnings);
+                Prescription newPrs = new Prescription(patientId, fName, lName, age, gender, address, hospitalName, amountTakenInADay, daysTakenInAWeek, quantityTaken, overdoseWarnings);
 
                 PatientList patients = new PatientList();
                 Patient p = patients.getPatient(patientId);
