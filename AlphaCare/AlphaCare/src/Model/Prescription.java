@@ -8,22 +8,16 @@ public class Prescription {
     private int patientId;
     private String fName;
     private String lName;
-    private int age;
-    private String gender;
-    private String address;
     private String hospitalName;
     private int amountTakenInADay;
     private int daysTakenInAWeek;
     private int quantityTaken;
     private String overdoseWarnings;
 
-    public Prescription(int patientId, String fName, String lName, int age, String gender, String address, String hospitalName, int amountTakenInADay, int daysTakenInAWeek, int quantityTaken, String overdoseWarnings) {
+    public Prescription(int patientId, String fName, String lName, String hospitalName, int amountTakenInADay, int daysTakenInAWeek, int quantityTaken, String overdoseWarnings) {
         this.patientId = patientId;
         this.fName = fName;
         this.lName = lName;
-        this.age = age;
-        this.gender = gender;
-        this.address = address;
         this.hospitalName = hospitalName;
         this.amountTakenInADay = amountTakenInADay;
         this.daysTakenInAWeek = daysTakenInAWeek;
@@ -53,30 +47,6 @@ public class Prescription {
 
     public void setlName(String lName) {
         this.lName = lName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getHospitalName() {
@@ -121,7 +91,7 @@ public class Prescription {
 
     @Override
     public String toString() {
-        return "Prescription " + "patientId: " + patientId + " fName: " + fName + ", lName=" + lName + ", age=" + age + ", gender=" + gender + ", address=" + address + ", hospitalName=" + hospitalName + ", amountTakenInADay=" + amountTakenInADay + ", daysTakenInAWeek=" + daysTakenInAWeek + ", quantityTaken=" + quantityTaken + ", overdoseWarnings=" + overdoseWarnings;
+        return "Prescription " + "patientId: " + patientId + " fName: " + fName + ", lName=" + lName + ", hospitalName=" + hospitalName + ", amountTakenInADay=" + amountTakenInADay + ", daysTakenInAWeek=" + daysTakenInAWeek + ", quantityTaken=" + quantityTaken + ", overdoseWarnings=" + overdoseWarnings;
     }
     
 }
