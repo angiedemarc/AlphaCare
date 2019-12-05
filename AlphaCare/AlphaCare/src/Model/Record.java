@@ -31,14 +31,14 @@ public class Record {
      */
     public Record() {
         this.patientId = 1;
-        this.patientName = "N/A";
-        this.ssn = 0;
-        this.address = "N/A";
-        this.state = "N/A";
-        this.medicalHistory = "N/A";
-        this.familyMedicalHistory = "N/A";
-        this.medicationHistory = "N/A";
-        this.treatmentHistory = "N/A";
+        this.patientName = "Genesis";
+        this.ssn = 987656421;
+        this.address = "10 Disappointment Avenue";
+        this.state = "PA";
+        this.medicalHistory = "Flu";
+        this.familyMedicalHistory = "Deaf";
+        this.medicationHistory = "Painkillers";
+        this.treatmentHistory = "Antibiotics";
         this.dateEntered = LocalDate.now();
         this.timeEntered = LocalTime.now();
     }
