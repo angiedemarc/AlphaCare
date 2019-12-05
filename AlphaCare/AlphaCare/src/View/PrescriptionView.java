@@ -63,10 +63,10 @@ public class PrescriptionView extends JFrame {
         setPatientIdLabel(new JLabel("Patient Id: "));
         setPatientIdField((new JTextField(16)));
         
-        setfNameLabel(new JLabel("First name: "));
+        setfNameLabel(new JLabel("First name (of doctor prescribing): "));
         setfNameField((new JTextField(16)));
         
-        setlNameLabel(new JLabel("Last name: "));
+        setlNameLabel(new JLabel("Last name (of doctor): "));
         setlNameField((new JTextField(16)));
         
         setAgeLabel(new JLabel("Age: "));

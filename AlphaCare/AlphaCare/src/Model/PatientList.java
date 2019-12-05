@@ -76,12 +76,22 @@ public class PatientList implements Serializable {
     }
 
     public Patient getPatient(int patientId) {
-        for (Patient p : this.getPatientList()) {
+        for (Patient p : theListOfPatients) {
             if (p.getPatientID() == patientId) {
                 return p;
             }
         }
         throw new NoSuchElementException();
+    }
+    
+    /**
+     * updates patient in the list
+     * 
+     * @param patient
+     */
+    public void editPatient(Patient patient){
+        theListOfPatients.remove(patient);
+        theListOfPatients.add(patient);
     }
 
 }
