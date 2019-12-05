@@ -25,9 +25,6 @@ public class PrescriptionView extends JFrame {
     private JLabel patientIdLabel;
     private JLabel fNameLabel;
     private JLabel lNameLabel;
-    private JLabel ageLabel;
-    private JLabel genderLabel;
-    private JLabel addressLabel;
     private JLabel hospitalNameLabel;
     private JLabel amountTakenInADayLabel;
     private JLabel daysTakenInAWeekLabel;
@@ -38,8 +35,6 @@ public class PrescriptionView extends JFrame {
     private JTextField patientIdField;
     private JTextField fNameField;
     private JTextField lNameField;
-    private JTextField ageField;
-    private JComboBox genderSelection;
     private JTextField addressField;
     private JTextField hospitalNameField;
     private JTextField amountTakenInADayField;
@@ -68,18 +63,6 @@ public class PrescriptionView extends JFrame {
         
         setlNameLabel(new JLabel("Last name (of doctor): "));
         setlNameField((new JTextField(16)));
-        
-        setAgeLabel(new JLabel("Age: "));
-        setAgeField((new JTextField(3)));
-        
-        setGenderLabel(new JLabel("Gender: "));
-        String [] genders = new String[2];
-        genders[0] = ("male");
-        genders[1] = ("female");
-        setGenderSelection((new JComboBox(genders)));
-        
-        setAddressLabel(new JLabel("Address: "));
-        setAddressField((new JTextField(16)));
         
         setHospitalNameLabel(new JLabel("Hospital name: "));
         setHospitalNameField((new JTextField(16)));
@@ -112,15 +95,6 @@ public class PrescriptionView extends JFrame {
         createPanel.add(lNameLabel);
         createPanel.add(lNameField);
 
-        createPanel.add(ageLabel);
-        createPanel.add(ageField);
-
-        createPanel.add(genderLabel);
-        createPanel.add(genderSelection);
-
-        createPanel.add(addressLabel);
-        createPanel.add(addressField);
-
         createPanel.add(hospitalNameLabel);
         createPanel.add(hospitalNameField);
 
@@ -140,7 +114,6 @@ public class PrescriptionView extends JFrame {
         createPanel.add(cancelButton);
 
         getContentPane().add(createPanel);
-        
     }
 
     //Getters and Setters
@@ -174,30 +147,6 @@ public class PrescriptionView extends JFrame {
 
     public void setlNameLabel(JLabel lNameLabel) {
         this.lNameLabel = lNameLabel;
-    }
-
-    public JLabel getAgeLabel() {
-        return ageLabel;
-    }
-
-    public void setAgeLabel(JLabel ageLabel) {
-        this.ageLabel = ageLabel;
-    }
-
-    public JLabel getGenderLabel() {
-        return genderLabel;
-    }
-
-    public void setGenderLabel(JLabel genderLabel) {
-        this.genderLabel = genderLabel;
-    }
-
-    public JLabel getAddressLabel() {
-        return addressLabel;
-    }
-
-    public void setAddressLabel(JLabel addressLabel) {
-        this.addressLabel = addressLabel;
     }
 
     public JLabel getHospitalNameLabel() {
@@ -262,22 +211,6 @@ public class PrescriptionView extends JFrame {
 
     public void setlNameField(JTextField lNameField) {
         this.lNameField = lNameField;
-    }
-
-    public JTextField getAgeField() {
-        return ageField;
-    }
-
-    public void setAgeField(JTextField ageField) {
-        this.ageField = ageField;
-    }
-
-    public JComboBox getGenderSelection() {
-        return genderSelection;
-    }
-
-    public void setGenderSelection(JComboBox genderSelection) {
-        this.genderSelection = genderSelection;
     }
 
     public JTextField getAddressField() {
