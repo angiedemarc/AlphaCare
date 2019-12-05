@@ -29,7 +29,7 @@ public class AppointmentViewController {
         this.mainInterface = new MainInterfaceView();
         this.mainInterface.setVisible(false);
         createButtonListeners();
-        this.apptList.add(new Appointment("Johnny Cash", "12/14/1990", 9876, "ad", "adf", "12/14/19", "afad"));
+        this.apptList.add(new Appointment("Genesis DuBon", "12/14/1990", 987656421, "484-786-5677", "gdubs@gmail.com", "12/14/19", "Deadness"));
     }
 
     public void addAppointmentView() {
