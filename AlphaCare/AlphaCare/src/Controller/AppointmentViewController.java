@@ -20,7 +20,7 @@ import javax.swing.*;
 public class AppointmentViewController {
 
     private AppointmentView appointmentView;
-    private static ArrayList<Appointment> apptList = new ArrayList();
+    private ArrayList<Appointment> apptList = new ArrayList();
     private MainInterfaceView mainInterface;
 
     // private Account test;
@@ -52,7 +52,7 @@ public class AppointmentViewController {
             appointmentView.setVisible(true);
             // Setting the appointment view with values from the previous appointments.
             appointmentView.getFullNameField().setText(apptList.get(apptListLength-1).getFullName());
-            appointmentView.getBirthDateField().setText(apptList.get(apptListLength-1).getFullName());
+            appointmentView.getBirthDateField().setText(apptList.get(apptListLength-1).getBirthDate());
             appointmentView.getSsnField().setText(Integer.toString(apptList.get(apptListLength-1).getSsn()));
             appointmentView.getPhoneNumField().setText(apptList.get(apptListLength-1).getPhoneNum());
             appointmentView.getEmailField().setText(apptList.get(apptListLength-1).getEmail());
@@ -81,7 +81,7 @@ public class AppointmentViewController {
             @Override
             public void actionPerformed(ActionEvent eventL) {    
                 appointmentView.setVisible(false);
-                new MainInterfaceViewController();
+                mainInterface.setVisible(true);
             }
         });
 
@@ -102,7 +102,7 @@ public class AppointmentViewController {
 
                    
                     appointmentView.setVisible(false);
-                    new MainInterfaceViewController();
+                    mainInterface.setVisible(true);
 
                     displayApptInfo();
 
@@ -126,7 +126,7 @@ public class AppointmentViewController {
                 if (response == JOptionPane.YES_OPTION) {
 
                     appointmentView.setVisible(false);
-                    new MainInterfaceViewController();
+                    mainInterface.setVisible(true);
                 }
 
             }
