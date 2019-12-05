@@ -33,8 +33,8 @@ public class MainInterfaceViewController {
     }
 
     private void CreateSearchListeners() {
-        JTextField search = mainInterfaceView.getSearchField();
-        search.addActionListener(
+        JTextField searchBar = mainInterfaceView.getSearchField();
+        searchBar.addActionListener(
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -45,7 +45,9 @@ public class MainInterfaceViewController {
                 new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(search.getText());
+                System.out.println(searchBar.getText());
+                SearchViewController search = new SearchViewController(searchBar.getText());
+                mainInterfaceView.setVisible(false);
             }
         });
     }

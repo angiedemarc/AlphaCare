@@ -97,7 +97,7 @@ public class MainInterfaceView extends JFrame {
         setReportButton(new JButton("Report feedback"));
 
         setSearchField(new JTextField());
-        getSearchField().setText("Enter a record number or account number");
+        getSearchField().setText("Enter a username");
         
         toolBar = new JToolBar();
         toolBar.add(getPrescriptionButton());
