@@ -118,5 +118,10 @@ public class Prescription {
     public void setOverdoseWarnings(String overdoseWarnings) {
         this.overdoseWarnings = overdoseWarnings;
     }
+
+    @Override
+    public String toString() {
+        return "Prescription " + "patientId: " + patientId + " fName: " + fName + ", lName=" + lName + ", age=" + age + ", gender=" + gender + ", address=" + address + ", hospitalName=" + hospitalName + ", amountTakenInADay=" + amountTakenInADay + ", daysTakenInAWeek=" + daysTakenInAWeek + ", quantityTaken=" + quantityTaken + ", overdoseWarnings=" + overdoseWarnings;
+    }
     
 }

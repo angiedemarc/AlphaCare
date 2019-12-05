@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author cole
@@ -13,6 +15,7 @@ public class Patient extends GeneralUser {
     private int age;
     private int patientID;
     private Record patientRecord;
+    private ArrayList<Prescription> patientPrescriptions;
 
     /**
      *
@@ -28,6 +31,7 @@ public class Patient extends GeneralUser {
         super(firstName, lastName, account);
         this.age = age;
         this.patientID = patientID;
+        patientPrescriptions = new ArrayList<>();
     }
     
     /**
@@ -107,6 +111,36 @@ public class Patient extends GeneralUser {
     public void setPatientRecord(Record patientRecord) {
         this.patientRecord = patientRecord;
     }
+    
+    /**
+     *
+     * getter for prescriptions
+     *
+     * @return patientPrescriptions
+     */
+    public ArrayList<Prescription> getPrescriptions() {
+        return patientPrescriptions;
+    }
+
+    /**
+     *
+     * setter for patientPrescriptions
+     *
+     * @param patientPrescriptions
+     */
+    public void setPatientPrescriptions(ArrayList<Prescription> patientPrescriptions) {
+        this.patientPrescriptions = patientPrescriptions;
+    }
+    
+    /**
+     * adds prescription to the list for the patient
+     * 
+     * @param prescription
+    */
+    public void addPrescription(Prescription prescription){
+        this.patientPrescriptions.add(prescription);
+    }
+    
 
     @Override
     public int hashCode() {
@@ -133,6 +167,9 @@ public class Patient extends GeneralUser {
         return true;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Patient Info: " + "age: " + age + " patient ID: " + patientID + " patient Record: " + patientRecord + " patientPrescriptions: " + patientPrescriptions;
+    }
     
 }

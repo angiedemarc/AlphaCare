@@ -32,7 +32,6 @@ public abstract class EditableView extends RecordView {
     }
 
     public JPanel promptRecordInfo() {
-
         JPanel content = new JPanel();
         //TODO put all this in a spring layout
         GridLayout grid = new GridLayout(0, 1);
