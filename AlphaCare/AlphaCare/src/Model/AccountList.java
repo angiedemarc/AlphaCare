@@ -34,7 +34,7 @@ public class AccountList  {
         theListOfAccountsAll.add((new Account("CJones45", "ghdjuei34", "Admin")));
         theListOfAccountsAll.add((new Account("AMira", "uejdnh36!", "Patient")));
         theListOfAccountsAll.add((new Account("MBuchle", "ujks3456", "Doctor")));
-        theListOfAccountsAll.add((new Account("a", "z", "Patient")));
+        theListOfAccountsAll.add((new Account("Genesis", "genesis", "Patient")));
         return theListOfAccountsAll;
     }
 
